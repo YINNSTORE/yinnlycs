@@ -105,7 +105,7 @@ internal fun CustomizationSettingsPage(
                         value = "$themeLabel, $paletteName",
                         onClick = { onOpenPage(SettingsPage.APPEARANCE) },
                         tint = MaterialTheme.colorScheme.tertiary,
-                        iconShape = MaterialShapes.Cookie9Sided.toShape(),
+                        iconShape = MaterialShapes.Cookie4Sided.toShape(),
                         explanation = stringResource(R.string.cz_info_theme)
                     )
                     SettingsHubRow(
