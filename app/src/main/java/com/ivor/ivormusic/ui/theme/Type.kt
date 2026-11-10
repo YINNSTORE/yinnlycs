@@ -3,6 +3,7 @@
 package com.ivor.ivormusic.ui.theme
 
 import androidx.compose.material3.Typography as MaterialTypography
+import com.ivor.ivormusic.R
 import androidx.annotation.StringRes
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.PlatformTextStyle
