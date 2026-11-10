@@ -77,8 +77,10 @@ android {
         abi {
             isEnable = true
             reset()
-            include("arm64-v8a", "armeabi-v7a")
-            isUniversalApk = true
+            // Build only the 64-bit APK used by modern Android phones.
+            // A universal APK duplicates native libraries for multiple ABIs.
+            include("arm64-v8a")
+            isUniversalApk = false
         }
     }
     signingConfigs {
