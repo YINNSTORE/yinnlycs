@@ -252,17 +252,6 @@ fun IvorMusicTheme(
 }
 
 /**
- * How a scheme built from a cover should be made, for the places that build
- * their own: the expanded player and the album and playlist pages.
- *
- * With [wholeApp] those take a complete scheme from *their* cover, as the root
- * does from the playing song's, instead of laying cover accents over the
- * ambient surfaces. That keeps the rule that a surface takes one scheme whole:
- * a playlist page is its own artwork's colours while the app around it is the
- * playing album's, and neither borrows roles from the other.
- */
-
-/**
  * A lightweight Liquid Glass-inspired treatment. It uses translucent M3
  * surface roles and softer geometry; it deliberately avoids per-frame blur
  * so scrolling and video playback stay smooth on Android 11 devices.
@@ -285,6 +274,17 @@ private fun ColorScheme.liquidGlassSurfaces(): ColorScheme = copy(
     surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.94f),
     outlineVariant = outlineVariant.copy(alpha = 0.56f),
 )
+
+/**
+ * How a scheme built from a cover should be made, for the places that build
+ * their own: the expanded player and the album and playlist pages.
+ *
+ * With [wholeApp] those take a complete scheme from *their* cover, as the root
+ * does from the playing song's, instead of laying cover accents over the
+ * ambient surfaces. That keeps the rule that a surface takes one scheme whole:
+ * a playlist page is its own artwork's colours while the app around it is the
+ * playing album's, and neither borrows roles from the other.
+ */
 
 data class AlbumTheming(val wholeApp: Boolean, val style: PaletteStyle, val amoled: Boolean)
 

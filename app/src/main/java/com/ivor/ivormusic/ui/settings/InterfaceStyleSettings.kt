@@ -31,7 +31,13 @@ internal fun InterfaceStyleSettingsPage(onBack: () -> Unit) {
                     SettingsChoiceRow(
                         icon = Icons.Rounded.AutoAwesome,
                         title = stringResource(R.string.settings_visual_style),
-                        subtitle = stringResource(R.string.settings_style_liquid_glass_description),
+                        subtitle = stringResource(
+                            if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) {
+                                R.string.settings_style_liquid_glass_description
+                            } else {
+                                R.string.settings_visual_style_description
+                            }
+                        ),
                         labels = listOf(
                             stringResource(R.string.settings_style_expressive),
                             stringResource(R.string.settings_style_liquid_glass)

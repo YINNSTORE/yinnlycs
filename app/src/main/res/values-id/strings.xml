@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Yinnlycs</string>
+    <string name="settings_interface_style_title">Gaya antarmuka &amp; font</string>
+    <string name="settings_interface_style_description">Atur tampilan panel, kartu, dan teks aplikasi.</string>
+    <string name="settings_visual_style">Gaya permukaan</string>
+    <string name="settings_visual_style_description">Pilih tampilan panel dan kartu aplikasi.</string>
+    <string name="settings_style_expressive">Ekspresif</string>
+    <string name="settings_style_liquid_glass">Liquid Glass</string>
+    <string name="settings_style_liquid_glass_description">Panel transparan dan sudut lebih lembut tanpa efek blur berat.</string>
+    <string name="settings_font_family">Jenis font</string>
+    <string name="settings_font_family_description">Pilih jenis huruf untuk seluruh aplikasi.</string>
+    <string name="font_family_default">Bawaan</string>
+    <string name="font_family_montserrat">Montserrat</string>
+    <string name="font_family_serif">Serif</string>
+    <string name="font_family_monospace">Mono</string>
     <string name="now_playing_channel_name">Sedang diputar</string>
     <string name="video_playback_channel_name">Pemutaran video</string>
 
