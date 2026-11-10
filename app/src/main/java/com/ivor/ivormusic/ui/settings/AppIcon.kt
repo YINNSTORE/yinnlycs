@@ -1,5 +1,11 @@
 package com.ivor.ivormusic.ui.settings
 
+import androidx.compose.ui.res.painterResource
+
+import androidx.compose.ui.layout.ContentScale
+
+import androidx.compose.foundation.Image
+
 import android.content.ComponentName
 import android.content.Context
 import android.content.pm.PackageManager
@@ -426,7 +432,7 @@ object AppIconManager {
     }
 }
 
-object KodaIconPaths {
+object YinnlycsIconPaths {
     const val BLOB =
         "M252.415,86.924C260.733,89.841 269.528,93.751 299.373,95.837C299.97,95.98 336.301,98.589 346.635,133.461C357.965,171.696 324.972,178.628 336.471,236.506C337.836,243.377 348.783,276.18 321.089,299.014C297.449,318.507 267.342,305.735 243.488,301.777C220.289,298.942 211.789,300.713 183.5,308.503C171.093,311.342 139.076,321.585 108.872,299.005C62.926,264.657 93.946,205.775 97.712,198.627C104.658,185.443 104.988,185.787 111.289,172.444C122.885,145.45 121.863,145.139 126.319,109.43C127.133,105.948 130.619,70.937 165.586,58.767C199.825,46.851 220.118,74.018 252.415,86.924Z"
     const val NOTE_BODY =
@@ -448,13 +454,13 @@ object KodaIconPaths {
  * Supports fluid animated color transitions, arbitrary container shapes, and ambient glow.
  */
 @Composable
-fun KodaAppIcon(
+fun YinnlycsAppIcon(
     style: IconStyle,
     modifier: Modifier = Modifier,
     shape: Shape,
     animateColors: Boolean = true,
 ) {
-    KodaAppIcon(
+    YinnlycsAppIcon(
         modifier = modifier,
         blobColor = style.blob,
         noteColor = style.note,
@@ -470,7 +476,7 @@ fun KodaAppIcon(
 }
 
 @Composable
-fun KodaAppIcon(
+fun YinnlycsAppIcon(
     modifier: Modifier = Modifier,
     blobColor: Color = Color(0xFF372DA9),
     noteColor: Color = Color(0xFFDAD8CD),
@@ -483,89 +489,17 @@ fun KodaAppIcon(
     shape: Shape = RoundedCornerShape(22.dp),
     animateColors: Boolean = true
 ) {
-    val animBlob by animateColorAsState(
-        targetValue = blobColor,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animBlob"
-    )
-    val animNote by animateColorAsState(
-        targetValue = noteColor,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animNote"
-    )
-    val animFlag by animateColorAsState(
-        targetValue = flagColor,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animFlag"
-    )
-    val animDot by animateColorAsState(
-        targetValue = dotColor,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animDot"
-    )
-    val animDark1 by animateColorAsState(
-        targetValue = dark1,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animDark1"
-    )
-    val animDark2 by animateColorAsState(
-        targetValue = dark2,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animDark2"
-    )
-    val animDark3 by animateColorAsState(
-        targetValue = dark3,
-        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
-        label = "animDark3"
-    )
-
-    val finalBlob = if (animateColors) animBlob else blobColor
-    val finalNote = if (animateColors) animNote else noteColor
-    val finalFlag = if (animateColors) animFlag else flagColor
-    val finalDot = if (animateColors) animDot else dotColor
-    val finalDark1 = if (animateColors) animDark1 else dark1
-    val finalDark2 = if (animateColors) animDark2 else dark2
-    val finalDark3 = if (animateColors) animDark3 else dark3
-
-    val blobPath = remember { PathParser.createPathFromPathData(KodaIconPaths.BLOB).asComposePath() }
-    val noteBodyPath = remember { PathParser.createPathFromPathData(KodaIconPaths.NOTE_BODY).asComposePath() }
-    val noteFlagPath = remember { PathParser.createPathFromPathData(KodaIconPaths.NOTE_FLAG).asComposePath() }
-    val dark1Path = remember { PathParser.createPathFromPathData(KodaIconPaths.DARK1).asComposePath() }
-    val dark2Path = remember { PathParser.createPathFromPathData(KodaIconPaths.DARK2).asComposePath() }
-    val dark3Path = remember { PathParser.createPathFromPathData(KodaIconPaths.DARK3).asComposePath() }
-    val dotPath = remember { PathParser.createPathFromPathData(KodaIconPaths.DOT).asComposePath() }
-
-    val containerMod = if (containerColor != null) {
-        modifier
-            .clip(shape)
-            .background(containerColor)
-    } else {
-        modifier.clip(shape)
-    }
-
     Box(
-        modifier = containerMod,
+        modifier = modifier
+            .clip(shape)
+            .background(containerColor ?: Color.Transparent),
         contentAlignment = Alignment.Center
     ) {
-        Canvas(modifier = Modifier.fillMaxSize()) {
-            val scaleFactor = size.minDimension / 108f
-            val offsetX = (size.width - 108f * scaleFactor) / 2f
-            val offsetY = (size.height - 108f * scaleFactor) / 2f
-
-            withTransform({
-                translate(offsetX, offsetY)
-                scale(scaleFactor, scaleFactor, Offset.Zero)
-                translate(19.44f, 24.4f)
-                scale(0.16f, 0.16f, Offset.Zero)
-            }) {
-                drawPath(blobPath, finalBlob)
-                drawPath(noteBodyPath, finalNote)
-                drawPath(noteFlagPath, finalFlag)
-                drawPath(dark1Path, finalDark1)
-                drawPath(dark2Path, finalDark2)
-                drawPath(dark3Path, finalDark3)
-                drawPath(dotPath, finalDot)
-            }
-        }
+        Image(
+            painter = painterResource(id = com.ivor.ivormusic.R.drawable.yinnlycs_icon),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
     }
 }

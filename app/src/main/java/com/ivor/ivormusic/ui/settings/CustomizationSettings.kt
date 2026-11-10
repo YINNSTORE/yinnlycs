@@ -36,7 +36,7 @@ import com.ivor.ivormusic.ui.theme.ThemeMode
 import kotlin.math.roundToInt
 
 /**
- * Everything about how Koda looks and behaves, in one place and sorted by the
+ * Everything about how Yinnlycs looks and behaves, in one place and sorted by the
  * part of the app it changes: its colours, its players, its layout and how it
  * answers a touch.
  *
