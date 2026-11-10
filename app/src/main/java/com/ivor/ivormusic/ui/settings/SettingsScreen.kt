@@ -2553,7 +2553,7 @@ private fun ExpressiveAboutDialog(
                             ) {
                                 // A saved style has no drawable behind it -
                                 // it is colours, not a resource - so the one
-                                // place Koda draws its own mark at size gets
+                                // place Yinnlycs draws its own mark at size gets
                                 // the live renderer when one is active, and
                                 // the preset's artwork otherwise. Without this
                                 // a style someone saved would change nothing
@@ -2572,7 +2572,7 @@ private fun ExpressiveAboutDialog(
                                     savedStyles.firstOrNull { it.id == activeStyleId }
                                 }
                                 if (activeStyle != null) {
-                                    KodaAppIcon(
+                                    YinnlycsAppIcon(
                                         style = activeStyle.toIconStyle(),
                                         shape = androidx.compose.foundation.shape
                                             .RoundedCornerShape(20.dp),
