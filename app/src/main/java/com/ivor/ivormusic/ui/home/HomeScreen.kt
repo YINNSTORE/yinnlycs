@@ -292,7 +292,7 @@ fun HomeScreen(
     /** Prevent a rebuilt Search tab from focusing behind the full video player. */
     hasExpandedVideoPlayer: Boolean = false,
     /** Spotlight: the alternative music Home. Off by default. */
-    spotlightHome: Boolean = false,
+    spotlightHome: Boolean = true,
     /** Use Material 3's compact bar instead of the default floating toolbar. */
     nonExpressiveNavigationBar: Boolean = false,
     /** Visibility, order and recommendation policy for Video mode. */
@@ -2654,6 +2654,13 @@ fun TopBarSection(
             }
         }
         
+        Text(
+            text = stringResource(R.string.home_tab_title),
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.onBackground,
+            modifier = Modifier.align(Alignment.CenterStart).padding(start = 56.dp)
+        )
+
         // Right side icons with shape morphing.
         Row(
             modifier = Modifier.align(Alignment.CenterEnd),

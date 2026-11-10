@@ -82,8 +82,8 @@ enum class AppIcon(
         dark2 = Color(0xFF5F0909),
         dark3 = Color(0xFF7F0000),
         bgColor = Color(0xFF1F0606),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_crimson,
-        previewBackgroundRes = R.drawable.ic_launcher_background_crimson
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     MIDNIGHT(
         id = "midnight",
@@ -98,8 +98,8 @@ enum class AppIcon(
         dark2 = Color(0xFF0A0B10),
         dark3 = Color(0xFF171822),
         bgColor = Color(0xFF0B0C10),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_midnight,
-        previewBackgroundRes = R.drawable.ic_launcher_background_midnight
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     EMERALD(
         id = "emerald",
@@ -114,8 +114,8 @@ enum class AppIcon(
         dark2 = Color(0xFF072109),
         dark3 = Color(0xFF0D3310),
         bgColor = Color(0xFF051A08),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_emerald,
-        previewBackgroundRes = R.drawable.ic_launcher_background_emerald
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     SUNSET(
         id = "sunset",
@@ -130,8 +130,8 @@ enum class AppIcon(
         dark2 = Color(0xFF662400),
         dark3 = Color(0xFF852E00),
         bgColor = Color(0xFF260D00),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_sunset,
-        previewBackgroundRes = R.drawable.ic_launcher_background_sunset
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     OCEAN(
         id = "ocean",
@@ -146,8 +146,8 @@ enum class AppIcon(
         dark2 = Color(0xFF03193D),
         dark3 = Color(0xFF062659),
         bgColor = Color(0xFF041630),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_ocean,
-        previewBackgroundRes = R.drawable.ic_launcher_background_ocean
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     BLOSSOM(
         id = "blossom",
@@ -162,8 +162,8 @@ enum class AppIcon(
         dark2 = Color(0xFF311B92),
         dark3 = Color(0xFF4527A0),
         bgColor = Color(0xFF190E2E),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_blossom,
-        previewBackgroundRes = R.drawable.ic_launcher_background_blossom
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     MONOCHROME(
         id = "monochrome",
@@ -178,8 +178,8 @@ enum class AppIcon(
         dark2 = Color(0xFF0A0A0A),
         dark3 = Color(0xFF101010),
         bgColor = Color(0xFF0D0D0D),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_monochrome,
-        previewBackgroundRes = R.drawable.ic_launcher_background_monochrome
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     ),
     SOLAR(
         id = "solar",
@@ -194,8 +194,8 @@ enum class AppIcon(
         dark2 = Color(0xFF693305),
         dark3 = Color(0xFF8A460A),
         bgColor = Color(0xFF241200),
-        previewForegroundRes = R.drawable.ic_launcher_foreground_solar,
-        previewBackgroundRes = R.drawable.ic_launcher_background_solar
+        previewForegroundRes = R.drawable.ic_launcher_foreground,
+        previewBackgroundRes = R.drawable.ic_launcher_background
     );
 
     companion object {

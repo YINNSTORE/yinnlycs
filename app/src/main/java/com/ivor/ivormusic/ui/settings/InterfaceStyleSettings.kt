@@ -1,5 +1,19 @@
 package com.ivor.ivormusic.ui.settings
 
+import androidx.compose.ui.unit.dp
+
+import androidx.compose.ui.Modifier
+
+import androidx.compose.material3.Text
+
+import androidx.compose.material3.Surface
+
+import androidx.compose.material3.MaterialTheme
+
+import androidx.compose.foundation.layout.padding
+
+import androidx.compose.foundation.layout.fillMaxWidth
+
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AutoAwesome
 import androidx.compose.material.icons.rounded.FormatSize
@@ -73,6 +87,30 @@ internal fun InterfaceStyleSettingsPage(onBack: () -> Unit) {
                             })
                         }
                     )
+                }
+            }
+        }
+
+        item {
+            SettingsSection(title = stringResource(R.string.settings_style_preview)) {
+                SettingsCard {
+                    Surface(
+                        modifier = Modifier.fillMaxWidth().padding(14.dp),
+                        shape = MaterialTheme.shapes.large,
+                        color = MaterialTheme.colorScheme.surfaceContainerLow,
+                        contentColor = MaterialTheme.colorScheme.onSurface
+                    ) {
+                        androidx.compose.foundation.layout.Column(
+                            modifier = Modifier.padding(18.dp)
+                        ) {
+                            Text("Yinnlycs", style = MaterialTheme.typography.headlineSmall)
+                            Text(
+                                "Music that moves with you",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
                 }
             }
         }

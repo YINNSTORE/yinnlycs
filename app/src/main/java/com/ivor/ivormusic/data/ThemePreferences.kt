@@ -2179,7 +2179,7 @@ class ThemePreferences(context: Context) {
     }
 
     private fun getSpotlightHomePreference(): Boolean {
-        return prefs.getBoolean(KEY_SPOTLIGHT_HOME, false)
+        return prefs.getBoolean(KEY_SPOTLIGHT_HOME, true)
     }
 
     /**

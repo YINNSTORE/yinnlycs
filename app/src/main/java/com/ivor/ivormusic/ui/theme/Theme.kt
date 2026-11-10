@@ -207,6 +207,7 @@ fun IvorMusicTheme(
         if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) colorScheme.liquidGlassSurfaces() else colorScheme
     }
     val styledShapes = if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) LiquidGlassShapes else ExpressiveShapes
+    val selectedTypography = typographyFor(fontFamily)
     
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -235,7 +236,7 @@ fun IvorMusicTheme(
         colorScheme = styledColorScheme,
         motionScheme = MotionScheme.expressive(),
         shapes = styledShapes,
-        typography = typographyFor(fontFamily),
+        typography = selectedTypography,
     ) {
         // The app's own scheme, kept reachable from inside a local re-theme.
         // Content color too: most screens paint a plain background rather than
@@ -245,6 +246,7 @@ fun IvorMusicTheme(
             LocalAppColorScheme provides styledColorScheme,
             LocalAlbumTheming provides AlbumTheming(artworkWholeApp, paletteStyle, darkTheme && amoledDark),
             androidx.compose.material3.LocalContentColor provides styledColorScheme.onBackground,
+            androidx.compose.material3.LocalTextStyle provides selectedTypography.bodyLarge,
         ) {
             ScaledDensity(uiScale, content)
         }
@@ -257,22 +259,23 @@ fun IvorMusicTheme(
  * so scrolling and video playback stay smooth on Android 11 devices.
  */
 private val LiquidGlassShapes = Shapes(
-    extraSmall = RoundedCornerShape(14.dp),
-    small = RoundedCornerShape(18.dp),
-    medium = RoundedCornerShape(24.dp),
-    large = RoundedCornerShape(30.dp),
-    extraLarge = RoundedCornerShape(36.dp),
+    extraSmall = RoundedCornerShape(12.dp),
+    small = RoundedCornerShape(20.dp),
+    medium = RoundedCornerShape(26.dp),
+    large = RoundedCornerShape(32.dp),
+    extraLarge = RoundedCornerShape(38.dp),
 )
 
 private fun ColorScheme.liquidGlassSurfaces(): ColorScheme = copy(
-    surface = surface.copy(alpha = 0.94f),
-    surfaceVariant = surfaceVariant.copy(alpha = 0.84f),
-    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.76f),
-    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.80f),
-    surfaceContainer = surfaceContainer.copy(alpha = 0.85f),
-    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.90f),
-    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.94f),
-    outlineVariant = outlineVariant.copy(alpha = 0.56f),
+    surface = surface.copy(alpha = 0.86f),
+    surfaceVariant = surfaceVariant.copy(alpha = 0.72f),
+    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.58f),
+    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.64f),
+    surfaceContainer = surfaceContainer.copy(alpha = 0.70f),
+    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.78f),
+    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.84f),
+    surfaceTint = primary.copy(alpha = 0.18f),
+    outlineVariant = outlineVariant.copy(alpha = 0.46f),
 )
 
 /**
