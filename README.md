@@ -2,7 +2,7 @@
   <img src="icon.svg" width="120" alt="Koda logo"/>
 </p>
 
-<h1 align="center">Koda</h1>
+<h1 align="center">yinnlycs</h1>
 
 <p align="center">
   <b>A music and video player for Android, powered by YouTube Music.</b>
