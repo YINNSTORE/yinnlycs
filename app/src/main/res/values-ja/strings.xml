@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Koda</string>
+    <string name="app_name">Yinnlycs</string>
 
     <!--
       Shared by the MediaStyle notification and the playback progress Live
@@ -39,7 +39,7 @@
     <string name="widget_vinyl_description">スリーブから滑り出したレコードが、音楽の再生中に回ります</string>
     <string name="widget_pixel_label">ピクセル</string>
     <string name="widget_pixel_description">音楽の再生中に回るドット絵のターンテーブル</string>
-    <string name="widget_action_open_app">Koda を開く</string>
+    <string name="widget_action_open_app">Yinnlycs を開く</string>
     <string name="widget_action_play">再生</string>
     <string name="widget_action_pause">一時停止</string>
     <string name="widget_action_next">次へ</string>
@@ -107,7 +107,7 @@
     <string name="local_only_update_subtitle">アップデートの確認にはインターネットが必要です。設定でローカルのみモードをオフにしてください。</string>
 
     <!-- Crash report prompt (MainActivity) -->
-    <string name="crash_dialog_title">前回、Koda がクラッシュしました</string>
+    <string name="crash_dialog_title">前回、Yinnlycs がクラッシュしました</string>
     <string name="crash_dialog_message">前回のセッションで問題が発生しました。詳細を含むバグレポートを送信できます - 共有を選ばない限り、端末の外には何も送られません。</string>
     <string name="crash_dialog_view_report">表示して報告</string>
     <string name="crash_dialog_not_now">後で</string>
@@ -291,7 +291,7 @@
     <string name="sp_replace_session_cookies">セッション Cookie を置き換え</string>
     <string name="sp_replace_session_cookies_sub">セッションが古くなった場合は、新しい Cookie ヘッダーを貼り付けてください</string>
     <string name="sp_sign_out_sub">YouTube アカウントとの接続を解除</string>
-    <string name="sp_signed_out_info">Koda はログインしなくても使えます。ログインすると、プレイリスト、お気に入りの曲、登録チャンネル、再生履歴が追加されます。</string>
+    <string name="sp_signed_out_info">Yinnlycs はログインしなくても使えます。ログインすると、プレイリスト、お気に入りの曲、登録チャンネル、再生履歴が追加されます。</string>
     <string name="sp_connect_youtube_music">YouTube Music に接続</string>
     <string name="sp_connect_youtube_music_sub">ログインしてプレイリストやお気に入りの曲を利用</string>
     <string name="sp_sign_in_cookies">Cookie でログイン</string>
@@ -305,7 +305,7 @@
     <string name="about_developer">開発者</string>
     <string name="about_debug">デバッグ</string>
     <string name="about_release">リリース</string>
-    <string name="about_title">Koda について</string>
+    <string name="about_title">Yinnlycs について</string>
     <string name="about_build_details">ビルドの詳細</string>
     <string name="about_package">パッケージ</string>
     <string name="about_device">端末</string>
@@ -313,11 +313,11 @@
     <string name="about_project">プロジェクト</string>
     <string name="about_update_subtitle">インストール済みのビルド、最新リリース、対応する APK を確認</string>
     <string name="about_source_code">ソースコード</string>
-    <string name="about_source_subtitle">GitHub で Koda のコードを読む・確認する・貢献する</string>
+    <string name="about_source_subtitle">GitHub で Yinnlycs のコードを読む・確認する・貢献する</string>
     <string name="about_license">ライセンス</string>
     <string name="about_license_subtitle">GNU General Public License v3.0</string>
     <string name="about_report_issue_subtitle">GitHub で新しい issue を作成</string>
-    <string name="about_open_source_note">Koda は GPL-3.0 のオープンソースです。上記のアプリマークとビルドの詳細はアプリに同梱されているため、何も取得しなくてもこのページは完結しています。</string>
+    <string name="about_open_source_note">Yinnlycs は GPL-3.0 のオープンソースです。上記のアプリマークとビルドの詳細はアプリに同梱されているため、何も取得しなくてもこのページは完結しています。</string>
     <string name="cd_profile_picture">プロフィール画像</string>
     <string name="cd_developer_avatar">開発者のアバター</string>
     <string name="sp_connected">接続済み</string>
@@ -364,7 +364,7 @@
     <string name="sb_hub_sub">動画内のスポンサー部分や本題と無関係な部分をスキップ</string>
     <string name="sb_enable">SponsorBlock を有効にする</string>
     <string name="sb_enable_sub">視聴する動画について、ユーザー投稿のセグメントを検索します</string>
-    <string name="sb_privacy_note">Koda は動画 ID を送信しません。そのハッシュの最初の4文字だけを送り、結果の中から端末内で該当の動画を特定するため、sponsor.ajay.app があなたの視聴内容を知ることはできません。</string>
+    <string name="sb_privacy_note">Yinnlycs は動画 ID を送信しません。そのハッシュの最初の4文字だけを送り、結果の中から端末内で該当の動画を特定するため、sponsor.ajay.app があなたの視聴内容を知ることはできません。</string>
     <string name="sb_categories">カテゴリ</string>
     <string name="sb_categories_sub">セグメントの種類ごとの動作を選択</string>
     <string name="sb_behaviour">動作</string>
@@ -403,7 +403,7 @@
     <plurals name="sb_active_categories">
         <item quantity="other">%1$d カテゴリ</item>
     </plurals>
-    <string name="sp_display_size_sub">Koda 内のすべてを小さく、または大きくします</string>
+    <string name="sp_display_size_sub">Yinnlycs 内のすべてを小さく、または大きくします</string>
     <string name="sp_display_size_preview">プレビュー</string>
     <string name="sp_display_size_scale">拡大率</string>
     <string name="sp_display_size_about">この設定について</string>
@@ -489,7 +489,7 @@
     <string name="settings_customization">カスタマイズ</string>
     <string name="settings_theme_and_colors">テーマと色</string>
     <string name="settings_gestures">ジェスチャーとフィードバック</string>
-    <string name="si_hub_customization">Koda の見た目と動作に関するすべてを、変更される部分ごとにまとめています：テーマと色、アプリアイコン、表示サイズ、プレーヤーとミニプレーヤー、ホームとナビゲーション、ジェスチャーとタッチフィードバック。</string>
+    <string name="si_hub_customization">Yinnlycs の見た目と動作に関するすべてを、変更される部分ごとにまとめています：テーマと色、アプリアイコン、表示サイズ、プレーヤーとミニプレーヤー、ホームとナビゲーション、ジェスチャーとタッチフィードバック。</string>
     <string name="cz_section_look">見た目</string>
     <string name="cz_section_players">プレーヤー</string>
     <string name="cz_section_layout">レイアウトとタッチ</string>
@@ -545,9 +545,9 @@
     <string name="cz_top_bar_downloads">ダウンロードを常に表示</string>
     <string name="cz_top_bar_downloads_sub">ダウンロード中だけでなく、常にダウンロードボタンをバーに表示します</string>
     <string name="cz_video_gestures_note">ダブルタップでスキップ、ピンチで画面いっぱいに拡大、フルスクリーンへの切り替えと終了のスワイプは常にオンのままです。</string>
-    <string name="cz_section_opening">Koda を開いたとき</string>
+    <string name="cz_section_opening">Yinnlycs を開いたとき</string>
     <string name="cz_start_screen">開始画面</string>
-    <string name="cz_start_screen_sub">Koda を開いたときに表示するタブ</string>
+    <string name="cz_start_screen_sub">Yinnlycs を開いたときに表示するタブ</string>
     <string name="cz_start_last">前回</string>
     <string name="cz_start_mode">開始モード</string>
     <string name="cz_start_mode_sub">音楽、動画、または前回の状態のまま開く</string>
@@ -566,8 +566,8 @@
     <string name="cz_gestures_value">触覚フィードバック: %1$s</string>
     <string name="cz_info_theme">ライトまたはダーク、カラーパレットとそのスタイル、真っ黒の背景。</string>
     <string name="cz_info_mini_player">ミニプレーヤーのボタン、ジャケットをタップしたときの動作、スワイプ、色、バブルへの縮小のタイミングを選びます。</string>
-    <string name="cz_info_home">ホームのレイアウト、ナビゲーションバーのスタイル、Koda を端末の向きに合わせて回転させるかを選びます。</string>
-    <string name="cz_info_gestures">Koda が指先で振動する強さと、プレイリストで曲をスワイプしたときの動作。</string>
+    <string name="cz_info_home">ホームのレイアウト、ナビゲーションバーのスタイル、Yinnlycs を端末の向きに合わせて回転させるかを選びます。</string>
+    <string name="cz_info_gestures">Yinnlycs が指先で振動する強さと、プレイリストで曲をスワイプしたときの動作。</string>
     <string name="sp_mini_summary_no_buttons">ボタンなし</string>
     <plurals name="sp_mini_summary_buttons">
         <item quantity="other">%1$d 個のボタン</item>
@@ -579,13 +579,13 @@
     <string name="sp_integrations">連携</string>
     <string name="sp_discord_presence">Discord リッチプレゼンス</string>
     <string name="sp_discord_presence_sub_on">オン: 再生中の曲とジャケットが Discord のプロフィールに表示されます</string>
-    <string name="sp_discord_presence_sub_off">オフ: Koda は Discord のプロフィールに表示されません</string>
+    <string name="sp_discord_presence_sub_off">オフ: Yinnlycs は Discord のプロフィールに表示されません</string>
     <string name="sp_auto_load_queue">キューを自動で読み込む</string>
     <string name="sp_auto_load_queue_sub">キューが少なくなったらおすすめの曲を追加します</string>
     <string name="sp_save_listening_history">再生履歴を保存</string>
     <string name="sp_streaming_quality">ストリーミング品質</string>
     <string name="sp_quality_per_network">ネットワークごとの品質</string>
-    <string name="sp_quality_network_hint">Koda は使用中の接続に応じてこれらを選びます</string>
+    <string name="sp_quality_network_hint">Yinnlycs は使用中の接続に応じてこれらを選びます</string>
     <string name="sp_music_quality">音楽の品質</string>
     <string name="sp_video_quality">動画の画質</string>
     <string name="sp_prefer_hdr">HDR動画を優先</string>
@@ -615,7 +615,7 @@
     <string name="sp_frame_interpolation_rate_hint_unknown">動画はこのレート、または画面のリフレッシュレートがそれより低い場合はそちらを上限に再生されます。レートが高いほどバッテリーを消費します。</string>
     <string name="fi_warning_title">なめらかな動きをオンにしますか？</string>
     <string name="fi_warning_subtitle">試験的な動画フレーム補間</string>
-    <string name="fi_warning_intro">Koda は実際のフレームの間に新しいフレームを描画し、動画を画面のリフレッシュレート（60、90、120 fps）まで引き上げて再生します。次のような負担があります：</string>
+    <string name="fi_warning_intro">Yinnlycs は実際のフレームの間に新しいフレームを描画し、動画を画面のリフレッシュレート（60、90、120 fps）まで引き上げて再生します。次のような負担があります：</string>
     <string name="fi_warning_battery">動画の再生中は常にGPUで処理されます。バッテリー消費が増え、端末が温かくなります。120fpsでは特に顕著です。</string>
     <string name="fi_warning_artifacts">動きの速い場面、動く物体の輪郭、画面上の文字が歪んだりちらついたりすることがあります。</string>
     <string name="fi_warning_hdr">オンの間、HDR動画はSDRで再生されます。ライブ配信、Shorts、すでに画面と同じなめらかさの動画はそのままです。</string>
@@ -679,8 +679,8 @@
     <string name="qd_music_mobile_desc">モバイルデータではこの品質で曲をストリーミングします。</string>
 
     <!-- Android Auto help -->
-    <string name="auto_help_subtitle">Koda が車に表示されないことがある理由</string>
-    <string name="auto_help_intro">Android Auto は、Play ストア以外からインストールされたメディアアプリを非表示にします。Koda は GitHub からのダウンロードで配布されているため、許可するまで表示されません。これは Auto の仕様で、Koda の不具合ではありません。</string>
+    <string name="auto_help_subtitle">Yinnlycs が車に表示されないことがある理由</string>
+    <string name="auto_help_intro">Android Auto は、Play ストア以外からインストールされたメディアアプリを非表示にします。Yinnlycs は GitHub からのダウンロードで配布されているため、許可するまで表示されません。これは Auto の仕様で、Yinnlycs の不具合ではありません。</string>
     <string name="auto_help_step1">スマートフォンで Android Auto アプリを開き、デベロッパーモードが表示されるまでバージョン情報を何度かタップします</string>
     <string name="auto_help_step2">メニューから「デベロッパー設定」を開きます</string>
     <string name="auto_help_step3">\u0022提供元不明のアプリ\u0022 をオンにします</string>
@@ -733,8 +733,8 @@
     <string name="sp_fast_refresh_off">すべての動画の詳細を取得します - 登録チャンネルが多いと遅くなります</string>
     <string name="sp_downloads">ダウンロード</string>
     <string name="sp_private_downloads">プライベートダウンロード</string>
-    <string name="sp_private_downloads_on">新しい音声と動画は Koda 内にとどまり、アンインストール時に削除されます</string>
-    <string name="sp_private_downloads_off">新しい音声と動画は Downloads/Koda に表示されます</string>
+    <string name="sp_private_downloads_on">新しい音声と動画は Yinnlycs 内にとどまり、アンインストール時に削除されます</string>
+    <string name="sp_private_downloads_off">新しい音声と動画は Downloads/Yinnlycs に表示されます</string>
     <string name="sp_private_downloads_note">アルバムアートは、どちらのモードでもギャラリーには表示されません。既存のダウンロードは今の場所に残ります。</string>
     <string name="sp_cache">キャッシュ</string>
     <string name="sp_cache_videos">動画をキャッシュ</string>
@@ -752,7 +752,7 @@
     <string name="sp_cache_music_sub">ストリーミングした曲を保持して、再生を速くしオフラインでも聴けるようにします</string>
     <string name="sp_local_cache">音楽キャッシュ</string>
     <string name="sp_max_cache_size">音楽キャッシュの上限</string>
-    <string name="sp_cache_size_large_warning">Koda は聴いた分だけキャッシュを溜めますが、古い曲を消し始める前に端末のストレージを最大 %1$s まで使用する可能性があります。</string>
+    <string name="sp_cache_size_large_warning">Yinnlycs は聴いた分だけキャッシュを溜めますが、古い曲を消し始める前に端末のストレージを最大 %1$s まで使用する可能性があります。</string>
     <string name="sp_cache_size_low_space">この端末の空き容量は %1$s のみです。空き容量がなくなるとキャッシュの増加は止まり、他のアプリも容量を共有することになります。</string>
     <string name="sp_clear_cache">音楽キャッシュを消去</string>
     <string name="sp_clear_cache_sub">一時的に保存した曲を削除します。ダウンロードは残ります</string>
@@ -762,13 +762,13 @@
     <string name="sp_live_playback_updates">再生のライブアップデート</string>
     <string name="sp_live_playback_updates_sub">再生中の曲をステータスバーのライブチップで表示します</string>
     <string name="sp_blocked_by_system">システム設定によりブロックされています</string>
-    <string name="sp_blocked_by_system_sub">Android の設定で Koda のライブアップデートを許可してください</string>
+    <string name="sp_blocked_by_system_sub">Android の設定で Yinnlycs のライブアップデートを許可してください</string>
     <string name="sp_new_uploads">新着の投稿</string>
     <string name="sp_notify_new_uploads">新着の投稿を通知</string>
     <string name="sp_notify_new_uploads_on">この端末でフォロー中のチャンネルと、ベルを「すべて」にしたアカウントの登録チャンネルを確認します</string>
-    <string name="sp_notify_new_uploads_off">オフ: Koda は使用中にのみ確認します</string>
+    <string name="sp_notify_new_uploads_off">オフ: Yinnlycs は使用中にのみ確認します</string>
     <string name="sp_notifications_blocked">通知がブロックされています</string>
-    <string name="sp_notifications_blocked_sub">Android の設定で Koda の通知を許可してください。許可するまで新着の投稿は保留されます。</string>
+    <string name="sp_notifications_blocked_sub">Android の設定で Yinnlycs の通知を許可してください。許可するまで新着の投稿は保留されます。</string>
     <string name="sp_channels">チャンネル</string>
     <string name="sp_choose_notifiers">通知を許可する相手を選択</string>
     <string name="sp_muted">ミュート中</string>
@@ -779,7 +779,7 @@
     <string name="sp_xiaomi_notice">Xiaomi 端末を検出しました。この2つを両方有効にすることを強くおすすめします。</string>
     <string name="sp_wellbeing">ウェルビーイング</string>
     <string name="sp_daily_time_limit">1日の利用時間制限</string>
-    <string name="sp_daily_time_limit_sub">1日の再生時間が一定に達したら Koda をロックします</string>
+    <string name="sp_daily_time_limit_sub">1日の再生時間が一定に達したら Yinnlycs をロックします</string>
     <string name="sp_feedback">フィードバック</string>
     <string name="sp_report_bug">バグを報告</string>
     <string name="sp_android_auto">Android Auto</string>
@@ -794,7 +794,7 @@
     <string name="ob_skip">スキップ</string>
     <string name="ob_continue">続ける</string>
     <string name="ob_start_listening">聴き始める</string>
-    <string name="ob_welcome_title">Koda へようこそ</string>
+    <string name="ob_welcome_title">Yinnlycs へようこそ</string>
     <string name="ob_welcome_body">音楽と動画、ローカルのファイル、そしてあなたに合わせて変化するプレーヤー。いくつかの簡単な選択をするだけで始められます。</string>
     <string name="ob_feat_stream_title">なんでもストリーミング</string>
     <string name="ob_feat_stream_sub">YouTube Music による音楽と動画</string>
@@ -807,7 +807,7 @@
     <string name="ob_scan_device_audio">端末の音声をスキャン</string>
     <string name="ob_scan_device_audio_sub">ローカルの曲をアプリ全体に表示します</string>
     <string name="ob_music_access">音楽へのアクセス</string>
-    <string name="ob_audio_access_allowed">Koda はオーディオライブラリを読み取れます。</string>
+    <string name="ob_audio_access_allowed">Yinnlycs はオーディオライブラリを読み取れます。</string>
     <string name="ob_audio_access_needed">この端末の曲を見つけるために必要です。</string>
     <string name="ob_allow">許可</string>
     <string name="ob_hint_only_audio">読み取るのは音声ファイルのみです。端末の外には何も送信されません。</string>
@@ -827,7 +827,7 @@
     <string name="ob_shorts_sub">ホームに棚を表示し、縦スワイプのプレーヤーを使用します</string>
     <string name="ob_shorts_warning">際限なく続くショート動画のフィードは、スクロールし続けるように作られています。Shorts をオフにすると、ホームには表示されず、他の場所では標準の動画プレーヤーで開きます。</string>
     <string name="ob_page_look_and_feel">外観</string>
-    <string name="ob_look_and_feel_body">Koda は Material You のダイナミックカラーを使用します。この端末での動作を選んでください。</string>
+    <string name="ob_look_and_feel_body">Yinnlycs は Material You のダイナミックカラーを使用します。この端末での動作を選んでください。</string>
     <string name="theme_system">システム</string>
     <string name="theme_dark">ダーク</string>
     <string name="theme_light">ライト</string>
@@ -861,9 +861,9 @@
     <string name="ob_high_compat_scan">高互換スキャン</string>
     <string name="ob_high_compat_scan_sub">一部の HyperOS ビルドなど、システムのインデックスから音楽が隠れてしまう端末向けです</string>
     <string name="ob_page_daily_limit">1日の利用時間制限</string>
-    <string name="ob_page_daily_limit_body">完全に任意で、初期状態ではオフです。1日に Koda を使える時間を決めておくと、使い切った時点で深夜0時までアプリがロックされます。</string>
+    <string name="ob_page_daily_limit_body">完全に任意で、初期状態ではオフです。1日に Yinnlycs を使える時間を決めておくと、使い切った時点で深夜0時までアプリがロックされます。</string>
     <string name="ob_limit_my_listening">再生時間を制限する</string>
-    <string name="ob_limit_my_listening_sub">その日の持ち時間を使い切ると Koda をロックします</string>
+    <string name="ob_limit_my_listening_sub">その日の持ち時間を使い切ると Yinnlycs をロックします</string>
     <string name="ob_every_day">毎日:</string>
     <string name="ob_hint_weekday_hours">曜日ごとに異なる時間は、あとから「設定 > 詳細」で設定できます。</string>
     <string name="cd_granted">許可済み</string>
@@ -880,7 +880,7 @@
     <string name="vh_youre_offline">オフラインです</string>
     <string name="vh_removed_from_history">再生履歴から削除しました</string>
     <string name="vh_clear_history">再生履歴を消去</string>
-    <string name="vh_clear_history_body">この端末の Koda の再生履歴を空にします。YouTube アカウントの内容は削除されません。</string>
+    <string name="vh_clear_history_body">この端末の Yinnlycs の再生履歴を空にします。YouTube アカウントの内容は削除されません。</string>
     <string name="vh_clear_history_confirm">消去</string>
     <string name="vh_no_videos_found">動画が見つかりませんでした</string>
     <string name="vh_downloaded_hint">ダウンロードした動画はここに表示されます</string>
@@ -1023,7 +1023,7 @@
     <string name="bell_content_description">%1$s の通知: %2$s。変更</string>
     <string name="bell_changed">通知を %1$s に設定しました</string>
     <string name="bell_change_failed">%1$s の通知を変更できませんでした</string>
-    <string name="bell_koda_uploads_off">設定で「新着の投稿」をオンにすると、Koda がこれらの投稿を通知します</string>
+    <string name="bell_koda_uploads_off">設定で「新着の投稿」をオンにすると、Yinnlycs がこれらの投稿を通知します</string>
     <string name="like">高評価</string>
     <string name="cd_dislike">低評価</string>
     <string name="cd_comments">コメント</string>
@@ -1095,7 +1095,7 @@
 
     <!-- Backup and restore -->
     <string name="bk_write_failed">そのファイルを書き込めませんでした。別のフォルダを選んでもう一度お試しください。</string>
-    <string name="bk_read_failed">そのファイルを Koda のバックアップとして読み込めませんでした。</string>
+    <string name="bk_read_failed">そのファイルを Yinnlycs のバックアップとして読み込めませんでした。</string>
     <string name="bk_this_install">このインストール</string>
     <string name="bk_create">バックアップを作成</string>
     <string name="bk_create_sub">すべてを1つのファイルに書き出し、好きな場所に保管できます</string>
@@ -1110,7 +1110,7 @@
     <string name="bk_hold_6">両モードのすべての設定（パレットやプレーヤースタイルからネットワークごとの品質まで）</string>
     <string name="bk_not_holds">含まれないもの</string>
     <string name="bk_not_1">Google のログイン情報。アカウントは名前だけが復元され、再度ログインを求められるため、このファイルはクラウドストレージに保管したり、自分宛てにメールで送ったりしても安全です。</string>
-    <string name="bk_not_2">ダウンロードした音声と動画。これらのファイルは Downloads/Koda にあり、アンインストールしても残ります。ここに含めるとバックアップが数ギガバイトになってしまいます。</string>
+    <string name="bk_not_2">ダウンロードした音声と動画。これらのファイルは Downloads/Yinnlycs にあり、アンインストールしても残ります。ここに含めるとバックアップが数ギガバイトになってしまいます。</string>
     <string name="bk_not_3">キャッシュされた再生メディア。聴いたり見たりするうちに自動で再構築されます。</string>
     <string name="bk_writing">バックアップを書き込み中</string>
     <string name="bk_reading">ファイルを読み込み中</string>
@@ -1119,10 +1119,10 @@
     <string name="bk_confirm_title">このバックアップを復元しますか？</string>
     <string name="bk_empty_warn">このバックアップは空です。復元すると、この端末の内容が消去され、何も戻りません。</string>
     <string name="bk_replace_warn">上に挙げたすべてが、この端末の内容を置き換えます。現在この端末にあり、バックアップにないプレイリスト、お気に入りの曲、統計、履歴、設定は失われます。</string>
-    <string name="bk_restarts">完了すると Koda が再起動します。</string>
+    <string name="bk_restarts">完了すると Yinnlycs が再起動します。</string>
     <string name="bk_replace_restore">置き換えて復元</string>
     <string name="bk_restored">復元しました</string>
-    <string name="bk_restart_needed">すべてを読み込み直すため、Koda の再起動が必要です。</string>
+    <string name="bk_restart_needed">すべてを読み込み直すため、Yinnlycs の再起動が必要です。</string>
     <string name="bk_sign_in_again">再起動後、「設定」の「アカウント」を開いて、もう一度ログインしてください。</string>
     <string name="bk_restart_now">今すぐ再起動</string>
     <string name="bk_failed_title">うまくいきませんでした</string>
@@ -1188,10 +1188,10 @@
     <string name="us_view_release">GitHub でリリースを表示</string>
     <string name="us_all_variants">すべてのバリアント</string>
     <string name="us_all_good">問題ありません！</string>
-    <string name="us_latest_body">Koda の最新バージョンを実行中です。</string>
+    <string name="us_latest_body">Yinnlycs の最新バージョンを実行中です。</string>
     <string name="us_couldnt_check">アップデートを確認できませんでした</string>
     <string name="us_check_again">もう一度確認</string>
-    <string name="us_installed_visible_while_checking">Koda が GitHub を確認している間も、インストール済みのビルドは引き続き利用できます。</string>
+    <string name="us_installed_visible_while_checking">Yinnlycs が GitHub を確認している間も、インストール済みのビルドは引き続き利用できます。</string>
     <string name="us_check_failed_body">インストール済みのアプリには影響ありません。オンラインのときにいつでも再試行できます。</string>
     <string name="us_installed_version">インストール済み %1$s</string>
     <string name="us_available_version">利用可能 %1$s</string>
@@ -1210,24 +1210,24 @@
     <string name="us_release_name">リリース</string>
     <string name="us_notes_on_github">リリースノートは GitHub で確認できます。</string>
     <string name="us_recommended">推奨</string>
-    <string name="us_local_only_hero">Koda は GitHub に接続していません。</string>
+    <string name="us_local_only_hero">Yinnlycs は GitHub に接続していません。</string>
     <string name="us_local_only_body">インストール済みのビルドは上に表示されており、接続は不要です。最新のリリースを確認するには、設定でローカルのみモードをオフにしてください。</string>
     <string name="us_handoff_started">ダウンロードを開きました</string>
     <string name="us_handoff_started_body">%1$s をブラウザでダウンロード中です。完了すると Android がインストールを求めます。</string>
     <string name="us_handoff_no_handler">そのリンクを開けるものがありません</string>
     <string name="us_handoff_no_handler_body">この端末には、ウェブリンクを開くアプリが登録されていません。ブラウザをインストールするか、別の端末でリリースをダウンロードしてください。</string>
     <string name="us_whats_new_in_this_version">このバージョンの新機能</string>
-    <string name="update_prompt_title">Koda %1$s が利用可能です</string>
+    <string name="update_prompt_title">Yinnlycs %1$s が利用可能です</string>
     <string name="update_prompt_update">アップデート</string>
     <string name="update_prompt_later">後で</string>
     <string name="update_prompt_details">リリースノート全文</string>
     <string name="update_prompt_no_highlights">このリリースには修正と改善が含まれています。変更内容のすべては、リリースノート全文でご確認ください。</string>
     <string name="whats_new_title">新機能</string>
-    <string name="whats_new_version">Koda %1$s</string>
+    <string name="whats_new_version">Yinnlycs %1$s</string>
     <string name="whats_new_done">わかりました</string>
 
-    <!-- Koda profiles -->
-    <string name="kp_koda_profile">Koda プロフィール</string>
+    <!-- Yinnlycs profiles -->
+    <string name="kp_koda_profile">Yinnlycs プロフィール</string>
     <string name="kp_youtube_account">YouTube アカウント</string>
     <string name="kp_since">%1$s から聴いています</string>
     <string name="kp_edit">プロフィールを編集</string>
@@ -1280,7 +1280,7 @@
     <string name="taste_preview_play">プレビューを再生</string>
     <string name="taste_preview_pause">プレビューを一時停止</string>
     <string name="taste_done_title">好みの設定が完了しました</string>
-    <string name="taste_done_body">Koda はこれをもとに音楽を選びます。設定からいつでも変更できます。</string>
+    <string name="taste_done_body">Yinnlycs はこれをもとに音楽を選びます。設定からいつでも変更できます。</string>
     <string name="taste_done_button">聴き始める</string>
     <string name="taste_change_picks">選び直す</string>
     <string name="taste_clear_all">すべて消去</string>
@@ -1289,8 +1289,8 @@
     <string name="taste_offline_body">接続を確認してもう一度お試しください。スキップして、あとから設定で好みを設定することもできます。</string>
     <string name="taste_retry">もう一度お試しください</string>
     <string name="taste_settings_title">あなたの好み</string>
-    <string name="taste_settings_sub">Koda がおすすめの元にするアーティスト、ジャンル、曲</string>
-    <string name="si_taste">選んだアーティストとジャンル、およびフォロー中のアーティストです。Koda はこれらと再生履歴を組み合わせて、おすすめを選びます。ここでいつでも変更や消去ができます。</string>
+    <string name="taste_settings_sub">Yinnlycs がおすすめの元にするアーティスト、ジャンル、曲</string>
+    <string name="si_taste">選んだアーティストとジャンル、およびフォロー中のアーティストです。Yinnlycs はこれらと再生履歴を組み合わせて、おすすめを選びます。ここでいつでも変更や消去ができます。</string>
     <plurals name="taste_artists_count">
         <item quantity="other">%1$d 組のアーティスト</item>
     </plurals>
@@ -1330,14 +1330,14 @@
     <string name="al_todays_listening">今日の再生時間です</string>
     <string name="al_youve_had">今日の再生時間: </string>
     <string name="al_resets_midnight">毎晩、深夜0時にリセットされます</string>
-    <string name="tl_locked_until_midnight">Koda は深夜0時までロックされています</string>
-    <string name="tl_locks_when_budget">その日の持ち時間を使い切ると Koda がロックされます</string>
-    <string name="tl_off_subtitle">オフ - Koda は常にロック解除されています</string>
+    <string name="tl_locked_until_midnight">Yinnlycs は深夜0時までロックされています</string>
+    <string name="tl_locks_when_budget">その日の持ち時間を使い切ると Yinnlycs がロックされます</string>
+    <string name="tl_off_subtitle">オフ - Yinnlycs は常にロック解除されています</string>
     <string name="tl_enable">1日の利用時間制限を有効にする</string>
-    <string name="tl_enable_sub">その日の持ち時間を使い切ると Koda 全体をロックします</string>
+    <string name="tl_enable_sub">その日の持ち時間を使い切ると Yinnlycs 全体をロックします</string>
     <string name="tl_quick_set">クイック設定 - 毎日同じ持ち時間</string>
     <string name="tl_per_day">曜日ごとの持ち時間</string>
-    <string name="tl_counts_note">Koda を画面上で開いている時間だけをカウントし、深夜0時にリセットされます。ある曜日を「無制限」にすると、その日は計測されません。</string>
+    <string name="tl_counts_note">Yinnlycs を画面上で開いている時間だけをカウントし、深夜0時にリセットされます。ある曜日を「無制限」にすると、その日は計測されません。</string>
     <string name="tl_tracking_off">計測オフ</string>
     <string name="tl_unlimited_today">今日は無制限 - 持ち時間は未設定です</string>
     <string name="tl_turn_on_to_track">計測を始めるには、下の制限をオンにしてください</string>
@@ -1459,7 +1459,7 @@
     <string name="dv_many_videos">%1$d 本の動画</string>
     <string name="dv_no_videos">この端末には動画が見つかりません</string>
     <string name="dv_folder_empty">もう何もありません</string>
-    <string name="dv_access_body">スマートフォンに保存されている動画を再生します。Koda には動画ファイルへのアクセスが必要です。</string>
+    <string name="dv_access_body">スマートフォンに保存されている動画を再生します。Yinnlycs には動画ファイルへのアクセスが必要です。</string>
     <string name="dv_allow_access">アクセスを許可</string>
     <string name="dv_partial_access">選択した動画のみを表示しています。</string>
     <string name="dv_select_more">さらに選択</string>
@@ -1532,7 +1532,7 @@
     <string name="sm_empty_body">他のアプリからリストをインポートするか、YouTube アカウントからコピーするか、チャンネルで「登録」をタップしてください。</string>
     <string name="sm_import_failed">インポートに失敗しました</string>
     <string name="sm_import_finished">インポートが完了しました</string>
-    <string name="sm_foreign_skipped">BiliBili や NicoNico などのチャンネルはスキップされました - Koda は YouTube のみ再生できます。</string>
+    <string name="sm_foreign_skipped">BiliBili や NicoNico などのチャンネルはスキップされました - Yinnlycs は YouTube のみ再生できます。</string>
 
     <!-- Player styles / home styles -->
     <string name="ps_style_classic">クラシック</string>
@@ -1571,7 +1571,7 @@
     <string name="hvm_subs_feed_rate_limited_soon">YouTube がこのネットワークからのリクエストを制限しています。しばらくしてからもう一度お試しください。</string>
     <string name="hvm_channel_feed_error">%1$s の投稿を読み込めませんでした。下に引いてもう一度お試しください。</string>
     <string name="hvm_import_empty">そのファイルは空か、開けませんでした。</string>
-    <string name="hvm_import_foreign">そのファイルには、Koda が再生できないサービスのチャンネルしか含まれていませんでした。</string>
+    <string name="hvm_import_foreign">そのファイルには、Yinnlycs が再生できないサービスのチャンネルしか含まれていませんでした。</string>
     <string name="hvm_import_no_channels">そのファイルにチャンネルが見つかりませんでした。</string>
     <string name="hvm_import_read">そのファイルを読み込めませんでした。</string>
     <string name="hvm_copy_empty">アカウントにコピーできる登録チャンネルがありません。</string>
@@ -1599,7 +1599,7 @@
     <string name="ns_section_new">新着</string>
     <string name="ns_section_earlier">以前</string>
     <string name="ns_section_kept">この端末に保存</string>
-    <string name="ns_section_kept_note">YouTube の受信トレイからは消えたものです。Koda は確認済みのものを60日間保持します。</string>
+    <string name="ns_section_kept_note">YouTube の受信トレイからは消えたものです。Yinnlycs は確認済みのものを60日間保持します。</string>
     <string name="ns_hide">非表示</string>
     <string name="ns_load_more_failed">古い通知を読み込めませんでした</string>
     <plurals name="ns_hidden_restore">
@@ -1683,12 +1683,12 @@
     </plurals>
     <string name="lib_upload_ytm_partial">%2$d 曲中 %1$d 曲を YouTube Music にアップロードしました。</string>
     <string name="lib_upload_ytm_failed">YouTube Music にアップロードできませんでした</string>
-    <string name="lib_hide_playlist">Koda から非表示にする</string>
+    <string name="lib_hide_playlist">Yinnlycs から非表示にする</string>
     <string name="lib_hidden_playlists">非表示のプレイリスト</string>
     <string name="lib_hidden_count">%1$d 件を非表示</string>
     <string name="lib_unhide">再表示</string>
-    <string name="lib_hidden_explainer">これらはアカウントに残ります。Koda が一覧に表示しなくなるだけです。</string>
-    <string name="lib_playlist_hidden">Koda から非表示にしました</string>
+    <string name="lib_hidden_explainer">これらはアカウントに残ります。Yinnlycs が一覧に表示しなくなるだけです。</string>
+    <string name="lib_playlist_hidden">Yinnlycs から非表示にしました</string>
     <string name="lib_removed_from_library">ライブラリから削除しました</string>
     <string name="lib_load_failed_title">トラックを読み込めませんでした</string>
     <string name="lib_load_failed_body">このプレイリストは空で返ってきました。接続を確認してもう一度お試しください。</string>
@@ -1731,7 +1731,7 @@
     <string name="action_undo">元に戻す</string>
     <string name="cd_in_playlist">このプレイリストに含まれています</string>
     <string name="about_licenses">オープンソースライセンス</string>
-    <string name="about_licenses_subtitle">Koda が利用しているライブラリ</string>
+    <string name="about_licenses_subtitle">Yinnlycs が利用しているライブラリ</string>
     <string name="lib_from_video_mode">動画モードから</string>
     <string name="vl_from_music_mode">音楽モードから</string>
     <string name="vpl_sorted">プレイリストを並べ替えました</string>
@@ -1876,7 +1876,7 @@
     <!-- App Icon Customizer -->
     <string name="sp_app_icon">アプリアイコン</string>
     <string name="sp_app_icon_subtitle">ランチャーアイコンのスタイルと色をカスタマイズ</string>
-    <string name="app_icon_classic">Koda クラシック</string>
+    <string name="app_icon_classic">Yinnlycs クラシック</string>
     <string name="app_icon_classic_desc">濃い紫にクリーム色の音符とネオンライムのスパーク</string>
     <string name="app_icon_crimson">クリムゾンビート</string>
     <string name="app_icon_crimson_desc">ルビーレッドにローズ色の音符と金色がかった琥珀色のスパーク</string>
@@ -1916,7 +1916,7 @@
     <string name="app_icon_shape_cookie">クッキー</string>
     <string name="app_icon_shape_clover">クローバー</string>
     <string name="app_icon_custom_title">カスタムスタイル</string>
-    <string name="app_icon_launcher_note">カスタムの色は Koda 内でのみ有効です。ランチャーには最も近いプリセット「%1$s」が表示されます。</string>
+    <string name="app_icon_launcher_note">カスタムの色は Yinnlycs 内でのみ有効です。ランチャーには最も近いプリセット「%1$s」が表示されます。</string>
     <string name="app_icon_save_style">スタイルを保存</string>
     <string name="app_icon_save_style_title">このスタイルに名前を付ける</string>
     <string name="app_icon_save_style_hint">スタイル名</string>
@@ -1944,14 +1944,14 @@
     <string name="sp_nav_standard">標準</string>
 
     <!-- Hub category explanations (long press) -->
-    <string name="si_hub_account">YouTube Music アカウントを接続すると、プレイリスト、高評価、履歴、登録チャンネルを取り込めます。Koda はログインしなくても完全に使えますが、ログインするとパーソナライズされたフィードが使えるようになります。</string>
-    <string name="si_hub_appearance">Koda の見た目と使い心地に関するすべて：テーマ、色、アプリアイコン、表示サイズ、ホームのレイアウト、ナビゲーションのスタイル、タッチフィードバック。</string>
+    <string name="si_hub_account">YouTube Music アカウントを接続すると、プレイリスト、高評価、履歴、登録チャンネルを取り込めます。Yinnlycs はログインしなくても完全に使えますが、ログインするとパーソナライズされたフィードが使えるようになります。</string>
+    <string name="si_hub_appearance">Yinnlycs の見た目と使い心地に関するすべて：テーマ、色、アプリアイコン、表示サイズ、ホームのレイアウト、ナビゲーションのスタイル、タッチフィードバック。</string>
     <string name="si_hub_player">8種類の再生中デザインから選び、プレーヤーがアルバムアートの色をどう使うかを設定します。</string>
     <string name="si_hub_playback">曲のつなぎ、音量の均一化、キューの動作、ネットワークごとに選べるストリーミング品質。</string>
     <string name="si_hub_content">音楽モードと動画モードの切り替え、完全オフラインの利用、Shorts、フィード、おすすめの調整。</string>
     <string name="si_hub_subscriptions">フォロー中のチャンネルの管理、保存先をこの端末にするかアカウントにするかの選択、フィードの更新方法。</string>
     <string name="si_hub_sponsorblock">ユーザーが投稿したタイムスタンプをもとに、動画内のスポンサー紹介などのセグメントを自動でスキップします。初期状態ではオフです。</string>
-    <string name="si_hub_storage">ダウンロードの保存場所、すぐに再生し直せるようにキャッシュする内容、Koda が使用できる容量。</string>
+    <string name="si_hub_storage">ダウンロードの保存場所、すぐに再生し直せるようにキャッシュする内容、Yinnlycs が使用できる容量。</string>
     <string name="si_hub_notifications">フォロー中のチャンネルの新着投稿の通知と、ダウンロードや再生のステータスバーでのライブ進行表示。</string>
     <string name="si_hub_local_library">この端末にある音楽ファイルを、YouTube Music と並べてライブラリに表示します。</string>
     <string name="si_hub_backup">設定、プレイリスト、履歴、統計を1つのファイルに保存し、どの端末でも復元できます。</string>
@@ -1960,22 +1960,22 @@
     <!-- Individual setting explanations (long press) -->
     <string name="si_amoled">ダークテーマで、濃いグレーの代わりに真っ黒を使います。OLED 画面では黒いピクセルが完全に消灯するため、コントラストが深まり、バッテリーも節約できます。</string>
     <string name="si_ambient">再生中のアルバムアートから抽出したやわらかな色で、アプリの背景に色を付けます。</string>
-    <string name="si_app_icon">形と色のプリセットの中から、ホーム画面の Koda アイコンの見た目を選べます。</string>
+    <string name="si_app_icon">形と色のプリセットの中から、ホーム画面の Yinnlycs アイコンの見た目を選べます。</string>
     <string name="si_display_size">システムのフォントサイズには手を加えずに、インターフェース全体を拡大・縮小します。適用前に変更をプレビューできます。</string>
-    <string name="si_rotate_with_device">Koda をスマートフォンと一緒に横向きにできます。横向き専用のレイアウトになり、ナビゲーションは横側に、プレーヤーはアートワークを操作部の横に配置します。システムの回転ロックは引き続き有効です。タブレットと展開した折りたたみ端末では、常に回転します。</string>
+    <string name="si_rotate_with_device">Yinnlycs をスマートフォンと一緒に横向きにできます。横向き専用のレイアウトになり、ナビゲーションは横側に、プレーヤーはアートワークを操作部の横に配置します。システムの回転ロックは引き続き有効です。タブレットと展開した折りたたみ端末では、常に回転します。</string>
     <string name="si_spotlight">同じ内容を表示する2種類のホームデザインです。クラシックは大きなヒーローとカルーセルを先頭に表示し、スポットライトはショートカット、クイックピック、アートワークの棚を並べた、より密度の高いグリッドです。</string>
     <string name="si_nav_bar">フローティングツールバーは、下にスクロールすると隠れ、上にスクロールすると戻ります。標準バーは、ラベル付きの固定された Material 3 ナビゲーションバーです。</string>
-    <string name="si_haptics">ドラッグ、切り替え、スキップ、タップといったタッチ操作に対して、Koda が振動する強さです。「リッチ」はすべての振動パターンを使い、「控えめ」は大事な場面だけに絞ります。</string>
+    <string name="si_haptics">ドラッグ、切り替え、スキップ、タップといったタッチ操作に対して、Yinnlycs が振動する強さです。「リッチ」はすべての振動パターンを使い、「控えめ」は大事な場面だけに絞ります。</string>
     <string name="si_artwork_colors">プレーヤーの操作部と背景、およびプレイリストやアルバムのページを、アプリのテーマではなくジャケットから抽出した色で彩ります。</string>
     <string name="si_crossfade">ある曲から次の曲への切り替え方です。AutoMix はテンポと無音部分を分析して相性のよい曲をつなぎ、手動は常に一定の時間だけ重ね、オフはきっぱりと曲を切り替えます。</string>
     <string name="si_normalize">曲どうしの音量差をならし、静かなアコースティックの曲と音圧の高い曲が同じくらいの音量で再生されるようにします。</string>
-    <string name="si_discord">Koda で再生中の曲を、ジャケットと進行バーとともに Discord のプロフィールに表示します。Discord アプリがインストール済みでログインしている必要があり、Koda のアカウントは不要です。一時停止して1分後に消え、シークレットがオンのときは一切表示されません。動画は表示されません。</string>
+    <string name="si_discord">Yinnlycs で再生中の曲を、ジャケットと進行バーとともに Discord のプロフィールに表示します。Discord アプリがインストール済みでログインしている必要があり、Yinnlycs のアカウントは不要です。一時停止して1分後に消え、シークレットがオンのときは一切表示されません。動画は表示されません。</string>
     <string name="si_auto_queue">キューが終わっても、停止せずに似た曲で音楽を続けます。</string>
     <string name="si_music_history">再生した曲のログをこの端末に保存します。統計と「最近再生した曲」に使われます。YouTube アカウントの履歴とは別のものです。</string>
-    <string name="si_frame_interpolation">動画のフレーム補間です。Koda はフレームの各ペアの間で物がどう動いたかを計算し、その間のフレームを GPU 上で描画するため、24、30、60 fps の動画が、安定した60、90、120 fps で画面に届きます。場面転換など、うまく対応づけられない箇所では、フレームを作り出す代わりに、近い方の実際のフレームを繰り返します。ここでオンにすると、動画プレーヤーの設定に「なめらかな動き」のスイッチが追加され、最後に選んだ状態を記憶して、初期状態ではオンになります。</string>
-    <string name="si_hdr">動画に HDR 版があり、画面が対応している場合、Koda は HDR 版を再生します。色は豊かになりますが、データ量とバッテリー消費は増えます。</string>
+    <string name="si_frame_interpolation">動画のフレーム補間です。Yinnlycs はフレームの各ペアの間で物がどう動いたかを計算し、その間のフレームを GPU 上で描画するため、24、30、60 fps の動画が、安定した60、90、120 fps で画面に届きます。場面転換など、うまく対応づけられない箇所では、フレームを作り出す代わりに、近い方の実際のフレームを繰り返します。ここでオンにすると、動画プレーヤーの設定に「なめらかな動き」のスイッチが追加され、最後に選んだ状態を記憶して、初期状態ではオンになります。</string>
+    <string name="si_hdr">動画に HDR 版があり、画面が対応している場合、Yinnlycs は HDR 版を再生します。色は豊かになりますが、データ量とバッテリー消費は増えます。</string>
     <string name="si_pip_buttons">Android はピクチャーインピクチャーのウィンドウに3つのボタンを表示します。この設定では、再生・一時停止ボタンの両側に何を配置するかを選びます。</string>
-    <string name="si_brightness">Koda は、フルスクリーン動画でドラッグして設定した明るさを記憶し、次回もそれを適用します。システムの明るさにはリセットされません。</string>
+    <string name="si_brightness">Yinnlycs は、フルスクリーン動画でドラッグして設定した明るさを記憶し、次回もそれを適用します。システムの明るさにはリセットされません。</string>
     <string name="si_local_only">すべてのインターネット通信を遮断します。ダウンロードした項目とこの端末内のファイルだけが再生でき、元に戻すまで検索、ストリーミング、YouTube 関連のすべての機能がオフになります。</string>
     <string name="si_home_mode_toggle">ホームのヘッダーに音楽/動画のスイッチを表示するので、設定を開かなくてもモードを切り替えられます。</string>
     <string name="si_timed_comments">コメントを、それが話題にしている瞬間に紐づけて、動画の再生に合わせてシークバーの上に浮かべて表示します。</string>
@@ -1985,8 +1985,8 @@
     <string name="si_compact_video_home">動画ホームのフィードで動画カードを小さくし、1画面に多く収まるようにします。</string>
     <string name="si_related_videos">再生中の動画の下に表示されるおすすめです。オフにすると気が散るものがなくなります。プレイリストとキューは引き続き動作します。</string>
     <string name="si_inline_previews">カードの上で止まると、動画を開かずに、音なしでその場で再生が始まります。同時にプレビューされるのは1つだけで、モバイルデータ通信中やデータセーバーがオンのときは再生されません。勝手に動くフィードは、頼んでいないバッテリーとデータを消費するため、初期状態ではオフです。</string>
-    <string name="si_not_interested">Koda に推奨をやめるよう伝えたすべて（非表示にした動画とブロックしたチャンネル）です。ここで、どれでも再表示できます。</string>
-    <string name="si_private_downloads">共有の Downloads/Koda フォルダではなく、他のアプリやギャラリーから見えない Koda のプライベートフォルダにダウンロードを保存します。</string>
+    <string name="si_not_interested">Yinnlycs に推奨をやめるよう伝えたすべて（非表示にした動画とブロックしたチャンネル）です。ここで、どれでも再表示できます。</string>
+    <string name="si_private_downloads">共有の Downloads/Yinnlycs フォルダではなく、他のアプリやギャラリーから見えない Yinnlycs のプライベートフォルダにダウンロードを保存します。</string>
     <string name="si_cache_music">最近ストリーミングした曲をディスクに保持するため、再生し直したときにすぐ始まり、データ通信も発生しません。下の上限に達すると、古いものから消えます。</string>
     <string name="si_cache_videos">最近ストリーミングした動画を一時的に保持し、スムーズなシークとすぐの再視聴を可能にします。視聴をやめて数分後に自動で消去されます。</string>
     <string name="si_cache_shorts">視聴した Shorts をキャッシュするので、スワイプで戻ったときにすぐ再生されます。</string>
@@ -1996,19 +1996,19 @@
     <string name="si_subs_target">「登録」ボタンで新しいチャンネルを保存する場所です：この端末のみ（YouTube からは見えません）、または YouTube アカウント。</string>
     <string name="si_load_local_songs">この端末の音楽ファイルをスキャンして、YouTube Music と並べてライブラリに表示します。音声ファイルの権限が必要です。</string>
     <string name="si_compat_scan">Android のメディアインデックスを使わず、ストレージから音楽ファイルを直接読み取ります。HyperOS や MIUI で曲が表示されない問題が解決しますが、すべてのファイルへのアクセス権限が必要です。</string>
-    <string name="si_battery">強力なバッテリーセーバーはバックグラウンド再生を終了させてしまいます。音楽の再生中は Koda を実行したままにするよう、Android に依頼します。</string>
-    <string name="si_upload_notifications">Koda はバックグラウンドで定期的にフォロー中のチャンネルを確認し、新着の投稿を通知します。バッテリーとデータを少し消費します。</string>
+    <string name="si_battery">強力なバッテリーセーバーはバックグラウンド再生を終了させてしまいます。音楽の再生中は Yinnlycs を実行したままにするよう、Android に依頼します。</string>
+    <string name="si_upload_notifications">Yinnlycs はバックグラウンドで定期的にフォロー中のチャンネルを確認し、新着の投稿を通知します。バッテリーとデータを少し消費します。</string>
     <string name="si_live_download">転送中、ダウンロードの進行状況を、ステータスバーのライブアップデートチップとして表示します。</string>
     <string name="si_live_playback">再生中の曲を、ステータスバーのライブアップデートチップとして表示します。</string>
-    <string name="si_time_limit">Koda の1日の利用時間の持ち時間を設定します。使い切ると、翌日までアプリがロックされます。</string>
-    <string name="si_watch_history_account">オンにすると、Koda で視聴した動画が、youtube.com で視聴したときとまったく同じように、YouTube アカウントの再生履歴に追加されます。</string>
+    <string name="si_time_limit">Yinnlycs の1日の利用時間の持ち時間を設定します。使い切ると、翌日までアプリがロックされます。</string>
+    <string name="si_watch_history_account">オンにすると、Yinnlycs で視聴した動画が、youtube.com で視聴したときとまったく同じように、YouTube アカウントの再生履歴に追加されます。</string>
     <string name="sp_motion_artwork">モーションアートワーク</string>
     <string name="sp_motion_artwork_sub">フルプレーヤーで、対応するアルバムカバーをアニメーションさせます</string>
     <string name="sp_motion_artwork_wifi">モーションアートワークは Wi-Fi のみ</string>
     <string name="sp_motion_artwork_wifi_sub">カバーの検索とアニメーションに、従量制でない Wi-Fi を使用します</string>
     <string name="sp_waveform">波形シークバー</string>
     <string name="sp_waveform_sub">曲全体の音量の変化を、進行バーに沿って表示します</string>
-    <string name="si_waveform">Koda は曲そのものの音声を読み取って全体を描画するため、静かなイントロや大音量のサビに差しかかる前に、その様子が見えます。バーは曲の読み込みに合わせて表示され、その後は変わりません。端末内のファイルは即座に計測されます。YouTube からストリーミングする曲は、これから再生するのと同じ音声を使って計測されるため、別の曲へスキップしない限り追加のデータ通信は発生せず、キュー内の次の曲もあらかじめ計測されるので、再生が始まるときにはバーの準備ができています。モバイルデータ通信でも動作します。音楽のキャッシュをオフにしていると音声を保持できないため、ストリーミングした曲の計測では2回目のダウンロードが発生します。ローカルのみモードでは、端末内またはキャッシュ内の曲に限定されます。計測結果はバックアップ対象ではなくキャッシュとして扱われ、権限は不要です。</string>
+    <string name="si_waveform">Yinnlycs は曲そのものの音声を読み取って全体を描画するため、静かなイントロや大音量のサビに差しかかる前に、その様子が見えます。バーは曲の読み込みに合わせて表示され、その後は変わりません。端末内のファイルは即座に計測されます。YouTube からストリーミングする曲は、これから再生するのと同じ音声を使って計測されるため、別の曲へスキップしない限り追加のデータ通信は発生せず、キュー内の次の曲もあらかじめ計測されるので、再生が始まるときにはバーの準備ができています。モバイルデータ通信でも動作します。音楽のキャッシュをオフにしていると音声を保持できないため、ストリーミングした曲の計測では2回目のダウンロードが発生します。ローカルのみモードでは、端末内またはキャッシュ内の曲に限定されます。計測結果はバックアップ対象ではなくキャッシュとして扱われ、権限は不要です。</string>
     <string name="sp_motion_artwork_quality">モーションアートワークの品質</string>
     <string name="sp_motion_artwork_quality_sub_saver">約360px。データ使用量が最も少なくなります。</string>
     <string name="sp_motion_artwork_quality_sub_balanced">約480px。データ使用量は少なめです。</string>
@@ -2029,7 +2029,7 @@
     <string name="sp_visualizer_density_hint">ストリップに描画するバーの数</string>
     <string name="sp_visualizer_sensitivity">感度</string>
     <string name="sp_visualizer_sensitivity_hint">静かな部分でストリップがどれだけ強く動くか</string>
-    <string name="si_visualizer">展開したすべてのプレーヤースタイルで、進行バーの下にアニメーションのストリップを表示します。Koda がすでに再生している音声を読み取るため、マイクの権限は不要で、何も録音しません。音楽の再生中は踊り、一時停止すると静まり、アプリの色に従い、視覚効果の軽減やバッテリーセーバーのときは静止します。</string>
+    <string name="si_visualizer">展開したすべてのプレーヤースタイルで、進行バーの下にアニメーションのストリップを表示します。Yinnlycs がすでに再生している音声を読み取るため、マイクの権限は不要で、何も録音しません。音楽の再生中は踊り、一時停止すると静まり、アプリの色に従い、視覚効果の軽減やバッテリーセーバーのときは静止します。</string>
     <string name="cd_visualizer">オーディオビジュアライザー</string>
     <string name="section_releases">リリース</string>
     <string name="lyrics_settings_title">歌詞</string>
@@ -2072,9 +2072,9 @@
     <string name="lastfm_enable">Last.fm を使う</string>
     <string name="lastfm_switch_detail">有効な間、音楽の再生を同期します。オフにすると、リクエストを停止し、未送信の再生を消去します。</string>
     <string name="lastfm_off_hero">あなたの音楽、あなたの選択</string>
-    <string name="lastfm_off_detail">初期状態ではオフです。Koda は Last.fm アカウントがなくても完全に動作します。シークレットとローカルのみでも Last.fm は一時停止されます。</string>
+    <string name="lastfm_off_detail">初期状態ではオフです。Yinnlycs は Last.fm アカウントがなくても完全に動作します。シークレットとローカルのみでも Last.fm は一時停止されます。</string>
     <string name="lastfm_connect">アカウントを接続</string>
-    <string name="lastfm_login_detail">ブラウザで安全にログインし、アクセスを承認してから Koda に戻ります。Last.fm のパスワードはブラウザの中にとどまります。</string>
+    <string name="lastfm_login_detail">ブラウザで安全にログインし、アクセスを承認してから Yinnlycs に戻ります。Last.fm のパスワードはブラウザの中にとどまります。</string>
     <string name="lastfm_key">API キー</string>
     <string name="lastfm_secret">共有シークレット</string>
     <string name="lastfm_secret_detail">スクロブルには、API キーと共有シークレットの両方に加え、アカウントの認証が必要です。認証情報はこの端末に暗号化して保存されます。</string>
@@ -2113,11 +2113,11 @@
     <string name="lastfm_error_code">Last.fm がリクエストを完了できませんでした（コード %1$d）。もう一度お試しください。</string>
     <string name="lastfm_account_tab">アカウント</string>
     <string name="lastfm_welcome_title">あなたの再生の居場所</string>
-    <string name="lastfm_welcome_body">あなたの音楽体験が形になっていくのを見ましょう。Last.fm を接続して、Koda で再生した音楽の記録を残します。</string>
+    <string name="lastfm_welcome_body">あなたの音楽体験が形になっていくのを見ましょう。Last.fm を接続して、Yinnlycs で再生した音楽の記録を残します。</string>
     <string name="lastfm_get_started">Last.fm を設定</string>
     <string name="lastfm_loading_history">再生履歴を読み込み中</string>
     <string name="lastfm_history_empty_title">次の一曲はここから</string>
-    <string name="lastfm_history_empty_body">最近の Last.fm の再生は、同期後にここに表示されます。Koda で曲を再生して、履歴に加えていきましょう。</string>
+    <string name="lastfm_history_empty_body">最近の Last.fm の再生は、同期後にここに表示されます。Yinnlycs で曲を再生して、履歴に加えていきましょう。</string>
     <string name="lastfm_today">今日</string>
     <string name="lastfm_yesterday">昨日</string>
     <string name="lastfm_history_limit">Last.fm の直近20件の再生</string>
@@ -2130,7 +2130,7 @@
     <string name="lastfm_member_since">登録日</string>
     <string name="lastfm_how_it_works">再生とプライバシー</string>
     <string name="lastfm_scrobble_definition">スクロブルとは？</string>
-    <string name="lastfm_scrobble_explanation">聴いた曲の記録です。Koda は、曲の半分または4分のいずれか早い方の後に1件送信します。曲の長さは30秒を超えている必要があります。動画は対象外です。</string>
+    <string name="lastfm_scrobble_explanation">聴いた曲の記録です。Yinnlycs は、曲の半分または4分のいずれか早い方の後に1件送信します。曲の長さは30秒を超えている必要があります。動画は対象外です。</string>
     <string name="lastfm_privacy_title">主導権はあなたにあります</string>
     <string name="lastfm_privacy_body">シークレットとローカルのみでは Last.fm が一時停止されます。オフにすると再生の送信が止まり、接続を解除すると、保存されたアカウントがこの端末から消去されます。</string>
     <string name="lastfm_pro">Last.fm Pro</string>
@@ -2230,7 +2230,7 @@
         <item quantity="other">%d 件のエントリは YouTube 以外のサービスのものだったため、スキップしました。</item>
     </plurals>
     <string name="spotify_import_title">Spotify からインポート</string>
-    <string name="spotify_import_intro">Spotify のプレイリストまたはアルバムのリンクを貼り付けてください。Koda は YouTube Music で同じ曲を探して、それらのプレイリストを作成します。Spotify からは何も再生されません。</string>
+    <string name="spotify_import_intro">Spotify のプレイリストまたはアルバムのリンクを貼り付けてください。Yinnlycs は YouTube Music で同じ曲を探して、それらのプレイリストを作成します。Spotify からは何も再生されません。</string>
     <string name="spotify_import_link_hint">Spotify のプレイリストまたはアルバムのリンク</string>
     <string name="spotify_import_find">曲を探す</string>
     <string name="spotify_import_load_failed">そのプレイリストを読み込めませんでした</string>
