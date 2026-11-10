@@ -33,7 +33,7 @@ android {
         targetSdk = 36
         versionCode = 31
         versionName = "5.3"
-        manifestPlaceholders["appLabel"] = "@string/app_name"
+        manifestPlaceholders["appLabel"] = "Yinnlycs"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -96,7 +96,7 @@ android {
             // widgets, media session and sign-in state during testing.
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
-            manifestPlaceholders["appLabel"] = "Koda Debug"
+            manifestPlaceholders["appLabel"] = "Yinnlycs Debug"
         }
         release {
             signingConfig = signingConfigs.getByName("release")
@@ -168,8 +168,8 @@ kotlin {
 
 // Build info available via BuildConfig
 android.defaultConfig.apply {
-    buildConfigField("String", "GITHUB_REPO", "\"ivorisnoob/Koda\"")
-    buildConfigField("String", "GITHUB_USERNAME", "\"ivorisnoob\"")
+    buildConfigField("String", "GITHUB_REPO", "\"YINNSTORE/yinnlycs\"")
+    buildConfigField("String", "GITHUB_USERNAME", "\"YINNSTORE\"")
 }
 
 dependencies {

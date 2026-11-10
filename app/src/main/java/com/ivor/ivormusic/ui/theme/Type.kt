@@ -2,7 +2,9 @@
 
 package com.ivor.ivormusic.ui.theme
 
-import androidx.compose.material3.Typography
+import androidx.compose.material3.Typography as MaterialTypography
+import com.ivor.ivormusic.R
+import androidx.annotation.StringRes
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
@@ -66,7 +68,7 @@ val RobotoFlexMediumWidth = FontFamily(
     )
 )
 
-val Typography = Typography(
+val Typography = MaterialTypography(
     displayLarge = TextStyle(
         fontFamily = MontserratFamily,
         fontWeight = FontWeight.SemiBold,
@@ -97,3 +99,55 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
 )
+
+/** Persisted visual choices. Keep storage IDs stable across releases. */
+enum class AppSurfaceStyle(val storageId: String, @param:StringRes val labelRes: Int) {
+    EXPRESSIVE("expressive", R.string.settings_style_expressive),
+    LIQUID_GLASS("liquid_glass", R.string.settings_style_liquid_glass);
+
+    companion object {
+        fun fromStorageId(value: String?): AppSurfaceStyle =
+            entries.firstOrNull { it.storageId == value } ?: EXPRESSIVE
+    }
+}
+
+enum class AppFontFamily(val storageId: String, @param:StringRes val labelRes: Int) {
+    DEFAULT("default", R.string.font_family_default),
+    MONTSERRAT("montserrat", R.string.font_family_montserrat),
+    SERIF("serif", R.string.font_family_serif),
+    MONOSPACE("monospace", R.string.font_family_monospace);
+
+    companion object {
+        fun fromStorageId(value: String?): AppFontFamily =
+            entries.firstOrNull { it.storageId == value } ?: DEFAULT
+    }
+}
+
+/** Keep the existing expressive scale and weights while changing only typefaces. */
+fun typographyFor(choice: AppFontFamily): MaterialTypography {
+    if (choice == AppFontFamily.DEFAULT) return Typography
+    val family = when (choice) {
+        AppFontFamily.DEFAULT -> FontFamily.SansSerif
+        AppFontFamily.MONTSERRAT -> MontserratFamily
+        AppFontFamily.SERIF -> FontFamily.Serif
+        AppFontFamily.MONOSPACE -> FontFamily.Monospace
+    }
+    return MaterialTypography(
+        displayLarge = Typography.displayLarge.copy(fontFamily = family),
+        displayMedium = Typography.displayMedium.copy(fontFamily = family),
+        displaySmall = Typography.displaySmall.copy(fontFamily = family),
+        headlineLarge = Typography.headlineLarge.copy(fontFamily = family),
+        headlineMedium = Typography.headlineMedium.copy(fontFamily = family),
+        headlineSmall = Typography.headlineSmall.copy(fontFamily = family),
+        titleLarge = Typography.titleLarge.copy(fontFamily = family),
+        titleMedium = Typography.titleMedium.copy(fontFamily = family),
+        titleSmall = Typography.titleSmall.copy(fontFamily = family),
+        bodyLarge = Typography.bodyLarge.copy(fontFamily = family),
+        bodyMedium = Typography.bodyMedium.copy(fontFamily = family),
+        bodySmall = Typography.bodySmall.copy(fontFamily = family),
+        labelLarge = Typography.labelLarge.copy(fontFamily = family),
+        labelMedium = Typography.labelMedium.copy(fontFamily = family),
+        labelSmall = Typography.labelSmall.copy(fontFamily = family),
+    )
+}
+

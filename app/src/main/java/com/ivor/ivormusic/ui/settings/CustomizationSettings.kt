@@ -18,8 +18,11 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ivor.ivormusic.R
@@ -64,6 +67,10 @@ internal fun CustomizationSettingsPage(
         com.ivor.ivormusic.ui.theme.findPalette(colorPalette)?.name ?: "Dynamic"
     }
     val currentAppIcon = remember(appIcon) { AppIcon.fromId(appIcon) }
+    val context = LocalContext.current
+    val appearancePreferences = remember(context) { ThemePreferences(context) }
+    val surfaceStyle by appearancePreferences.surfaceStyle.collectAsState()
+    val fontFamily by appearancePreferences.fontFamily.collectAsState()
     val hapticsLabel = stringResource(
         when (hapticsLevel) {
             "off" -> R.string.haptic_level_off
@@ -88,6 +95,15 @@ internal fun CustomizationSettingsPage(
                         tint = MaterialTheme.colorScheme.tertiary,
                         iconShape = MaterialShapes.Cookie9Sided.toShape(),
                         explanation = stringResource(R.string.cz_info_theme)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.AutoAwesome,
+                        title = stringResource(R.string.settings_interface_style_title),
+                        value = "${stringResource(surfaceStyle.labelRes)} · ${stringResource(fontFamily.labelRes)}",
+                        onClick = { onOpenPage(SettingsPage.INTERFACE_STYLE) },
+                        tint = MaterialTheme.colorScheme.tertiary,
+                        iconShape = MaterialShapes.Pill.toShape(),
+                        explanation = stringResource(R.string.settings_interface_style_description)
                     )
                     SettingsHubRow(
                         icon = Icons.Rounded.AutoAwesome,

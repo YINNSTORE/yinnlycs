@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">Koda</string>
+    <string name="app_name">Yinnlycs</string>
+    <string name="settings_interface_style_title">Interface style &amp; fonts</string>
+    <string name="settings_interface_style_description">Customize the feel of panels, cards, and text across the app.</string>
+    <string name="settings_visual_style">Surface style</string>
+    <string name="settings_visual_style_description">Choose the visual treatment used by app surfaces.</string>
+    <string name="settings_style_expressive">Expressive</string>
+    <string name="settings_style_liquid_glass">Liquid Glass</string>
+    <string name="settings_style_liquid_glass_description">Translucent surfaces, soft edges, and subtle highlights without heavy blur.</string>
+    <string name="settings_font_family">Font family</string>
+    <string name="settings_font_family_description">Choose the typeface used throughout the app.</string>
+    <string name="font_family_default">Default</string>
+    <string name="font_family_montserrat">Montserrat</string>
+    <string name="font_family_serif">Serif</string>
+    <string name="font_family_monospace">Mono</string>
 
     <!--
       Shared by the MediaStyle notification and the playback progress Live

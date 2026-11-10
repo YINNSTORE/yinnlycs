@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.ivor.ivormusic.ui.theme.ThemeMode
 import com.ivor.ivormusic.ui.theme.PaletteStyle
+import com.ivor.ivormusic.ui.theme.AppFontFamily
+import com.ivor.ivormusic.ui.theme.AppSurfaceStyle
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -79,6 +81,12 @@ class ThemePreferences(context: Context) {
 
     private val _paletteStyle = MutableStateFlow(getPaletteStylePreference())
     val paletteStyle: StateFlow<PaletteStyle> = _paletteStyle.asStateFlow()
+
+    private val _surfaceStyle = MutableStateFlow(getSurfaceStylePreference())
+    val surfaceStyle: StateFlow<AppSurfaceStyle> = _surfaceStyle.asStateFlow()
+
+    private val _fontFamily = MutableStateFlow(getFontFamilyPreference())
+    val fontFamily: StateFlow<AppFontFamily> = _fontFamily.asStateFlow()
 
     private val _appIcon = MutableStateFlow(getAppIconPreference())
     val appIcon: StateFlow<String> = _appIcon.asStateFlow()
@@ -435,6 +443,8 @@ class ThemePreferences(context: Context) {
             KEY_COLOR_PALETTE -> _colorPalette.value = getColorPalettePreference()
             KEY_APP_ICON -> _appIcon.value = getAppIconPreference()
             KEY_PALETTE_STYLE -> _paletteStyle.value = getPaletteStylePreference()
+            KEY_SURFACE_STYLE -> _surfaceStyle.value = getSurfaceStylePreference()
+            KEY_FONT_FAMILY -> _fontFamily.value = getFontFamilyPreference()
             KEY_LOAD_LOCAL_SONGS -> _loadLocalSongs.value = getLoadLocalSongsPreference()
             KEY_AMBIENT_BACKGROUND -> _ambientBackground.value = getAmbientBackgroundPreference()
             KEY_MOTION_ARTWORK -> _motionArtwork.value = getMotionArtworkPreference()
@@ -606,6 +616,8 @@ class ThemePreferences(context: Context) {
         const val KEY_APP_ICON = "app_icon"
         const val DEFAULT_APP_ICON = "default"
         private const val KEY_PALETTE_STYLE = "palette_style"
+        private const val KEY_SURFACE_STYLE = "surface_style"
+        private const val KEY_FONT_FAMILY = "font_family"
         /** Default palette id: wallpaper-based dynamic color (Android 12+). */
         const val DEFAULT_COLOR_PALETTE = "dynamic"
         private const val KEY_LOAD_LOCAL_SONGS = "load_local_songs"
@@ -1287,6 +1299,26 @@ class ThemePreferences(context: Context) {
     fun setPaletteStyle(style: PaletteStyle) {
         prefs.edit().putString(KEY_PALETTE_STYLE, style.storageId).apply()
         _paletteStyle.value = style
+    }
+
+    private fun getSurfaceStylePreference(): AppSurfaceStyle =
+        AppSurfaceStyle.fromStorageId(
+            prefs.getString(KEY_SURFACE_STYLE, AppSurfaceStyle.EXPRESSIVE.storageId)
+        )
+
+    fun setSurfaceStyle(style: AppSurfaceStyle) {
+        prefs.edit().putString(KEY_SURFACE_STYLE, style.storageId).apply()
+        _surfaceStyle.value = style
+    }
+
+    private fun getFontFamilyPreference(): AppFontFamily =
+        AppFontFamily.fromStorageId(
+            prefs.getString(KEY_FONT_FAMILY, AppFontFamily.DEFAULT.storageId)
+        )
+
+    fun setFontFamily(fontFamily: AppFontFamily) {
+        prefs.edit().putString(KEY_FONT_FAMILY, fontFamily.storageId).apply()
+        _fontFamily.value = fontFamily
     }
 
     fun setColorPalette(paletteId: String) {
