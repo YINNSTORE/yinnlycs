@@ -47,6 +47,7 @@ import com.ivor.ivormusic.data.PlaybackSessionRepository
 import com.ivor.ivormusic.data.SongRepository
 import com.ivor.ivormusic.data.StatsRepository
 import com.ivor.ivormusic.data.ThemePreferences
+import com.ivor.ivormusic.data.ExperiencePreferences
 import com.ivor.ivormusic.data.YouTubeRepository
 import com.ivor.ivormusic.widget.PlayerWidgetStore
 import com.ivor.ivormusic.widget.PlayerWidgets
@@ -546,6 +547,7 @@ class MusicService : MediaLibraryService() {
         streamResolver.clear()
         playbackRecovery.clear()
         streamWarmer.clear()
+        YinnlycsEqualizer.release()
         super.onDestroy()
     }
 
@@ -768,6 +770,7 @@ class MusicService : MediaLibraryService() {
         if (generatedSessionId != android.media.AudioManager.ERROR) {
             audioSessionId = generatedSessionId
             engine.setAudioSessionId(generatedSessionId)
+            YinnlycsEqualizer.attach(this, generatedSessionId)
             val intent = Intent(AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION).apply {
                 putExtra(AudioEffect.EXTRA_AUDIO_SESSION, generatedSessionId)
                 putExtra(AudioEffect.EXTRA_PACKAGE_NAME, packageName)
@@ -776,6 +779,16 @@ class MusicService : MediaLibraryService() {
             sendBroadcast(intent)
             KLog.i(TAG, "Announced audio session $generatedSessionId for external equalizers")
         }
+    }
+
+    private fun publishDynamicIslandState() {
+        if (!ExperiencePreferences(this).isDynamicIslandEnabled) return
+        val metadata = engine.active.currentMediaItem?.mediaMetadata
+        sendBroadcast(Intent(DynamicIslandService.ACTION_PLAYBACK_STATE).setPackage(packageName).apply {
+            putExtra(DynamicIslandService.EXTRA_TITLE, metadata?.title?.toString().orEmpty())
+            putExtra(DynamicIslandService.EXTRA_ARTIST, metadata?.artist?.toString().orEmpty())
+            putExtra(DynamicIslandService.EXTRA_PLAYING, engine.active.isPlaying)
+        })
     }
 
     private fun initializeSession() {
@@ -1158,6 +1171,7 @@ class MusicService : MediaLibraryService() {
          */
         override fun onEvents(player: Player, events: Player.Events) {
             super.onEvents(player, events)
+            publishDynamicIslandState()
             if (events.containsAny(
                     Player.EVENT_IS_PLAYING_CHANGED,
                     Player.EVENT_PLAY_WHEN_READY_CHANGED,

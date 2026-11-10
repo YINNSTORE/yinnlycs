@@ -1,5 +1,9 @@
 package com.ivor.ivormusic.ui.settings
 
+import com.ivor.ivormusic.data.AppLocaleManager
+
+import com.ivor.ivormusic.data.ExperiencePreferences
+
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
@@ -18,8 +22,11 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ivor.ivormusic.R
@@ -29,7 +36,7 @@ import com.ivor.ivormusic.ui.theme.ThemeMode
 import kotlin.math.roundToInt
 
 /**
- * Everything about how Koda looks and behaves, in one place and sorted by the
+ * Everything about how Yinnlycs looks and behaves, in one place and sorted by the
  * part of the app it changes: its colours, its players, its layout and how it
  * answers a touch.
  *
@@ -64,6 +71,18 @@ internal fun CustomizationSettingsPage(
         com.ivor.ivormusic.ui.theme.findPalette(colorPalette)?.name ?: "Dynamic"
     }
     val currentAppIcon = remember(appIcon) { AppIcon.fromId(appIcon) }
+    val context = LocalContext.current
+    val experiencePreferences = remember(context) { ExperiencePreferences(context) }
+    val highRefreshRate by experiencePreferences.highRefreshRate.collectAsState()
+    val dynamicIslandEnabled by experiencePreferences.dynamicIslandEnabled.collectAsState()
+    val languageLabel = when (AppLocaleManager.currentLanguage(context)) {
+        "id" -> stringResource(R.string.settings_language_indonesian)
+        "en" -> stringResource(R.string.settings_language_english)
+        else -> stringResource(R.string.settings_language_system)
+    }
+    val appearancePreferences = remember(context) { ThemePreferences(context) }
+    val surfaceStyle by appearancePreferences.surfaceStyle.collectAsState()
+    val fontFamily by appearancePreferences.fontFamily.collectAsState()
     val hapticsLabel = stringResource(
         when (hapticsLevel) {
             "off" -> R.string.haptic_level_off
@@ -86,8 +105,17 @@ internal fun CustomizationSettingsPage(
                         value = "$themeLabel, $paletteName",
                         onClick = { onOpenPage(SettingsPage.APPEARANCE) },
                         tint = MaterialTheme.colorScheme.tertiary,
-                        iconShape = MaterialShapes.Cookie9Sided.toShape(),
+                        iconShape = MaterialShapes.Cookie4Sided.toShape(),
                         explanation = stringResource(R.string.cz_info_theme)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.AutoAwesome,
+                        title = stringResource(R.string.settings_interface_style_title),
+                        value = "${stringResource(surfaceStyle.labelRes)} · ${stringResource(fontFamily.labelRes)}",
+                        onClick = { onOpenPage(SettingsPage.INTERFACE_STYLE) },
+                        tint = MaterialTheme.colorScheme.tertiary,
+                        iconShape = MaterialShapes.Pill.toShape(),
+                        explanation = stringResource(R.string.settings_interface_style_description)
                     )
                     SettingsHubRow(
                         icon = Icons.Rounded.AutoAwesome,
@@ -194,6 +222,46 @@ internal fun CustomizationSettingsPage(
                         tint = MaterialTheme.colorScheme.secondary,
                         iconShape = MaterialShapes.SoftBurst.toShape(),
                         explanation = stringResource(R.string.cz_info_gestures)
+                    )
+                }
+            }
+            Spacer(Modifier.height(32.dp))
+        }
+
+        item {
+            SettingsSection(title = stringResource(R.string.settings_device_experience)) {
+                SettingsCard {
+                    SettingsHubRow(
+                        icon = Icons.Rounded.FormatSize,
+                        title = stringResource(R.string.settings_language),
+                        value = languageLabel,
+                        onClick = { onOpenPage(SettingsPage.LANGUAGE) },
+                        iconShape = MaterialShapes.Pill.toShape(),
+                        explanation = stringResource(R.string.settings_language_subtitle)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.SmartDisplay,
+                        title = stringResource(R.string.settings_refresh_rate),
+                        value = stringResource(if (highRefreshRate) R.string.settings_enabled else R.string.settings_disabled),
+                        onClick = { onOpenPage(SettingsPage.PERFORMANCE) },
+                        iconShape = MaterialShapes.Gem.toShape(),
+                        explanation = stringResource(R.string.settings_refresh_rate_subtitle)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.AutoAwesome,
+                        title = stringResource(R.string.settings_dynamic_island),
+                        value = stringResource(if (dynamicIslandEnabled) R.string.settings_enabled else R.string.settings_disabled),
+                        onClick = { onOpenPage(SettingsPage.DYNAMIC_ISLAND) },
+                        iconShape = MaterialShapes.Burst.toShape(),
+                        explanation = stringResource(R.string.settings_dynamic_island_subtitle)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.PlayCircle,
+                        title = stringResource(R.string.settings_equalizer),
+                        value = stringResource(R.string.settings_equalizer_subtitle),
+                        onClick = { onOpenPage(SettingsPage.EQUALIZER) },
+                        iconShape = MaterialShapes.Cookie9Sided.toShape(),
+                        explanation = stringResource(R.string.settings_equalizer_subtitle)
                     )
                 }
             }

@@ -236,6 +236,23 @@ internal fun buildSettingsSearchIndex(
 
     // Customization
     entry(
+        "app_language", stringResource(R.string.settings_language), stringResource(R.string.settings_device_experience), Icons.Rounded.FormatSize,
+        listOf("language", "bahasa", "indonesia", "english", "system language", "locale")
+    ) { onOpenPage(SettingsPage.LANGUAGE) }
+    entry(
+        "high_refresh_rate", stringResource(R.string.settings_refresh_rate), stringResource(R.string.settings_performance), Icons.Rounded.SmartDisplay,
+        listOf("120hz", "120 hz", "refresh rate", "fps", "smooth scrolling", "display mode", "high refresh")
+    ) { onOpenPage(SettingsPage.PERFORMANCE) }
+    entry(
+        "dynamic_island", stringResource(R.string.settings_dynamic_island), stringResource(R.string.settings_device_experience), Icons.Rounded.AutoAwesome,
+        listOf("dynamic island", "floating pill", "music pill", "overlay", "notch", "mini player")
+    ) { onOpenPage(SettingsPage.DYNAMIC_ISLAND) }
+    entry(
+        "equalizer", stringResource(R.string.settings_equalizer), stringResource(R.string.settings_device_experience), Icons.Rounded.GraphicEq,
+        listOf("equalizer", "eq", "bass", "treble", "mid", "sound", "audio effect", "device equalizer")
+    ) { onOpenPage(SettingsPage.EQUALIZER) }
+
+    entry(
         "video_player_gestures", stringResource(R.string.cz_video_player), stringResource(R.string.settings_customization), Icons.Rounded.PlayCircle,
         listOf(
             "video", "gesture", "swipe", "brightness", "volume", "hold", "long press", "2x", "speed up",
@@ -360,6 +377,10 @@ internal fun buildSettingsSearchIndex(
             "icon style", "custom icon", "change icon", "app logo"
         )
     ) { onOpenPage(SettingsPage.APP_ICON) }
+    entry(
+        "interface_style", stringResource(R.string.settings_interface_style_title), stringResource(R.string.settings_appearance), Icons.Rounded.AutoAwesome,
+        listOf("liquid glass", "glass", "font", "font family", "typography", "text style", "interface style", "surface style")
+    ) { onOpenPage(SettingsPage.INTERFACE_STYLE) }
     entry(
         "display_size", stringResource(R.string.sp_display_size), stringResource(R.string.settings_appearance), Icons.Rounded.FormatSize,
         listOf(

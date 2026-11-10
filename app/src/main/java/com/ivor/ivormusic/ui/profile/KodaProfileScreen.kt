@@ -123,11 +123,11 @@ private data class ProfileListening(
 )
 
 /**
- * A Koda profile: who is using the app, drawn large, over what they listen to.
+ * A Yinnlycs profile: who is using the app, drawn large, over what they listen to.
  *
  * Opened by tapping the profile picture in music mode; holding the picture is
  * still the account switcher. A device-only profile is its own thing here, with
- * a name and a picture of its choosing (a Koda avatar or a photo); an account
+ * a name and a picture of its choosing (a Yinnlycs avatar or a photo); an account
  * profile shows the account's name and picture and is not editable, because
  * those are YouTube's to change.
  *

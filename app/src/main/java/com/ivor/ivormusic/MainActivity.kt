@@ -142,6 +142,18 @@ class MainActivity : ComponentActivity() {
     private var foregroundedAtMs = 0L
     private var appTimeTicker: kotlinx.coroutines.Job? = null
 
+    override fun attachBaseContext(newBase: android.content.Context) {
+        super.attachBaseContext(com.ivor.ivormusic.data.AppLocaleManager.wrap(newBase))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        com.ivor.ivormusic.util.DisplayPerformance.apply(
+            this,
+            com.ivor.ivormusic.data.ExperiencePreferences(this).isHighRefreshRateEnabled
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)

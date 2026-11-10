@@ -265,6 +265,11 @@ internal enum class SettingsPage {
     HUB,
     ACCOUNT,
     APPEARANCE,
+    INTERFACE_STYLE,
+    LANGUAGE,
+    PERFORMANCE,
+    DYNAMIC_ISLAND,
+    EQUALIZER,
     PLAYER,
     PLAYBACK,
     CONTENT,
@@ -296,7 +301,8 @@ internal enum class SettingsPage {
      */
     val parent: SettingsPage
         get() = when (this) {
-            APPEARANCE, APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
+            APPEARANCE, INTERFACE_STYLE, LANGUAGE, PERFORMANCE, DYNAMIC_ISLAND, EQUALIZER,
+            APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
             HOME_NAVIGATION, GESTURES, VIDEO_PLAYER, VIDEO_FEED, VIDEO_SHADERS, STANDBY -> CUSTOMIZATION
             VIDEO_HOME -> CONTENT
             else -> HUB
@@ -835,6 +841,26 @@ fun SettingsScreen(
             onNavigateToColorPalette = onNavigateToColorPalette,
             amoledTheme = amoledTheme,
             onAmoledThemeToggle = onAmoledThemeToggle,
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.INTERFACE_STYLE -> InterfaceStyleSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.LANGUAGE -> LanguageSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.PERFORMANCE -> PerformanceSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.DYNAMIC_ISLAND -> DynamicIslandSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.EQUALIZER -> EqualizerSettingsPage(
             onBack = { page = SettingsPage.CUSTOMIZATION }
         )
 
@@ -2527,7 +2553,7 @@ private fun ExpressiveAboutDialog(
                             ) {
                                 // A saved style has no drawable behind it -
                                 // it is colours, not a resource - so the one
-                                // place Koda draws its own mark at size gets
+                                // place Yinnlycs draws its own mark at size gets
                                 // the live renderer when one is active, and
                                 // the preset's artwork otherwise. Without this
                                 // a style someone saved would change nothing
@@ -2546,7 +2572,7 @@ private fun ExpressiveAboutDialog(
                                     savedStyles.firstOrNull { it.id == activeStyleId }
                                 }
                                 if (activeStyle != null) {
-                                    KodaAppIcon(
+                                    YinnlycsAppIcon(
                                         style = activeStyle.toIconStyle(),
                                         shape = androidx.compose.foundation.shape
                                             .RoundedCornerShape(20.dp),
