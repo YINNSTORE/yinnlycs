@@ -265,6 +265,7 @@ internal enum class SettingsPage {
     HUB,
     ACCOUNT,
     APPEARANCE,
+    INTERFACE_STYLE,
     PLAYER,
     PLAYBACK,
     CONTENT,
@@ -296,7 +297,7 @@ internal enum class SettingsPage {
      */
     val parent: SettingsPage
         get() = when (this) {
-            APPEARANCE, APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
+            APPEARANCE, INTERFACE_STYLE, APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
             HOME_NAVIGATION, GESTURES, VIDEO_PLAYER, VIDEO_FEED, VIDEO_SHADERS, STANDBY -> CUSTOMIZATION
             VIDEO_HOME -> CONTENT
             else -> HUB
@@ -835,6 +836,10 @@ fun SettingsScreen(
             onNavigateToColorPalette = onNavigateToColorPalette,
             amoledTheme = amoledTheme,
             onAmoledThemeToggle = onAmoledThemeToggle,
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.INTERFACE_STYLE -> InterfaceStyleSettingsPage(
             onBack = { page = SettingsPage.CUSTOMIZATION }
         )
 

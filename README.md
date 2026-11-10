@@ -1,16 +1,17 @@
 <p align="center">
-  <img src="icon.svg" width="120" alt="Koda logo"/>
+  <img src="app/src/main/res/drawable-nodpi/yinnlycs_icon.webp" width="120" alt="Yinnlycs logo"/>
 </p>
 
-<h1 align="center">Koda</h1>
+<h1 align="center">Yinnlycs</h1>
 
 <p align="center">
   <b>A music and video player for Android, powered by YouTube Music.</b>
+  <br/>A personal rebrand of the open-source <a href="https://github.com/Ivorisnoob/Koda">Koda</a> project.
 </p>
 
 <p align="center">
-  <a href="https://github.com/Ivorisnoob/Koda/releases/latest"><img src="https://img.shields.io/github/v/release/Ivorisnoob/Koda?style=for-the-badge&label=Download&color=6750A4" alt="Latest release"/></a>
-  <a href="https://github.com/Ivorisnoob/Koda/releases"><img src="https://img.shields.io/github/downloads/Ivorisnoob/Koda/total?style=for-the-badge&color=1B6C3A" alt="Downloads"/></a>
+  <a href="https://github.com/YINNSTORE/yinnlycs/releases/latest"><img src="https://img.shields.io/github/v/release/YINNSTORE/yinnlycs?style=for-the-badge&label=Download&color=6750A4" alt="Latest release"/></a>
+  <a href="https://github.com/YINNSTORE/yinnlycs/releases"><img src="https://img.shields.io/github/downloads/YINNSTORE/yinnlycs/total?style=for-the-badge&color=1B6C3A" alt="Downloads"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/Ivorisnoob/Koda?style=for-the-badge&color=8B4513" alt="GPL-3.0 license"/></a>
 </p>
 
@@ -33,7 +34,7 @@ It works without an official YouTube API key, and an account is optional. Search
 
 ## Download
 
-Download the latest APK from **[GitHub Releases](https://github.com/Ivorisnoob/Koda/releases/latest)**. Koda requires Android 11 or newer.
+Download the latest APK from **[GitHub Releases](https://github.com/YINNSTORE/yinnlycs/releases/latest)**. Koda requires Android 11 or newer.
 
 | APK | Use it for |
 |---|---|
@@ -237,8 +238,8 @@ Nine styles to choose from. Pick one in Settings, or long-press the artwork whil
 Use the latest stable Android Studio and a device or emulator running Android 11 or newer.
 
 ```bash
-git clone https://github.com/Ivorisnoob/Koda.git
-cd Koda
+git clone https://github.com/YINNSTORE/yinnlycs.git
+cd yinnlycs
 ./gradlew assembleDebug
 ```
 

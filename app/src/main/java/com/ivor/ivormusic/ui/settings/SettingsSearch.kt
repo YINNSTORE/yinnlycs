@@ -361,6 +361,10 @@ internal fun buildSettingsSearchIndex(
         )
     ) { onOpenPage(SettingsPage.APP_ICON) }
     entry(
+        "interface_style", stringResource(R.string.settings_interface_style_title), stringResource(R.string.settings_appearance), Icons.Rounded.AutoAwesome,
+        listOf("liquid glass", "glass", "font", "font family", "typography", "text style", "interface style", "surface style")
+    ) { onOpenPage(SettingsPage.INTERFACE_STYLE) }
+    entry(
         "display_size", stringResource(R.string.sp_display_size), stringResource(R.string.settings_appearance), Icons.Rounded.FormatSize,
         listOf(
             "ui scale", "scale", "zoom", "font size", "text size", "bigger",
