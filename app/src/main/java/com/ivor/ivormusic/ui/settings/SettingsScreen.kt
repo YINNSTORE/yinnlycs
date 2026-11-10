@@ -266,6 +266,10 @@ internal enum class SettingsPage {
     ACCOUNT,
     APPEARANCE,
     INTERFACE_STYLE,
+    LANGUAGE,
+    PERFORMANCE,
+    DYNAMIC_ISLAND,
+    EQUALIZER,
     PLAYER,
     PLAYBACK,
     CONTENT,
@@ -297,7 +301,8 @@ internal enum class SettingsPage {
      */
     val parent: SettingsPage
         get() = when (this) {
-            APPEARANCE, INTERFACE_STYLE, APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
+            APPEARANCE, INTERFACE_STYLE, LANGUAGE, PERFORMANCE, DYNAMIC_ISLAND, EQUALIZER,
+            APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
             HOME_NAVIGATION, GESTURES, VIDEO_PLAYER, VIDEO_FEED, VIDEO_SHADERS, STANDBY -> CUSTOMIZATION
             VIDEO_HOME -> CONTENT
             else -> HUB
@@ -840,6 +845,22 @@ fun SettingsScreen(
         )
 
         SettingsPage.INTERFACE_STYLE -> InterfaceStyleSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.LANGUAGE -> LanguageSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.PERFORMANCE -> PerformanceSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.DYNAMIC_ISLAND -> DynamicIslandSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.EQUALIZER -> EqualizerSettingsPage(
             onBack = { page = SettingsPage.CUSTOMIZATION }
         )
 

@@ -51,7 +51,7 @@
     <string name="local_only_video_library_subtitle">Koleksi video butuh internet. Matikan mode khusus lokal di Setelan untuk melihatnya.</string>
     <string name="local_only_update_subtitle">Pemeriksaan pembaruan butuh internet. Matikan mode khusus lokal di Setelan untuk memeriksa pembaruan.</string>
 
-    <string name="crash_dialog_title">Koda crash pada sesi sebelumnya</string>
+    <string name="crash_dialog_title">Yinnlycs crash pada sesi sebelumnya</string>
     <string name="crash_dialog_message">Terjadi masalah pada sesi terakhir Anda. Anda bisa mengirim laporan bug dengan detailnya - tidak ada yang keluar dari perangkat Anda kecuali Anda memilih untuk membagikannya.</string>
     <string name="crash_dialog_view_report">Lihat &amp; laporkan</string>
     <string name="crash_dialog_not_now">Nanti saja</string>
@@ -325,7 +325,7 @@
     <string name="vh_youre_offline">Kamu offline</string>
     <string name="vh_removed_from_history">Dihapus dari riwayat tonton</string>
     <string name="vh_clear_history">Hapus riwayat tonton</string>
-    <string name="vh_clear_history_body">Ini mengosongkan riwayat tonton Koda di perangkat ini. Tidak menghapus apa pun dari akun YouTube-mu.</string>
+    <string name="vh_clear_history_body">Ini mengosongkan riwayat tonton Yinnlycs di perangkat ini. Tidak menghapus apa pun dari akun YouTube-mu.</string>
     <string name="vh_clear_history_confirm">Hapus</string>
     <string name="vh_no_videos_found">Tidak ada video ditemukan</string>
     <string name="vh_downloaded_hint">Video yang didownload akan muncul di sini</string>
@@ -376,4 +376,48 @@
     <string name="subscription_sort_recent">Unggahan terbaru lebih dulu</string>
     <string name="subscription_sort_name">Nama kanal (A–Z)</string>
     <string name="subscription_sort_oldest">Unggahan terlama lebih dulu</string>
+
+
+    <string name="home_tab_title">Beranda</string>
+    <string name="home_greeting_morning">Selamat pagi</string>
+    <string name="home_greeting_afternoon">Selamat siang</string>
+    <string name="home_greeting_evening">Selamat malam</string>
+    <string name="home_greeting_subtitle">Temukan lagu yang cocok untuk suasana saat ini.</string>
+    <string name="home_community_title">Dari komunitas</string>
+    <string name="spotlight_moods_title">Pilih suasana</string>
+    <string name="settings_device_experience">Pengalaman perangkat</string>
+    <string name="settings_language">Bahasa aplikasi</string>
+    <string name="settings_language_subtitle">Ikuti bahasa HP atau pilih bahasa sendiri.</string>
+    <string name="settings_language_system">Ikuti sistem</string>
+    <string name="settings_language_indonesian">Bahasa Indonesia</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_performance">Performa</string>
+    <string name="settings_refresh_rate">Refresh rate tinggi</string>
+    <string name="settings_refresh_rate_subtitle">Minta Android memakai mode layar tercepat saat Yinnlycs terbuka. Android dan sistem HP tetap dapat membatasinya.</string>
+    <string name="settings_refresh_rate_device_max">Maksimum yang didukung HP ini: %1$.0f Hz</string>
+    <string name="settings_dynamic_island">Dynamic Island</string>
+    <string name="settings_dynamic_island_subtitle">Mini-player mengambang yang bisa diatur. Memerlukan izin tampil di atas aplikasi lain.</string>
+    <string name="settings_dynamic_island_enable">Tampilkan mini-player mengambang</string>
+    <string name="settings_dynamic_island_permission">Izinkan tampil di atas aplikasi lain</string>
+    <string name="settings_dynamic_island_width">Lebar</string>
+    <string name="settings_dynamic_island_height">Tinggi</string>
+    <string name="settings_dynamic_island_theme">Tema island</string>
+    <string name="settings_dynamic_island_theme_glass">Glass</string>
+    <string name="settings_dynamic_island_theme_violet">Ungu</string>
+    <string name="settings_dynamic_island_theme_ocean">Ocean</string>
+    <string name="settings_equalizer">Equalizer</string>
+    <string name="settings_equalizer_subtitle">Atur audio Yinnlycs atau buka equalizer bawaan HP maupun aplikasi equalizer lain.</string>
+    <string name="settings_equalizer_enabled">Gunakan equalizer bawaan aplikasi</string>
+    <string name="settings_equalizer_system">Buka equalizer perangkat</string>
+    <string name="settings_equalizer_unavailable">Panel equalizer sistem yang kompatibel tidak ditemukan.</string>
+    <string name="settings_equalizer_session">Mulai putar musik untuk menghubungkan equalizer ke sesi audio aktif.</string>
+    <string name="settings_equalizer_band_60">60 Hz</string>
+    <string name="settings_equalizer_band_230">230 Hz</string>
+    <string name="settings_equalizer_band_910">910 Hz</string>
+    <string name="settings_equalizer_band_3600">3,6 kHz</string>
+    <string name="settings_equalizer_band_14000">14 kHz</string>
+    <string name="settings_style_preview">Pratinjau langsung</string>
+    <string name="settings_enabled">Aktif</string>
+    <string name="settings_disabled">Nonaktif</string>
+
 </resources>

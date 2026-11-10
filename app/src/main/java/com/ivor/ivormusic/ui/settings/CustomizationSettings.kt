@@ -1,5 +1,9 @@
 package com.ivor.ivormusic.ui.settings
 
+import com.ivor.ivormusic.data.AppLocaleManager
+
+import com.ivor.ivormusic.data.ExperiencePreferences
+
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
@@ -68,6 +72,14 @@ internal fun CustomizationSettingsPage(
     }
     val currentAppIcon = remember(appIcon) { AppIcon.fromId(appIcon) }
     val context = LocalContext.current
+    val experiencePreferences = remember(context) { ExperiencePreferences(context) }
+    val highRefreshRate by experiencePreferences.highRefreshRate.collectAsState()
+    val dynamicIslandEnabled by experiencePreferences.dynamicIslandEnabled.collectAsState()
+    val languageLabel = when (AppLocaleManager.currentLanguage(context)) {
+        "id" -> stringResource(R.string.settings_language_indonesian)
+        "en" -> stringResource(R.string.settings_language_english)
+        else -> stringResource(R.string.settings_language_system)
+    }
     val appearancePreferences = remember(context) { ThemePreferences(context) }
     val surfaceStyle by appearancePreferences.surfaceStyle.collectAsState()
     val fontFamily by appearancePreferences.fontFamily.collectAsState()
@@ -210,6 +222,46 @@ internal fun CustomizationSettingsPage(
                         tint = MaterialTheme.colorScheme.secondary,
                         iconShape = MaterialShapes.SoftBurst.toShape(),
                         explanation = stringResource(R.string.cz_info_gestures)
+                    )
+                }
+            }
+            Spacer(Modifier.height(32.dp))
+        }
+
+        item {
+            SettingsSection(title = stringResource(R.string.settings_device_experience)) {
+                SettingsCard {
+                    SettingsHubRow(
+                        icon = Icons.Rounded.FormatSize,
+                        title = stringResource(R.string.settings_language),
+                        value = languageLabel,
+                        onClick = { onOpenPage(SettingsPage.LANGUAGE) },
+                        iconShape = MaterialShapes.Pill.toShape(),
+                        explanation = stringResource(R.string.settings_language_subtitle)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.SmartDisplay,
+                        title = stringResource(R.string.settings_refresh_rate),
+                        value = stringResource(if (highRefreshRate) R.string.settings_enabled else R.string.settings_disabled),
+                        onClick = { onOpenPage(SettingsPage.PERFORMANCE) },
+                        iconShape = MaterialShapes.Gem.toShape(),
+                        explanation = stringResource(R.string.settings_refresh_rate_subtitle)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.AutoAwesome,
+                        title = stringResource(R.string.settings_dynamic_island),
+                        value = stringResource(if (dynamicIslandEnabled) R.string.settings_enabled else R.string.settings_disabled),
+                        onClick = { onOpenPage(SettingsPage.DYNAMIC_ISLAND) },
+                        iconShape = MaterialShapes.Burst.toShape(),
+                        explanation = stringResource(R.string.settings_dynamic_island_subtitle)
+                    )
+                    SettingsHubRow(
+                        icon = Icons.Rounded.PlayCircle,
+                        title = stringResource(R.string.settings_equalizer),
+                        value = stringResource(R.string.settings_equalizer_subtitle),
+                        onClick = { onOpenPage(SettingsPage.EQUALIZER) },
+                        iconShape = MaterialShapes.Cookie9Sided.toShape(),
+                        explanation = stringResource(R.string.settings_equalizer_subtitle)
                     )
                 }
             }
