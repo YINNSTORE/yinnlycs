@@ -499,7 +499,7 @@ fun YinnlycsAppIcon(
             painter = painterResource(id = com.ivor.ivormusic.R.drawable.yinnlycs_icon),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize().padding(8.dp)
         )
     }
 }

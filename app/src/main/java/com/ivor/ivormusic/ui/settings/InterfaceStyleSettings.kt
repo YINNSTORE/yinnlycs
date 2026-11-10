@@ -105,7 +105,7 @@ internal fun InterfaceStyleSettingsPage(onBack: () -> Unit) {
                         ) {
                             Text("Yinnlycs", style = MaterialTheme.typography.headlineSmall)
                             Text(
-                                "Music that moves with you",
+                                stringResource(R.string.home_greeting_subtitle),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
