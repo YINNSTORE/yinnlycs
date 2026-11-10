@@ -440,9 +440,9 @@ jobs:
             RESPONSE=$(curl -sS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
               --data-urlencode "chat_id=${CHAT_ID}" \
               --data-urlencode "parse_mode=HTML" \
-              --data-urlencode "text=<b>Latest beta</b> · Koda v${VERSION}
+              --data-urlencode "text=<b>Latest beta</b> · Yinnlycs v${VERSION}
 
-        $(esc "$(basename "$apk")") is over Telegram's 50 MB bot limit — grab it from the <a href=\"${RUN_URL}\">workflow artifacts</a>.")
+        $(esc "$(basename "$apk")") is over Telegram's 50 MB bot limit — grab it from the <a href=\"https://github.com/${REPO}/releases/download/ci-latest/Yinnlycs-arm64-v8a.apk\">direct APK download</a>.")
             if ! telegram_ok "$RESPONSE"; then
               echo "Telegram artifact-link send failed: ${RESPONSE}"
               exit 1
