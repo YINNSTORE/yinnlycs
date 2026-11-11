@@ -66,6 +66,8 @@ android {
             "th",
             "vi",
             "id",
+            // Android 11–12 resolve Indonesian through the legacy ISO code.
+            "in",
             "ja",
             "ko",
             "zh-rCN",
