@@ -31,9 +31,9 @@ android {
         // platform did not gain until API 33.
         minSdk = 30
         targetSdk = 36
-        versionCode = 31
-        versionName = "5.3"
-        manifestPlaceholders["appLabel"] = "@string/app_name"
+        versionCode = 32
+        versionName = "6.0.0"
+        manifestPlaceholders["appLabel"] = "Yinnlycs"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -77,8 +77,10 @@ android {
         abi {
             isEnable = true
             reset()
-            include("arm64-v8a", "armeabi-v7a")
-            isUniversalApk = true
+            // Build only the 64-bit APK used by modern Android phones.
+            // A universal APK duplicates native libraries for multiple ABIs.
+            include("arm64-v8a")
+            isUniversalApk = false
         }
     }
     signingConfigs {
@@ -96,7 +98,7 @@ android {
             // widgets, media session and sign-in state during testing.
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
-            manifestPlaceholders["appLabel"] = "Koda Debug"
+            manifestPlaceholders["appLabel"] = "Yinnlycs Debug"
         }
         release {
             signingConfig = signingConfigs.getByName("release")
@@ -168,8 +170,8 @@ kotlin {
 
 // Build info available via BuildConfig
 android.defaultConfig.apply {
-    buildConfigField("String", "GITHUB_REPO", "\"ivorisnoob/Koda\"")
-    buildConfigField("String", "GITHUB_USERNAME", "\"ivorisnoob\"")
+    buildConfigField("String", "GITHUB_REPO", "\"YINNSTORE/yinnlycs\"")
+    buildConfigField("String", "GITHUB_USERNAME", "\"YINNSTORE\"")
 }
 
 dependencies {

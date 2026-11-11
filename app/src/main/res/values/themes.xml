@@ -30,7 +30,7 @@
         <!-- Set the splash screen background color (Deep Purple) -->
         <item name="windowSplashScreenBackground">#000000</item>
         <!-- Use the animated vector drawable we created -->
-        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <!-- Set the animation duration (match the AVD duration) -->
         <item name="windowSplashScreenAnimationDuration">800</item>
         <!-- Post-splash theme (the actual app theme) -->

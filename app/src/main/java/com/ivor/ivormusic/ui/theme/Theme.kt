@@ -22,6 +22,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.SideEffect
@@ -38,6 +39,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import com.ivor.ivormusic.data.UI_SCALE_DEFAULT
+import com.ivor.ivormusic.data.ThemePreferences
 
 private val DarkColorScheme = darkColorScheme(
     primary = PrimaryBlue,
@@ -178,6 +180,9 @@ fun IvorMusicTheme(
     content: @Composable () -> Unit
 ) {
     val context = LocalContext.current
+    val appearancePreferences = remember(context) { ThemePreferences(context) }
+    val surfaceStyle by appearancePreferences.surfaceStyle.collectAsState()
+    val fontFamily by appearancePreferences.fontFamily.collectAsState()
     // Configuration changes include wallpaper/UI mode changes. Rebuild then,
     // but never regenerate HCT roles on unrelated parent recompositions.
     val configuration = androidx.compose.ui.platform.LocalConfiguration.current
@@ -198,6 +203,13 @@ fun IvorMusicTheme(
         if (darkTheme && amoledDark) scheme else scheme.withTintedPages(darkTheme)
     }
     val colorScheme = rememberFadedColorScheme(targetScheme, fadeKey = artworkSeed)
+    val styledColorScheme = remember(colorScheme, surfaceStyle) {
+        if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) colorScheme.liquidGlassSurfaces() else colorScheme
+    }
+    val styledShapes = if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) LiquidGlassShapes else ExpressiveShapes
+    // Keep one stable typography snapshot per choice; every Material text role
+    // and the default LocalTextStyle must switch together when the preference changes.
+    val selectedTypography = remember(fontFamily) { typographyFor(fontFamily) }
     
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -223,24 +235,56 @@ fun IvorMusicTheme(
     }
 
     MaterialExpressiveTheme(
-        colorScheme = colorScheme,
+        colorScheme = styledColorScheme,
         motionScheme = MotionScheme.expressive(),
-        shapes = ExpressiveShapes,
-        typography = Typography,
+        shapes = styledShapes,
+        typography = selectedTypography,
     ) {
         // The app's own scheme, kept reachable from inside a local re-theme.
         // Content color too: most screens paint a plain background rather than
         // a Surface, and without one an uncolored Text falls back to black,
         // which is invisible in dark theme.
         CompositionLocalProvider(
-            LocalAppColorScheme provides colorScheme,
+            LocalAppColorScheme provides styledColorScheme,
             LocalAlbumTheming provides AlbumTheming(artworkWholeApp, paletteStyle, darkTheme && amoledDark),
-            androidx.compose.material3.LocalContentColor provides colorScheme.onBackground,
+            LocalLiquidGlassEnabled provides (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS),
+            androidx.compose.material3.LocalContentColor provides styledColorScheme.onBackground,
+            androidx.compose.material3.LocalTextStyle provides selectedTypography.bodyLarge,
         ) {
             ScaledDensity(uiScale, content)
         }
     }
 }
+
+/**
+ * A lightweight Liquid Glass-inspired treatment. It uses translucent M3
+ * surface roles and softer geometry; it deliberately avoids per-frame blur
+ * so scrolling and video playback stay smooth on Android 11 devices.
+ */
+private val LiquidGlassShapes = Shapes(
+    extraSmall = RoundedCornerShape(12.dp),
+    small = RoundedCornerShape(20.dp),
+    medium = RoundedCornerShape(26.dp),
+    large = RoundedCornerShape(32.dp),
+    extraLarge = RoundedCornerShape(38.dp),
+)
+
+private fun ColorScheme.liquidGlassSurfaces(): ColorScheme = copy(
+    // Glass must reveal the page beneath it. The previous values were so
+    // opaque that cards looked like the Expressive treatment on flat screens.
+    surface = surface.copy(alpha = 0.58f),
+    surfaceVariant = surfaceVariant.copy(alpha = 0.46f),
+    surfaceDim = surfaceDim.copy(alpha = 0.64f),
+    surfaceBright = surfaceBright.copy(alpha = 0.68f),
+    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.18f),
+    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.25f),
+    surfaceContainer = surfaceContainer.copy(alpha = 0.32f),
+    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.40f),
+    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.48f),
+    surfaceTint = primary.copy(alpha = 0.28f),
+    outline = outline.copy(alpha = 0.38f),
+    outlineVariant = outlineVariant.copy(alpha = 0.44f),
+)
 
 /**
  * How a scheme built from a cover should be made, for the places that build
@@ -252,7 +296,11 @@ fun IvorMusicTheme(
  * a playlist page is its own artwork's colours while the app around it is the
  * playing album's, and neither borrows roles from the other.
  */
+
 data class AlbumTheming(val wholeApp: Boolean, val style: PaletteStyle, val amoled: Boolean)
+
+/** Lets custom-drawn containers add a glass edge while the style is selected. */
+val LocalLiquidGlassEnabled = staticCompositionLocalOf { false }
 
 val LocalAlbumTheming = staticCompositionLocalOf { AlbumTheming(false, PaletteStyle.TONAL_SPOT, false) }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Koda</string>
+    <string name="app_name">Yinnlycs</string>
     <!--
       Shared by the MediaStyle notification and the playback progress Live
       Update. Media3's DefaultMediaNotificationProvider creates its own channel
@@ -80,7 +80,7 @@
     <string name="local_only_video_library_subtitle">A biblioteca de vídeos requer conexão com a internet. Desative o modo apenas local nas Configurações para visualizá-la.</string>
     <string name="local_only_update_subtitle">A verificação de atualizações requer conexão com a internet. Desative o modo apenas local nas Configurações para verificar se há atualizações.</string>
     <!-- Crash report prompt (MainActivity) -->
-    <string name="crash_dialog_title">O Koda travou na última vez</string>
+    <string name="crash_dialog_title">O Yinnlycs travou na última vez</string>
     <string name="crash_dialog_message">Algo deu errado na sua sessão anterior. Você pode enviar um relatório de erro com os detalhes — nada sai do seu dispositivo, a menos que você escolha compartilhar.</string>
     <string name="crash_dialog_view_report">Ver e relatar</string>
     <string name="crash_dialog_not_now">Agora não</string>
@@ -205,7 +205,7 @@
     <string name="sp_replace_session_cookies">Substituir cookies de sessão</string>
     <string name="sp_replace_session_cookies_sub">Cole um novo cabeçalho de cookie se a sua sessão expirar</string>
     <string name="sp_sign_out_sub">Desconectar sua conta do YouTube</string>
-    <string name="sp_signed_out_info">O Koda funciona sem login. Fazer login adiciona suas playlists, músicas curtidas, inscrições e histórico de reprodução.</string>
+    <string name="sp_signed_out_info">O Yinnlycs funciona sem login. Fazer login adiciona suas playlists, músicas curtidas, inscrições e histórico de reprodução.</string>
     <string name="sp_connect_youtube_music">Conectar ao YouTube Music</string>
     <string name="sp_connect_youtube_music_sub">Faça login para acessar suas playlists e músicas curtidas</string>
     <string name="sp_sign_in_cookies">Fazer login com cookies</string>
@@ -219,7 +219,7 @@
     <string name="about_developer">Desenvolvedor</string>
     <string name="about_debug">Depuração</string>
     <string name="about_release">Lançamento</string>
-    <string name="about_title">Sobre o Koda</string>
+    <string name="about_title">Sobre o Yinnlycs</string>
     <string name="about_build_details">Detalhes da build</string>
     <string name="about_package">Pacote</string>
     <string name="about_device">Dispositivo</string>
@@ -227,11 +227,11 @@
     <string name="about_project">Projeto</string>
     <string name="about_update_subtitle">Veja a build instalada, o lançamento mais recente e o APK compatível</string>
     <string name="about_source_code">Código-fonte</string>
-    <string name="about_source_subtitle">Leia, inspecione ou contribua com o Koda no GitHub</string>
+    <string name="about_source_subtitle">Leia, inspecione ou contribua com o Yinnlycs no GitHub</string>
     <string name="about_license">Licença</string>
     <string name="about_license_subtitle">GNU General Public License v3.0</string>
     <string name="about_report_issue_subtitle">Abra um novo problema (issue) no GitHub</string>
-    <string name="about_open_source_note">O Koda é de código aberto sob a licença GPL-3.0. A marca do aplicativo e os detalhes da compilação mencionados acima estão incluídos no próprio aplicativo; portanto, esta página está completa antes mesmo de qualquer conteúdo ser carregado.</string>
+    <string name="about_open_source_note">O Yinnlycs é de código aberto sob a licença GPL-3.0. A marca do aplicativo e os detalhes da compilação mencionados acima estão incluídos no próprio aplicativo; portanto, esta página está completa antes mesmo de qualquer conteúdo ser carregado.</string>
     <string name="cd_profile_picture">Foto de perfil</string>
     <string name="cd_developer_avatar">Avatar do desenvolvedor</string>
     <string name="sp_connected">Conectado</string>
@@ -253,7 +253,7 @@
     <string name="sb_hub_sub">Pule partes patrocinadas e fora do assunto dos vídeos</string>
     <string name="sb_enable">Ativar SponsorBlock</string>
     <string name="sb_enable_sub">Busque segmentos enviados pela comunidade para os vídeos que você assiste</string>
-    <string name="sb_privacy_note">O Koda nunca envia o ID do vídeo.Ele envia os quatro primeiros caracteres de um hash do vídeo e seleciona o seu vídeo a partir dos resultados localmente; assim, o sponsor.ajay.app não consegue saber o que você está assistindo.</string>
+    <string name="sb_privacy_note">O Yinnlycs nunca envia o ID do vídeo.Ele envia os quatro primeiros caracteres de um hash do vídeo e seleciona o seu vídeo a partir dos resultados localmente; assim, o sponsor.ajay.app não consegue saber o que você está assistindo.</string>
     <string name="sb_categories">Categorias</string>
     <string name="sb_categories_sub">Escolha o que acontece com cada tipo de segmento</string>
     <string name="sb_behaviour">Comportamento</string>
@@ -293,7 +293,7 @@
         <item quantity="one">%1$d categoria</item>
         <item quantity="other">%1$d categorias</item>
     </plurals>
-    <string name="sp_display_size_sub">Ajustar o tamanho de tudo no Koda</string>
+    <string name="sp_display_size_sub">Ajustar o tamanho de tudo no Yinnlycs</string>
     <string name="sp_display_size_preview">Prévia</string>
     <string name="sp_display_size_scale">Escala</string>
     <string name="sp_display_size_about">Sobre esta configuração</string>
@@ -318,7 +318,7 @@
     <string name="sp_save_listening_history">Salvar histórico de reprodução</string>
     <string name="sp_streaming_quality">Qualidade de streaming</string>
     <string name="sp_quality_per_network">Qualidade por rede</string>
-    <string name="sp_quality_network_hint">O Koda seleciona essas opções com base na conexão em uso</string>
+    <string name="sp_quality_network_hint">O Yinnlycs seleciona essas opções com base na conexão em uso</string>
     <string name="sp_music_quality">Qualidade da música</string>
     <string name="sp_video_quality">Qualidade do vídeo</string>
     <string name="sp_prefer_hdr">Preferir vídeo HDR</string>
@@ -348,8 +348,8 @@
     <string name="qd_music_mobile">Qualidade de música em dados móveis</string>
     <string name="qd_music_mobile_desc">As músicas são reproduzidas com esta qualidade em dados móveis.</string>
     <!-- Android Auto help -->
-    <string name="auto_help_subtitle">Por que o Koda pode não aparecer no seu carro</string>
-    <string name="auto_help_intro">O Android Auto oculta aplicativos de mídia que não foram instalados pela Play Store. O Koda é baixado do GitHub e, por isso, permanece invisível até que você autorize sua exibição — essa é uma regra do Android Auto, não um erro do Koda.</string>
+    <string name="auto_help_subtitle">Por que o Yinnlycs pode não aparecer no seu carro</string>
+    <string name="auto_help_intro">O Android Auto oculta aplicativos de mídia que não foram instalados pela Play Store. O Yinnlycs é baixado do GitHub e, por isso, permanece invisível até que você autorize sua exibição — essa é uma regra do Android Auto, não um erro do Yinnlycs.</string>
     <string name="auto_help_step1">Abra o aplicativo Android Auto no seu celular e toque repetidamente nas informações da versão até que a opção de modo de desenvolvedor seja oferecida</string>
     <string name="auto_help_step2">Abra as configurações de desenvolvedor no menu</string>
     <string name="auto_help_step3">Ative a opção \u0022Fontes desconhecidas\u0022</string>
@@ -385,8 +385,8 @@
     <string name="sp_fast_refresh_off">Detalhes completos de cada vídeo – lento para listas de inscrição extensas</string>
     <string name="sp_downloads">Downloads</string>
     <string name="sp_private_downloads">Downloads privados</string>
-    <string name="sp_private_downloads_on">Novos áudios e vídeos permanecem no Koda e são removidos ao desinstalar o app</string>
-    <string name="sp_private_downloads_off">Novos áudios e vídeos aparecem na pasta Downloads/Koda</string>
+    <string name="sp_private_downloads_on">Novos áudios e vídeos permanecem no Yinnlycs e são removidos ao desinstalar o app</string>
+    <string name="sp_private_downloads_off">Novos áudios e vídeos aparecem na pasta Downloads/Yinnlycs</string>
     <string name="sp_private_downloads_note">A capa do álbum permanece oculta da Galeria em ambos os modos. Os downloads existentes permanecem onde estão.</string>
     <string name="sp_cache">Cache</string>
     <string name="sp_cache_music">Cache de reprodução</string>
@@ -401,11 +401,11 @@
     <string name="sp_live_playback_updates">Atualizações de reprodução em tempo real</string>
     <string name="sp_live_playback_updates_sub">Mostrar o que está sendo reproduzido como um indicador na barra de status</string>
     <string name="sp_blocked_by_system">Bloqueado pelas configurações do sistema</string>
-    <string name="sp_blocked_by_system_sub">Permitir atualizações em tempo real para o Koda nas configurações do Android</string>
+    <string name="sp_blocked_by_system_sub">Permitir atualizações em tempo real para o Yinnlycs nas configurações do Android</string>
     <string name="sp_new_uploads">Novos uploads</string>
     <string name="sp_notify_new_uploads">Notificar sobre novos uploads</string>
     <string name="sp_notify_new_uploads_on">Verifica canais que você segue neste dispositivo</string>
-    <string name="sp_notify_new_uploads_off">Desativado: o Koda verifica apenas enquanto você o utiliza</string>
+    <string name="sp_notify_new_uploads_off">Desativado: o Yinnlycs verifica apenas enquanto você o utiliza</string>
     <string name="sp_channels">Canais</string>
     <string name="sp_choose_notifiers">Escolha quem pode notificá-lo</string>
     <string name="sp_muted">Silenciado</string>
@@ -416,7 +416,7 @@
     <string name="sp_xiaomi_notice">Dispositivo Xiaomi detectado. Recomenda-se fortemente ativar ambas as opções.</string>
     <string name="sp_wellbeing">Bem-estar</string>
     <string name="sp_daily_time_limit">Limite de tempo diário</string>
-    <string name="sp_daily_time_limit_sub">Bloquear o Koda após um tempo definido de reprodução por dia</string>
+    <string name="sp_daily_time_limit_sub">Bloquear o Yinnlycs após um tempo definido de reprodução por dia</string>
     <string name="sp_feedback">Feedback</string>
     <string name="sp_report_bug">Relatar um erro</string>
     <string name="sp_android_auto">Android Auto</string>
@@ -430,7 +430,7 @@
     <string name="ob_skip">Pular</string>
     <string name="ob_continue">Continuar</string>
     <string name="ob_start_listening">Começar a ouvir</string>
-    <string name="ob_welcome_title">Bem-vindo ao Koda</string>
+    <string name="ob_welcome_title">Bem-vindo ao Yinnlycs</string>
     <string name="ob_welcome_body">Músicas e vídeos, seus arquivos locais e um reprodutor que se adapta a você. Algumas escolhas rápidas e pronto.</string>
     <string name="ob_feat_stream_title">Transmita qualquer coisa</string>
     <string name="ob_feat_stream_sub">Músicas e vídeos com tecnologia do YouTube Music</string>
@@ -443,7 +443,7 @@
     <string name="ob_scan_device_audio">Escanear áudio do dispositivo</string>
     <string name="ob_scan_device_audio_sub">Mostrar músicas locais em todo o aplicativo</string>
     <string name="ob_music_access">Acesso a músicas</string>
-    <string name="ob_audio_access_allowed">O Koda pode ler sua biblioteca de áudio.</string>
+    <string name="ob_audio_access_allowed">O Yinnlycs pode ler sua biblioteca de áudio.</string>
     <string name="ob_audio_access_needed">Necessário para encontrar músicas neste dispositivo.</string>
     <string name="ob_allow">Permitir</string>
     <string name="ob_hint_only_audio">Apenas seus arquivos de áudio são lidos. Nada sai do dispositivo.</string>
@@ -463,7 +463,7 @@
     <string name="ob_shorts_sub">Mostrar uma seção de Shorts no Início e usar o player com deslize vertical</string>
     <string name="ob_shorts_warning">Feeds infinitos de vídeos curtos são projetados para manter você rolando a tela. Com os Shorts desativados, eles não aparecem no Início e abrem no player de vídeo padrão em outros locais.</string>
     <string name="ob_page_look_and_feel">Visual e estilo</string>
-    <string name="ob_look_and_feel_body">O Koda usa as cores dinâmicas do Material You. Escolha como o aplicativo deve se comportar neste dispositivo.</string>
+    <string name="ob_look_and_feel_body">O Yinnlycs usa as cores dinâmicas do Material You. Escolha como o aplicativo deve se comportar neste dispositivo.</string>
     <string name="theme_system">Sistema</string>
     <string name="theme_dark">Escuro</string>
     <string name="theme_light">Claro</string>
@@ -496,9 +496,9 @@
     <string name="ob_high_compat_scan">Verificação de alta compatibilidade</string>
     <string name="ob_high_compat_scan_sub">Apenas para dispositivos que ocultam músicas do índice do sistema, como algumas versões do HyperOS</string>
     <string name="ob_page_daily_limit">Limite de tempo diário</string>
-    <string name="ob_page_daily_limit_body">Totalmente opcional e desativado por padrão. Defina quanto tempo de Koda você terá por dia; quando o tempo acabar, o aplicativo será bloqueado até a meia-noite.</string>
+    <string name="ob_page_daily_limit_body">Totalmente opcional e desativado por padrão. Defina quanto tempo de Yinnlycs você terá por dia; quando o tempo acabar, o aplicativo será bloqueado até a meia-noite.</string>
     <string name="ob_limit_my_listening">Limitar meu tempo de audição</string>
-    <string name="ob_limit_my_listening_sub">Bloqueia o Koda quando o limite diário se esgota</string>
+    <string name="ob_limit_my_listening_sub">Bloqueia o Yinnlycs quando o limite diário se esgota</string>
     <string name="ob_every_day">Todos os dias:</string>
     <string name="ob_hint_weekday_hours">Horários diferentes para cada dia da semana podem ser definidos posteriormente em Configurações &gt; Avançado.</string>
     <string name="cd_granted">Concedido</string>
@@ -509,7 +509,7 @@
     <string name="vh_youre_offline">Você está offline</string>
     <string name="vh_removed_from_history">Removido do histórico de visualizações</string>
     <string name="vh_clear_history">Limpar histórico de visualizações</string>
-    <string name="vh_clear_history_body">Isso limpa o histórico de visualizações do Koda neste dispositivo. Não exclui nada da sua conta do YouTube.</string>
+    <string name="vh_clear_history_body">Isso limpa o histórico de visualizações do Yinnlycs neste dispositivo. Não exclui nada da sua conta do YouTube.</string>
     <string name="vh_clear_history_confirm">Limpar</string>
     <string name="vh_no_videos_found">Nenhum vídeo encontrado</string>
     <string name="vh_downloaded_hint">Vídeos baixados aparecerão aqui</string>
@@ -646,7 +646,7 @@
     <string name="vhs_pick_up">Continue de onde parou</string>
     <!-- Backup and restore -->
     <string name="bk_write_failed">Não foi possível gravar esse arquivo. Escolha outra pasta e tente novamente.</string>
-    <string name="bk_read_failed">Não foi possível ler esse arquivo como um backup do Koda.</string>
+    <string name="bk_read_failed">Não foi possível ler esse arquivo como um backup do Yinnlycs.</string>
     <string name="bk_this_install">Esta instalação</string>
     <string name="bk_create">Criar um backup</string>
     <string name="bk_create_sub">Salvar tudo em um único arquivo que você pode guardar onde quiser</string>
@@ -661,7 +661,7 @@
     <string name="bk_hold_6">Todas as configurações de ambos os modos, desde a paleta e o estilo do player até a qualidade por rede</string>
     <string name="bk_not_holds">O que não contém</string>
     <string name="bk_not_1">Seu login do Google. As contas são restauradas pelo nome e exigem novo login; portanto, é seguro manter o arquivo em armazenamento na nuvem ou enviá-lo por e-mail para si mesmo.</string>
-    <string name="bk_not_2">Áudios e vídeos baixados. Esses arquivos ficam na pasta Downloads/Koda e permanecem no dispositivo mesmo após a desinstalação; Incluí-los aqui faria o backup ocupar gigabytes.</string>
+    <string name="bk_not_2">Áudios e vídeos baixados. Esses arquivos ficam na pasta Downloads/Yinnlycs e permanecem no dispositivo mesmo após a desinstalação; Incluí-los aqui faria o backup ocupar gigabytes.</string>
     <string name="bk_not_3">Mídia de reprodução em cache, que é recriada conforme você ouve e assiste.</string>
     <string name="bk_writing">Gravando seu backup</string>
     <string name="bk_reading">Lendo o arquivo</string>
@@ -670,10 +670,10 @@
     <string name="bk_confirm_title">Restaurar este backup?</string>
     <string name="bk_empty_warn">Este backup está vazio. Restaurá-lo apagaria o conteúdo atual do dispositivo sem adicionar nada novo.</string>
     <string name="bk_replace_warn">Tudo o que está listado acima substituirá o conteúdo atual do dispositivo. Playlists, músicas curtidas, estatísticas, histórico e configurações presentes agora — mas não no backup — serão perdidos.</string>
-    <string name="bk_restarts">O Koda será reiniciado ao finalizar.</string>
+    <string name="bk_restarts">O Yinnlycs será reiniciado ao finalizar.</string>
     <string name="bk_replace_restore">Substituir e restaurar</string>
     <string name="bk_restored">Restaurado</string>
-    <string name="bk_restart_needed">O Koda precisa reiniciar para carregar tudo de volta.</string>
+    <string name="bk_restart_needed">O Yinnlycs precisa reiniciar para carregar tudo de volta.</string>
     <string name="bk_sign_in_again">Ao reiniciar, vá em Configurações &gt; Conta para fazer login novamente.</string>
     <string name="bk_restart_now">Reiniciar agora</string>
     <string name="bk_failed_title">Não funcionou</string>
@@ -695,10 +695,10 @@
     <string name="us_view_release">Ver versão no GitHub</string>
     <string name="us_all_variants">Todas as Variantes</string>
     <string name="us_all_good">Tudo certo!</string>
-    <string name="us_latest_body">Você está usando a versão mais recente do Koda.</string>
+    <string name="us_latest_body">Você está usando a versão mais recente do Yinnlycs.</string>
     <string name="us_couldnt_check">Não foi possível verificar atualizações</string>
     <string name="us_check_again">Verificar novamente</string>
-    <string name="us_installed_visible_while_checking">Sua versão instalada permanece disponível enquanto o Koda verifica o GitHub.</string>
+    <string name="us_installed_visible_while_checking">Sua versão instalada permanece disponível enquanto o Yinnlycs verifica o GitHub.</string>
     <string name="us_check_failed_body">O aplicativo instalado não foi afetado.Você pode tentar novamente quando estiver online.</string>
     <string name="us_installed_version">Instalado: %1$s</string>
     <string name="us_available_version">Disponível: %1$s</string>
@@ -717,7 +717,7 @@
     <string name="us_release_name">Versão</string>
     <string name="us_notes_on_github">As notas da versão estão disponíveis no GitHub.</string>
     <string name="us_recommended">Recomendado</string>
-    <string name="us_local_only_hero">O Koda não está se conectando ao GitHub.</string>
+    <string name="us_local_only_hero">O Yinnlycs não está se conectando ao GitHub.</string>
     <string name="us_local_only_body">A versão instalada está listada acima e não requer conexão. Desative a opção "Apenas local" nas Configurações para ver a versão mais recente.</string>
     <string name="us_handoff_started">Download iniciado</string>
     <string name="us_handoff_started_body">O %1$s está sendo baixado no seu navegador. O Android solicitará a instalação quando o download terminar.</string>
@@ -751,14 +751,14 @@
     <string name="al_todays_listening">Tempo de escuta de hoje</string>
     <string name="al_youve_had">Você usou</string>
     <string name="al_resets_midnight">Reinicia toda noite à meia-noite</string>
-    <string name="tl_locked_until_midnight">O Koda está bloqueado até a meia-noite</string>
-    <string name="tl_locks_when_budget">O Koda bloqueia quando o limite diário se esgota</string>
-    <string name="tl_off_subtitle">Desativado - O Koda permanece sempre desbloqueado</string>
+    <string name="tl_locked_until_midnight">O Yinnlycs está bloqueado até a meia-noite</string>
+    <string name="tl_locks_when_budget">O Yinnlycs bloqueia quando o limite diário se esgota</string>
+    <string name="tl_off_subtitle">Desativado - O Yinnlycs permanece sempre desbloqueado</string>
     <string name="tl_enable">Ativar limite de tempo diário</string>
-    <string name="tl_enable_sub">Bloqueia o Koda totalmente após o uso do limite diário</string>
+    <string name="tl_enable_sub">Bloqueia o Yinnlycs totalmente após o uso do limite diário</string>
     <string name="tl_quick_set">Configuração rápida - mesmo limite todos os dias</string>
     <string name="tl_per_day">Limites diários</string>
-    <string name="tl_counts_note">Conta apenas o tempo em que o Koda está aberto na tela e reinicia à meia-noite. Definir um dia como "Ilimitado" significa que ele não será monitorado.</string>
+    <string name="tl_counts_note">Conta apenas o tempo em que o Yinnlycs está aberto na tela e reinicia à meia-noite. Definir um dia como "Ilimitado" significa que ele não será monitorado.</string>
     <string name="tl_tracking_off">Monitoramento desativado</string>
     <string name="tl_unlimited_today">Ilimitado hoje - sem limite definido</string>
     <string name="tl_turn_on_to_track">Ative o limite abaixo para começar a monitorar</string>
@@ -850,7 +850,7 @@
     <string name="dv_many_videos">%1$d vídeos</string>
     <string name="dv_no_videos">Nenhum vídeo encontrado neste dispositivo</string>
     <string name="dv_folder_empty">Não há mais nada aqui</string>
-    <string name="dv_access_body">Reproduza vídeos armazenados no seu telefone. O Koda precisa de acesso aos seus arquivos de vídeo.</string>
+    <string name="dv_access_body">Reproduza vídeos armazenados no seu telefone. O Yinnlycs precisa de acesso aos seus arquivos de vídeo.</string>
     <string name="dv_allow_access">Permitir acesso</string>
     <string name="dv_partial_access">Mostrando apenas os vídeos que você selecionou.</string>
     <string name="dv_select_more">Selecionar mais</string>
@@ -904,7 +904,7 @@
     <string name="sm_empty_body">Importe uma lista de outro aplicativo, copie sua conta do YouTube ou simplesmente toque em "Inscrever-se" em qualquer canal.</string>
     <string name="sm_import_failed">Falha na importação</string>
     <string name="sm_import_finished">Importação concluída</string>
-    <string name="sm_foreign_skipped">Canais do BiliBili, NicoNico e similares foram ignorados — o Koda reproduz apenas conteúdo do YouTube.</string>
+    <string name="sm_foreign_skipped">Canais do BiliBili, NicoNico e similares foram ignorados — o Yinnlycs reproduz apenas conteúdo do YouTube.</string>
     <!-- Player styles / home styles -->
     <string name="ps_style_classic">Clássico</string>
     <string name="ps_style_gesture">Gestos</string>
@@ -940,7 +940,7 @@
     <string name="hvm_subs_feed_rate_limited_soon">O YouTube está limitando as solicitações desta rede. Tente novamente em instantes.</string>
     <string name="hvm_channel_feed_error">Não foi possível carregar os envios de %1$s. Puxe para tentar novamente.</string>
     <string name="hvm_import_empty">O arquivo estava vazio ou não pôde ser aberto.</string>
-    <string name="hvm_import_foreign">O arquivo continha apenas canais de serviços que o Koda não consegue reproduzir.</string>
+    <string name="hvm_import_foreign">O arquivo continha apenas canais de serviços que o Yinnlycs não consegue reproduzir.</string>
     <string name="hvm_import_no_channels">Não foi possível encontrar canais no arquivo.</string>
     <string name="hvm_import_read">Não foi possível ler o arquivo.</string>
     <string name="hvm_copy_empty">Sua conta não tem assinaturas para copiar.</string>
@@ -1003,12 +1003,12 @@
     <string name="lib_saved_to_library">Salvo na sua biblioteca</string>
     <string name="lib_copy_editable">Salvar como cópia editável</string>
     <string name="lib_copy_editable_done">Copiado para sua biblioteca. Edite lá.</string>
-    <string name="lib_hide_playlist">Ocultar do Koda</string>
+    <string name="lib_hide_playlist">Ocultar do Yinnlycs</string>
     <string name="lib_hidden_playlists">Playlists ocultas</string>
     <string name="lib_hidden_count">%1$d ocultas</string>
     <string name="lib_unhide">Mostrar novamente</string>
-    <string name="lib_hidden_explainer">Elas permanecem na sua conta. O Koda apenas para de listá-las.</string>
-    <string name="lib_playlist_hidden">Oculta do Koda</string>
+    <string name="lib_hidden_explainer">Elas permanecem na sua conta. O Yinnlycs apenas para de listá-las.</string>
+    <string name="lib_playlist_hidden">Oculta do Yinnlycs</string>
     <string name="lib_removed_from_library">Removido da sua biblioteca</string>
     <string name="lib_load_failed_title">Não foi possível carregar as faixas</string>
     <string name="lib_load_failed_body">Esta playlist retornou vazia. Verifique sua conexão e tente novamente.</string>
@@ -1138,7 +1138,7 @@
     <string name="app_icon_apply_failed">O Android recusou a alteração do ícone. Nada foi alterado.</string>
     <string name="app_icon_blossom">Flor pastel</string>
     <string name="app_icon_blossom_desc">Lavanda suave com detalhe perolado e brilho azul-celeste</string>
-    <string name="app_icon_classic">Koda clássico</string>
+    <string name="app_icon_classic">Yinnlycs clássico</string>
     <string name="app_icon_classic_desc">Roxo profundo com detalhe creme e brilho verde-limão</string>
     <string name="app_icon_closest_preset">Corresponde à predefinição "%1$s"</string>
     <string name="app_icon_color_bg">Fundo</string>
@@ -1153,7 +1153,7 @@
     <string name="app_icon_delete_style_body">"%1$s" será removido deste dispositivo.</string>
     <string name="app_icon_emerald">Groove esmeralda</string>
     <string name="app_icon_emerald_desc">Verde botânico com detalhe menta e brilho amarelo-sol</string>
-    <string name="app_icon_launcher_note">As cores personalizadas permanecem no Koda. Seu launcher mostra a predefinição mais próxima, %1$s.</string>
+    <string name="app_icon_launcher_note">As cores personalizadas permanecem no Yinnlycs. Seu launcher mostra a predefinição mais próxima, %1$s.</string>
     <string name="app_icon_midnight">Cibernético da meia-noite</string>
     <string name="app_icon_midnight_desc">Obsidiana discreta com detalhe ciano luminoso e brilho rosa-choque</string>
     <string name="app_icon_monochrome">Monocromático</string>
@@ -1255,11 +1255,11 @@
     <!-- Setting explanations -->
     <string name="si_ambient">Tinge o fundo do app com cores suaves extraídas da capa do álbum que está tocando.</string>
     <string name="si_amoled">Usa preto puro em vez de cinza escuro no tema escuro. Em telas OLED, os pixels pretos se desligam, aumentando o contraste e economizando bateria.</string>
-    <string name="si_app_icon">Escolha outra aparência para o ícone do Koda na tela inicial usando predefinições de formas e cores.</string>
+    <string name="si_app_icon">Escolha outra aparência para o ícone do Yinnlycs na tela inicial usando predefinições de formas e cores.</string>
     <string name="si_artwork_colors">Tinge os controles e o fundo do player com cores da capa atual em vez das cores do tema.</string>
-    <string name="si_auto_queue">Quando a fila acaba, o Koda continua com músicas semelhantes em vez de parar.</string>
-    <string name="si_battery">Economizadores agressivos de bateria encerram a reprodução em segundo plano. Isto pede ao Android para manter o Koda em execução durante a reprodução.</string>
-    <string name="si_brightness">O Koda lembra o brilho escolhido no vídeo em tela cheia e o reaplica na próxima vez.</string>
+    <string name="si_auto_queue">Quando a fila acaba, o Yinnlycs continua com músicas semelhantes em vez de parar.</string>
+    <string name="si_battery">Economizadores agressivos de bateria encerram a reprodução em segundo plano. Isto pede ao Android para manter o Yinnlycs em execução durante a reprodução.</string>
+    <string name="si_brightness">O Yinnlycs lembra o brilho escolhido no vídeo em tela cheia e o reaplica na próxima vez.</string>
     <string name="si_cache_music">Mantém músicas transmitidas recentemente no disco para reproduções instantâneas e sem gastar dados. As entradas mais antigas são removidas ao atingir o limite.</string>
     <string name="si_cache_shorts">Armazena os Shorts assistidos para que voltar deslizando os reproduza instantaneamente.</string>
     <string name="si_cache_videos">Mantém temporariamente vídeos transmitidos para buscas suaves e reproduções instantâneas. É limpo alguns minutos após você parar de assistir.</string>
@@ -1269,12 +1269,12 @@
     <string name="si_display_size">Aumenta ou reduz toda a interface sem alterar o tamanho da fonte do sistema. Você pode visualizar a mudança antes de aplicá-la.</string>
     <string name="si_fast_refresh">O modo rápido lê o feed RSS leve de cada canal, usando cerca de vinte vezes menos dados, mas não mostra durações de vídeo ou indicadores de transmissão ao vivo.</string>
     <string name="si_got_it">Entendi</string>
-    <string name="si_haptics">Define a intensidade da vibração do Koda ao tocar, arrastar, alternar e pular. Intenso usa todos os eventos; Sutil mantém apenas os momentos importantes.</string>
-    <string name="si_hdr">Quando há uma versão HDR e sua tela é compatível, o Koda reproduz a versão HDR. Cores mais ricas, mas maior consumo de dados e bateria.</string>
+    <string name="si_haptics">Define a intensidade da vibração do Yinnlycs ao tocar, arrastar, alternar e pular. Intenso usa todos os eventos; Sutil mantém apenas os momentos importantes.</string>
+    <string name="si_hdr">Quando há uma versão HDR e sua tela é compatível, o Yinnlycs reproduz a versão HDR. Cores mais ricas, mas maior consumo de dados e bateria.</string>
     <string name="si_home_mode_toggle">Mostra um seletor de música/vídeo no cabeçalho da tela inicial para trocar de modo sem abrir as configurações.</string>
-    <string name="si_hub_account">Conecte uma conta do YouTube Music para trazer playlists, curtidas, histórico e inscrições. O Koda funciona sem login; entrar libera os feeds personalizados.</string>
+    <string name="si_hub_account">Conecte uma conta do YouTube Music para trazer playlists, curtidas, histórico e inscrições. O Yinnlycs funciona sem login; entrar libera os feeds personalizados.</string>
     <string name="si_hub_advanced">Correções para economizadores agressivos de bateria, ajuda do Android Auto, limite diário e relatório de erros.</string>
-    <string name="si_hub_appearance">Tudo sobre a aparência do Koda: tema, cores, ícone, tamanho da tela, layout da tela inicial, navegação e feedback tátil.</string>
+    <string name="si_hub_appearance">Tudo sobre a aparência do Yinnlycs: tema, cores, ícone, tamanho da tela, layout da tela inicial, navegação e feedback tátil.</string>
     <string name="si_hub_backup">Salve configurações, playlists, histórico e estatísticas em um arquivo que pode ser restaurado em qualquer dispositivo.</string>
     <string name="si_hub_content">Alterne entre música e vídeo, fique totalmente offline e ajuste Shorts, feeds e recomendações.</string>
     <string name="si_hub_local_library">Mostra os arquivos de música deste dispositivo junto com o YouTube Music na biblioteca.</string>
@@ -1282,7 +1282,7 @@
     <string name="si_hub_playback">Transições, nivelamento de volume, comportamento da fila e qualidade de streaming escolhida por rede.</string>
     <string name="si_hub_player">Escolha entre oito designs de reprodução e controle como o player usa as cores da capa.</string>
     <string name="si_hub_sponsorblock">Pula automaticamente patrocínios e outros segmentos usando marcações enviadas pela comunidade. Desativado por padrão.</string>
-    <string name="si_hub_storage">Onde os downloads ficam, o que é armazenado para reproduções instantâneas e quanto espaço o Koda pode usar.</string>
+    <string name="si_hub_storage">Onde os downloads ficam, o que é armazenado para reproduções instantâneas e quanto espaço o Yinnlycs pode usar.</string>
     <string name="si_hub_subscriptions">Gerencie canais seguidos, escolha se ficam neste dispositivo ou na conta e defina como o feed é atualizado.</string>
     <string name="si_live_download">Mostra o progresso do download como um chip de atualização ao vivo na barra de status durante a transferência.</string>
     <string name="si_live_playback">Mostra a música em reprodução como um chip de atualização ao vivo na barra de status.</string>
@@ -1292,22 +1292,22 @@
     <string name="si_music_history">Mantém neste dispositivo um registro das músicas reproduzidas. Ele alimenta suas estatísticas e reproduções recentes, separado do histórico da conta do YouTube.</string>
     <string name="si_nav_bar">A barra flutuante se oculta ao rolar para baixo e retorna ao rolar para cima. A barra padrão é fixa e usa a barra de navegação Material 3 com rótulos.</string>
     <string name="si_normalize">Equilibra o volume entre músicas para que faixas acústicas e masterizadas altas toquem em níveis semelhantes.</string>
-    <string name="si_not_interested">Tudo que você pediu ao Koda para não recomendar: vídeos ocultos e canais bloqueados. Você pode reexibir qualquer item aqui.</string>
+    <string name="si_not_interested">Tudo que você pediu ao Yinnlycs para não recomendar: vídeos ocultos e canais bloqueados. Você pode reexibir qualquer item aqui.</string>
     <string name="si_playlist_swipe">Ações rápidas ao deslizar uma música na playlist. Fila adiciona à fila atual; Remover só aparece quando a playlist pode ser editada.</string>
     <string name="si_preload">Busca o início das próximas músicas e Shorts antes de você chegar neles, para que os saltos comecem instantaneamente. Usa dados em redes tarifadas.</string>
-    <string name="si_private_downloads">Armazena downloads na pasta privada do Koda, invisível para outros apps e para a galeria, em vez da pasta compartilhada Downloads/Koda.</string>
+    <string name="si_private_downloads">Armazena downloads na pasta privada do Yinnlycs, invisível para outros apps e para a galeria, em vez da pasta compartilhada Downloads/Yinnlycs.</string>
     <string name="si_recent_searches">Mostra pesquisas anteriores ao tocar no campo de busca. Desativar oculta as pesquisas sem apagá-las.</string>
     <string name="si_related_videos">Controla as sugestões abaixo do vídeo em reprodução. Desativar remove a distração; playlists e filas continuam funcionando.</string>
     <string name="si_shorts">Mostra ou oculta Shorts no app. Shorts ocultos deixam de ser buscados, não ficam apenas escondidos.</string>
     <string name="si_spotlight">Dois designs de tela inicial com o mesmo conteúdo. Clássico usa destaque grande e carrosséis; Spotlight usa uma grade mais densa.</string>
     <string name="si_subs_source">Quais inscrições o feed mostra: as salvas no dispositivo, as da conta do YouTube ou ambas combinadas.</string>
     <string name="si_subs_target">Onde o botão Inscrever-se salva um novo canal: somente neste dispositivo ou na conta do YouTube.</string>
-    <string name="si_time_limit">Define um limite diário de uso do Koda. Quando acabar, o app será bloqueado até o dia seguinte.</string>
+    <string name="si_time_limit">Define um limite diário de uso do Yinnlycs. Quando acabar, o app será bloqueado até o dia seguinte.</string>
     <string name="si_timed_comments">Mostra comentários fixados no momento a que se referem, flutuando sobre a barra de busca durante o vídeo.</string>
-    <string name="si_upload_notifications">O Koda verifica periodicamente canais seguidos em segundo plano e avisa sobre novos uploads. Usa pouca bateria e dados.</string>
-    <string name="si_visualizer">Mostra uma faixa animada sob o progresso em todos os players expandidos. Usa o áudio que o Koda já reproduz, sem permissão de microfone ou gravação.</string>
-    <string name="si_watch_history_account">Quando ativado, vídeos assistidos no Koda são adicionados ao histórico da conta do YouTube, como em youtube.com.</string>
-    <string name="si_waveform">O Koda lê o áudio da música e desenha a faixa inteira, mostrando introdução e refrão antes de você chegar neles. Nenhuma permissão é necessária.</string>
+    <string name="si_upload_notifications">O Yinnlycs verifica periodicamente canais seguidos em segundo plano e avisa sobre novos uploads. Usa pouca bateria e dados.</string>
+    <string name="si_visualizer">Mostra uma faixa animada sob o progresso em todos os players expandidos. Usa o áudio que o Yinnlycs já reproduz, sem permissão de microfone ou gravação.</string>
+    <string name="si_watch_history_account">Quando ativado, vídeos assistidos no Yinnlycs são adicionados ao histórico da conta do YouTube, como em youtube.com.</string>
+    <string name="si_waveform">O Yinnlycs lê o áudio da música e desenha a faixa inteira, mostrando introdução e refrão antes de você chegar neles. Nenhuma permissão é necessária.</string>
     <!-- Playback settings -->
     <string name="song_options_speed">Velocidade de reprodução</string>
     <string name="song_options_speed_normal">Velocidade normal</string>
@@ -1316,7 +1316,7 @@
     <string name="sp_app_icon_subtitle">Personalizar estilo e cores do ícone do launcher</string>
     <string name="sp_cache_shorts">Armazenar Shorts em cache</string>
     <string name="sp_cache_shorts_sub">Manter dados temporários dos Shorts para voltar e reproduzir</string>
-    <string name="sp_cache_size_large_warning">O Koda só preenche o cache enquanto você ouve, mas ele pode crescer até %1$s do armazenamento antes de remover músicas antigas.</string>
+    <string name="sp_cache_size_large_warning">O Yinnlycs só preenche o cache enquanto você ouve, mas ele pode crescer até %1$s do armazenamento antes de remover músicas antigas.</string>
     <string name="sp_cache_size_low_space">Há apenas %1$s livres neste dispositivo. O cache para de crescer quando o espaço acaba, compartilhando-o com outros apps.</string>
     <string name="sp_cache_videos">Armazenar vídeos em cache</string>
     <string name="sp_cache_videos_sub">Manter dados temporários de vídeo para buscar e reproduzir novamente</string>

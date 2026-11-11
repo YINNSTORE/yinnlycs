@@ -141,6 +141,14 @@ fun SpotlightHomeContent(
     val discoveryCollections by viewModel.discoveryCollections.collectAsState()
     val isDiscoveryLoading by viewModel.isDiscoveryLoading.collectAsState()
     val musicBrowse by viewModel.musicBrowse.collectAsState()
+    LaunchedEffect(Unit) { viewModel.loadMusicBrowse(BROWSE_EXPLORE) }
+    val homeMoods = remember(musicBrowse) {
+        musicBrowse[BROWSE_EXPLORE]?.shelves.orEmpty()
+            .flatMap { it.items }
+            .filterIsInstance<com.ivor.ivormusic.data.MusicShelfItem.Mood>()
+            .distinctBy { it.key }
+            .take(5)
+    }
 
     // Fetched when its tab is opened rather than with the rest of Home: it is
     // several searches plus a radio call, and most sessions never look at it.
@@ -209,6 +217,29 @@ fun SpotlightHomeContent(
                 )
             }
 
+            item(key = "greeting") {
+                val hour = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+                val greeting = when (hour) {
+                    in 5..10 -> R.string.home_greeting_morning
+                    in 11..15 -> R.string.home_greeting_afternoon
+                    else -> R.string.home_greeting_evening
+                }
+                Column(
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp)
+                ) {
+                    Text(
+                        text = stringResource(greeting),
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = stringResource(R.string.home_greeting_subtitle),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
             item(key = "chips") {
                 SpotlightFilterChips(selected = filter, onSelect = onFilterChange)
             }
@@ -227,6 +258,42 @@ fun SpotlightHomeContent(
                             }
                         },
                     )
+                }
+            }
+
+            if (filter == SpotlightFilter.All && homeMoods.isNotEmpty()) {
+                item(key = "home-moods") {
+                    Column(modifier = Modifier.fillMaxWidth().padding(top = 12.dp)) {
+                        Text(
+                            text = stringResource(R.string.spotlight_moods_title),
+                            style = MaterialTheme.typography.titleLarge,
+                            modifier = Modifier.padding(horizontal = 20.dp, vertical = 8.dp)
+                        )
+                        Row(
+                            modifier = Modifier.fillMaxWidth()
+                                .horizontalScroll(rememberScrollState())
+                                .padding(horizontal = 20.dp),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            homeMoods.forEach { mood ->
+                                Surface(
+                                    shape = RoundedCornerShape(50),
+                                    color = MaterialTheme.colorScheme.surfaceContainerHigh,
+                                    contentColor = MaterialTheme.colorScheme.onSurface,
+                                    modifier = Modifier.clickable {
+                                        viewModel.openMood(mood)
+                                        onFilterChange(SpotlightFilter.Explore)
+                                    }
+                                ) {
+                                    Text(
+                                        text = mood.title,
+                                        style = MaterialTheme.typography.labelLarge,
+                                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -315,7 +382,7 @@ fun SpotlightHomeContent(
                 if (discoveryCollections.playlists.isNotEmpty()) {
                     item(key = "discovery-playlists-header") {
                         SpotlightSectionHeader(
-                            title = stringResource(R.string.spotlight_playlists_to_try),
+                            title = stringResource(R.string.home_community_title),
                             subtitle = stringResource(R.string.spotlight_playlists_to_try_sub),
                         )
                     }

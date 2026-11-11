@@ -83,6 +83,7 @@ import androidx.compose.material.icons.rounded.DirectionsCar
 import androidx.compose.material.icons.rounded.Download
 import androidx.compose.material.icons.rounded.SystemUpdate
 import androidx.compose.material.icons.rounded.Folder
+import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FolderOff
 import androidx.compose.material.icons.rounded.GraphicEq
 import androidx.compose.material.icons.rounded.GridView
@@ -265,6 +266,10 @@ internal enum class SettingsPage {
     HUB,
     ACCOUNT,
     APPEARANCE,
+    INTERFACE_STYLE,
+    LANGUAGE,
+    PERFORMANCE,
+    EQUALIZER,
     PLAYER,
     PLAYBACK,
     CONTENT,
@@ -296,7 +301,8 @@ internal enum class SettingsPage {
      */
     val parent: SettingsPage
         get() = when (this) {
-            APPEARANCE, APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
+            APPEARANCE, INTERFACE_STYLE, LANGUAGE, PERFORMANCE, EQUALIZER,
+            APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
             HOME_NAVIGATION, GESTURES, VIDEO_PLAYER, VIDEO_FEED, VIDEO_SHADERS, STANDBY -> CUSTOMIZATION
             VIDEO_HOME -> CONTENT
             else -> HUB
@@ -835,6 +841,22 @@ fun SettingsScreen(
             onNavigateToColorPalette = onNavigateToColorPalette,
             amoledTheme = amoledTheme,
             onAmoledThemeToggle = onAmoledThemeToggle,
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.INTERFACE_STYLE -> InterfaceStyleSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.LANGUAGE -> LanguageSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.PERFORMANCE -> PerformanceSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.EQUALIZER -> EqualizerSettingsPage(
             onBack = { page = SettingsPage.CUSTOMIZATION }
         )
 
@@ -2469,13 +2491,9 @@ private fun ExpressiveAboutDialog(
     onNavigateToLicenses: () -> Unit
 ) {
     val context = LocalContext.current
+    var showDonateDialog by remember { mutableStateOf(false) }
     val githubUrl = "https://github.com/${BuildConfig.GITHUB_REPO}"
     val developerUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}"
-    val developerAvatarUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}.png"
-    // Local Only means the app does not reach the network, and a profile photo
-    // is not the exception that proves the rule. The placeholder below is the
-    // whole card in that state.
-    val localOnly = remember { ThemePreferences.isLocalOnly(context) }
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -2527,41 +2545,24 @@ private fun ExpressiveAboutDialog(
                             ) {
                                 // A saved style has no drawable behind it -
                                 // it is colours, not a resource - so the one
-                                // place Koda draws its own mark at size gets
+                                // place Yinnlycs draws its own mark at size gets
                                 // the live renderer when one is active, and
                                 // the preset's artwork otherwise. Without this
                                 // a style someone saved would change nothing
                                 // they could ever see.
-                                val themePrefs = remember { ThemePreferences(context) }
-                                val styleStore = remember {
-                                    com.ivor.ivormusic.data.AppIconStyleStore(context)
-                                }
-                                val currentAppIconId by themePrefs.appIcon.collectAsState()
-                                val activeStyleId by styleStore.activeStyleId.collectAsState()
-                                val savedStyles by styleStore.styles.collectAsState()
-                                val currentAppIcon = remember(currentAppIconId) {
-                                    AppIcon.fromId(currentAppIconId)
-                                }
-                                val activeStyle = remember(activeStyleId, savedStyles) {
-                                    savedStyles.firstOrNull { it.id == activeStyleId }
-                                }
-                                if (activeStyle != null) {
-                                    KodaAppIcon(
-                                        style = activeStyle.toIconStyle(),
-                                        shape = androidx.compose.foundation.shape
-                                            .RoundedCornerShape(20.dp),
-                                        animateColors = false,
-                                        modifier = Modifier.fillMaxSize(),
-                                    )
-                                } else {
-                                    androidx.compose.foundation.Image(
-                                        painter = painterResource(
-                                            currentAppIcon.previewForegroundRes
-                                        ),
-                                        contentDescription = stringResource(R.string.app_name),
-                                        modifier = Modifier.fillMaxSize(),
-                                    )
-                                }
+                                // Compose painterResource supports bitmap and vector
+                                // drawables, not Android LayerDrawable resources such as
+                                // ic_launcher_foreground.xml. Loading that adaptive-icon
+                                // XML here crashed the entire About dialog on tap. Use the
+                                // supplied WebP asset directly; it is safe on every API.
+                                androidx.compose.foundation.Image(
+                                    painter = painterResource(R.drawable.yinnlycs_logo_v7),
+                                    contentDescription = stringResource(R.string.app_name),
+                                    contentScale = ContentScale.Fit,
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .padding(8.dp),
+                                )
                             }
                             Spacer(modifier = Modifier.height(14.dp))
                             Text(
@@ -2635,13 +2636,6 @@ private fun ExpressiveAboutDialog(
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.spacedBy(16.dp),
                                 ) {
-                                    // The placeholder is drawn first and never
-                                    // waits on anything, so the card is
-                                    // complete the frame it appears. The avatar
-                                    // crossfades over it out of Coil's shared
-                                    // disk cache, which makes every visit after
-                                    // the first a local read rather than a
-                                    // round trip to GitHub.
                                     Box(
                                         modifier = Modifier
                                             .size(58.dp)
@@ -2649,31 +2643,12 @@ private fun ExpressiveAboutDialog(
                                             .background(MaterialTheme.colorScheme.secondary),
                                         contentAlignment = Alignment.Center,
                                     ) {
-                                        Icon(
-                                            Icons.Rounded.Person,
-                                            contentDescription = null,
-                                            tint = MaterialTheme.colorScheme.onSecondary,
+                                        androidx.compose.foundation.Image(
+                                            painter = painterResource(R.drawable.yinnlycs_developer_v7),
+                                            contentDescription = stringResource(R.string.about_developer),
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier.fillMaxSize(),
                                         )
-                                        if (!localOnly) {
-                                            AsyncImage(
-                                                model = ImageRequest.Builder(context)
-                                                    .data(developerAvatarUrl)
-                                                    .memoryCachePolicy(CachePolicy.ENABLED)
-                                                    .diskCachePolicy(CachePolicy.ENABLED)
-                                                    // GitHub serves this path
-                                                    // with redirects and rotating
-                                                    // query strings; keying on the
-                                                    // stable URL keeps one entry
-                                                    // rather than one per redirect.
-                                                    .memoryCacheKey(developerAvatarUrl)
-                                                    .diskCacheKey(developerAvatarUrl)
-                                                    .crossfade(true)
-                                                    .build(),
-                                                contentDescription = null,
-                                                contentScale = ContentScale.Crop,
-                                                modifier = Modifier.fillMaxSize(),
-                                            )
-                                        }
                                     }
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(
@@ -2696,6 +2671,14 @@ private fun ExpressiveAboutDialog(
                     item {
                         SettingsSection(title = stringResource(R.string.about_project)) {
                             SettingsCard {
+                                SettingsRow(
+                                    icon = Icons.Rounded.Favorite,
+                                    title = stringResource(R.string.about_donate),
+                                    subtitle = stringResource(R.string.about_donate_subtitle),
+                                    onClick = { showDonateDialog = true },
+                                    showChevron = true,
+                                )
+                                SettingsDivider()
                                 SettingsRow(
                                     icon = Icons.Rounded.SystemUpdate,
                                     title = stringResource(R.string.action_check_updates),
@@ -2768,6 +2751,31 @@ private fun ExpressiveAboutDialog(
                 }
             }
         }
+    }
+
+    if (showDonateDialog) {
+        AlertDialog(
+            onDismissRequest = { showDonateDialog = false },
+            title = { Text(stringResource(R.string.about_donate_title)) },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Text(stringResource(R.string.about_donate_message))
+                    androidx.compose.foundation.Image(
+                        painter = painterResource(R.drawable.yinnlycs_donate_qris_v7),
+                        contentDescription = stringResource(R.string.about_donate_title),
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 420.dp),
+                    )
+                }
+            },
+            confirmButton = {
+                Button(onClick = { showDonateDialog = false }) {
+                    Text(stringResource(R.string.about_donate_close))
+                }
+            },
+        )
     }
 }
 

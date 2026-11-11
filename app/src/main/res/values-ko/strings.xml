@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Koda</string>
+    <string name="app_name">Yinnlycs</string>
     <string name="now_playing_channel_name">재생 중</string>
     <string name="video_playback_channel_name">동영상 재생</string>
 
@@ -38,7 +38,7 @@
     <string name="local_only_video_library_subtitle">동영상 보관함에는 인터넷이 필요해요. 설정에서 오프라인 전용 모드를 꺼 주세요.</string>
     <string name="local_only_update_subtitle">업데이트 확인에는 인터넷이 필요해요. 설정에서 오프라인 전용 모드를 꺼 주세요.</string>
 
-    <string name="crash_dialog_title">지난번에 Koda가 비정상 종료되었어요</string>
+    <string name="crash_dialog_title">지난번에 Yinnlycs가 비정상 종료되었어요</string>
     <string name="crash_dialog_message">이전 세션에서 문제가 발생했어요. 자세한 내용과 함께 버그 신고를 보낼 수 있어요 - 공유를 선택하지 않으면 기기 밖으로 아무 것도 나가지 않아요.</string>
     <string name="crash_dialog_view_report">확인 및 신고</string>
     <string name="crash_dialog_not_now">나중에</string>
@@ -312,7 +312,7 @@
     <string name="vh_youre_offline">오프라인 상태예요</string>
     <string name="vh_removed_from_history">시청 기록에서 삭제했어요</string>
     <string name="vh_clear_history">시청 기록 지우기</string>
-    <string name="vh_clear_history_body">이 기기의 Koda 시청 기록을 비워요. YouTube 계정의 내용은 삭제되지 않아요.</string>
+    <string name="vh_clear_history_body">이 기기의 Yinnlycs 시청 기록을 비워요. YouTube 계정의 내용은 삭제되지 않아요.</string>
     <string name="vh_clear_history_confirm">지우기</string>
     <string name="vh_no_videos_found">동영상을 찾지 못했어요</string>
     <string name="vh_downloaded_hint">다운로드한 동영상이 여기에 표시돼요</string>
