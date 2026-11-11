@@ -123,7 +123,7 @@ jobs:
   build-debug:
     name: Build Debug APK
     needs: authorize
-    if: needs.authorize.outputs.allowed == 'true' && github.event_name == 'pull_request'
+    if: needs.authorize.outputs.allowed == 'true' && (github.event_name == 'pull_request' || github.ref == 'refs/heads/fix/yinnlycs-v8-1-indonesian-polish')
     runs-on: ubuntu-latest
     permissions:
       contents: read
