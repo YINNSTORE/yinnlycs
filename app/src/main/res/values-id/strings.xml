@@ -2337,4 +2337,15 @@
     <string name="stats_song_count">%1$d lagu</string>
     <string name="stats_play_count">%1$d kali diputar</string>
     <string name="report_log_lines">%1$d baris log tercatat pada sesi ini</string>
+    <string name="ni_blocked_channels_count">%1$d kanal tidak akan muncul di berandamu</string>
+    <string name="ni_hidden_videos_count">%1$d disembunyikan</string>
+    <string name="ni_recommend_channel_again">Rekomendasikan %1$s lagi</string>
+    <string name="ni_unhide_video">Tampilkan %1$s kembali</string>
+    <string name="sm_channel_count">%1$d kanal</string>
+    <string name="sm_delete_group_accessibility">Hapus %1$s</string>
+    <string name="sm_no_channel_matches">Tidak ada kanal yang cocok dengan “%1$s”</string>
+    <string name="sm_delete_group_title">Hapus %1$s?</string>
+    <string name="sm_groups_for_channel">Grup untuk %1$s</string>
+    <string name="sm_unfollow_channel">Berhenti mengikuti %1$s</string>
+    <string name="sm_rename_group">Ubah nama grup</string>
 </resources>
