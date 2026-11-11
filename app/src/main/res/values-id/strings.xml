@@ -2330,4 +2330,11 @@
     <string name="comment_pinned">Komentar disematkan</string>
     <string name="comment_hearted_by_creator">Diberi tanda hati oleh kreator</string>
     <string name="comment_delete_accessibility">Hapus komentar</string>
+    <string name="stats_songs_played">Lagu diputar</string>
+    <string name="stats_artists_explored">Artis yang dijelajahi</string>
+    <string name="stats_liked_songs">Lagu disukai</string>
+    <string name="stats_top_artist">Artis teratas</string>
+    <string name="stats_song_count">%1$d lagu</string>
+    <string name="stats_play_count">%1$d kali diputar</string>
+    <string name="report_log_lines">%1$d baris log tercatat pada sesi ini</string>
 </resources>
