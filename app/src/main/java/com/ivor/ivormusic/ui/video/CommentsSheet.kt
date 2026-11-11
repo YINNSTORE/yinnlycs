@@ -476,7 +476,7 @@ private fun CommentComposer(
                     IconButton(onClick = onCancelReply) {
                         Icon(
                             Icons.Rounded.Close,
-                            contentDescription = "Cancel reply",
+                            contentDescription = stringResource(R.string.comment_cancel_reply),
                             modifier = Modifier.size(18.dp),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -520,7 +520,7 @@ private fun CommentComposer(
                     ) {
                         Icon(
                             Icons.AutoMirrored.Rounded.Send,
-                            contentDescription = "Post",
+                            contentDescription = stringResource(R.string.comment_post),
                             tint = if (text.isNotBlank()) MaterialTheme.colorScheme.primary
                             else MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -587,7 +587,7 @@ private fun CommentRow(
                 if (comment.isPinned) {
                     Icon(
                         Icons.Rounded.PushPin,
-                        contentDescription = "Pinned",
+                        contentDescription = stringResource(R.string.comment_pinned),
                         modifier = Modifier.size(12.dp),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -618,7 +618,7 @@ private fun CommentRow(
                 if (comment.isVerified) {
                     Icon(
                         Icons.Rounded.Verified,
-                        contentDescription = "Verified",
+                        contentDescription = stringResource(R.string.cd_verified),
                         modifier = Modifier.size(14.dp),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -676,7 +676,7 @@ private fun CommentRow(
                         Spacer(Modifier.width(4.dp))
                         Icon(
                             Icons.Rounded.Favorite,
-                            contentDescription = "Hearted by creator",
+                            contentDescription = stringResource(R.string.comment_hearted_by_creator),
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.error
                         )
@@ -697,12 +697,12 @@ private fun CommentRow(
                     ) {
                         Icon(
                             Icons.Rounded.DeleteOutline,
-                            contentDescription = "Delete comment",
+                            contentDescription = stringResource(R.string.comment_delete_accessibility),
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                         Text(
-                            text = "Delete",
+                            text = stringResource(R.string.action_delete),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
