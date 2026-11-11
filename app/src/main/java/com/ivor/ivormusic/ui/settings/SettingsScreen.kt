@@ -266,7 +266,6 @@ internal enum class SettingsPage {
     HUB,
     ACCOUNT,
     APPEARANCE,
-    INTERFACE_STYLE,
     LANGUAGE,
     PERFORMANCE,
     EQUALIZER,
@@ -301,7 +300,7 @@ internal enum class SettingsPage {
      */
     val parent: SettingsPage
         get() = when (this) {
-            APPEARANCE, INTERFACE_STYLE, LANGUAGE, PERFORMANCE, EQUALIZER,
+            APPEARANCE, LANGUAGE, PERFORMANCE, EQUALIZER,
             APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
             HOME_NAVIGATION, GESTURES, VIDEO_PLAYER, VIDEO_FEED, VIDEO_SHADERS, STANDBY -> CUSTOMIZATION
             VIDEO_HOME -> CONTENT
@@ -841,10 +840,6 @@ fun SettingsScreen(
             onNavigateToColorPalette = onNavigateToColorPalette,
             amoledTheme = amoledTheme,
             onAmoledThemeToggle = onAmoledThemeToggle,
-            onBack = { page = SettingsPage.CUSTOMIZATION }
-        )
-
-        SettingsPage.INTERFACE_STYLE -> InterfaceStyleSettingsPage(
             onBack = { page = SettingsPage.CUSTOMIZATION }
         )
 
@@ -2494,6 +2489,8 @@ private fun ExpressiveAboutDialog(
     var showDonateDialog by remember { mutableStateOf(false) }
     val githubUrl = "https://github.com/${BuildConfig.GITHUB_REPO}"
     val developerUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}"
+    val developerAvatarUrl = "https://avatars.githubusercontent.com/u/146443900?v=4"
+    val whatsappChannelUrl = "https://whatsapp.com/channel/0029Vb8N4MCKwqSRSuyBsr1n"
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -2543,25 +2540,12 @@ private fun ExpressiveAboutDialog(
                                     .background(MaterialTheme.colorScheme.primaryContainer),
                                 contentAlignment = Alignment.Center,
                             ) {
-                                // A saved style has no drawable behind it -
-                                // it is colours, not a resource - so the one
-                                // place Yinnlycs draws its own mark at size gets
-                                // the live renderer when one is active, and
-                                // the preset's artwork otherwise. Without this
-                                // a style someone saved would change nothing
-                                // they could ever see.
-                                // Compose painterResource supports bitmap and vector
-                                // drawables, not Android LayerDrawable resources such as
-                                // ic_launcher_foreground.xml. Loading that adaptive-icon
-                                // XML here crashed the entire About dialog on tap. Use the
-                                // supplied WebP asset directly; it is safe on every API.
+                                // The About hero uses the developer's supplied portrait.
                                 androidx.compose.foundation.Image(
-                                    painter = painterResource(R.drawable.yinnlycs_logo_v7),
-                                    contentDescription = stringResource(R.string.app_name),
-                                    contentScale = ContentScale.Fit,
-                                    modifier = Modifier
-                                        .fillMaxSize()
-                                        .padding(8.dp),
+                                    painter = painterResource(R.drawable.yinnlycs_developer_v7),
+                                    contentDescription = stringResource(R.string.about_developer),
+                                    contentScale = ContentScale.Crop,
+                                    modifier = Modifier.fillMaxSize(),
                                 )
                             }
                             Spacer(modifier = Modifier.height(14.dp))
@@ -2643,10 +2627,17 @@ private fun ExpressiveAboutDialog(
                                             .background(MaterialTheme.colorScheme.secondary),
                                         contentAlignment = Alignment.Center,
                                     ) {
-                                        androidx.compose.foundation.Image(
-                                            painter = painterResource(R.drawable.yinnlycs_developer_v7),
+                                        AsyncImage(
+                                            model = ImageRequest.Builder(context)
+                                                .data(developerAvatarUrl)
+                                                .crossfade(true)
+                                                .diskCachePolicy(CachePolicy.ENABLED)
+                                                .memoryCachePolicy(CachePolicy.ENABLED)
+                                                .build(),
                                             contentDescription = stringResource(R.string.about_developer),
                                             contentScale = ContentScale.Crop,
+                                            placeholder = painterResource(R.drawable.yinnlycs_icon),
+                                            error = painterResource(R.drawable.yinnlycs_icon),
                                             modifier = Modifier.fillMaxSize(),
                                         )
                                     }
@@ -2676,6 +2667,14 @@ private fun ExpressiveAboutDialog(
                                     title = stringResource(R.string.about_donate),
                                     subtitle = stringResource(R.string.about_donate_subtitle),
                                     onClick = { showDonateDialog = true },
+                                    showChevron = true,
+                                )
+                                SettingsDivider()
+                                SettingsRow(
+                                    icon = Icons.Rounded.ChatBubble,
+                                    title = stringResource(R.string.about_whatsapp_channel),
+                                    subtitle = stringResource(R.string.about_whatsapp_channel_subtitle),
+                                    onClick = { context.openAboutLink(whatsappChannelUrl) },
                                     showChevron = true,
                                 )
                                 SettingsDivider()
