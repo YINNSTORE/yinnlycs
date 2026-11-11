@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-    android:src="@drawable/yinnlycs_logo_v7"
-    android:gravity="fill" />
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Keep the complete wordmark inside Android's adaptive-icon safe zone. -->
+    <item
+        android:width="72dp"
+        android:height="72dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/yinnlycs_logo_v7"
+            android:gravity="fill" />
+    </item>
+</layer-list>
