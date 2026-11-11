@@ -43,11 +43,7 @@ import kotlin.math.roundToInt
 internal fun LanguageSettingsPage(onBack: () -> Unit) {
     val context = LocalContext.current
     val selected = AppLocaleManager.currentLanguage(context)
-    val selectedIndex = when (selected) {
-        "id" -> 1
-        "en" -> 2
-        else -> 0
-    }
+    val selectedIndex = if (selected == "en") 1 else 0
     SettingsDetailScaffold(title = stringResource(R.string.settings_language), onBack = onBack) {
         item {
             SettingsSection(title = stringResource(R.string.settings_language)) {
@@ -57,14 +53,12 @@ internal fun LanguageSettingsPage(onBack: () -> Unit) {
                         title = stringResource(R.string.settings_language),
                         subtitle = stringResource(R.string.settings_language_subtitle),
                         labels = listOf(
-                            stringResource(R.string.settings_language_system),
                             stringResource(R.string.settings_language_indonesian),
                             stringResource(R.string.settings_language_english)
                         ),
                         selectedIndex = selectedIndex,
                         onSelect = { index ->
-                            val language = listOf("system", "id", "en").getOrElse(index) { "system" }
-                            AppLocaleManager.setLanguage(context, language)
+                            AppLocaleManager.setLanguage(context, if (index == 1) "en" else "id")
                         }
                     )
                 }
