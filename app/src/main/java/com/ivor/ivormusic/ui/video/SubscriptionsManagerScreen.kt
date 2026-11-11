@@ -566,7 +566,7 @@ private fun ImportProgressCard(progress: Pair<Int, Int>?) {
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                text = progress?.let { (done, total) -> "$done of $total channels" }
+                text = progress?.let { (done, total) -> stringResource(R.string.sm_channel_progress_count, done, total) }
                     ?: stringResource(R.string.bk_reading),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -843,15 +843,15 @@ private fun ImportSummaryDialog(result: SubscriptionImportResult, onDismiss: () 
                 if (result.error != null) {
                     Text(result.error, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 } else {
-                    SummaryLine("Added", "${result.added}")
+                    SummaryLine(stringResource(R.string.sm_summary_added), "${result.added}")
                     if (result.alreadyPresent > 0) {
-                        SummaryLine("Already following", "${result.alreadyPresent}")
+                        SummaryLine(stringResource(R.string.sm_summary_already_following), "${result.alreadyPresent}")
                     }
                     if (result.unresolved > 0) {
-                        SummaryLine("Couldn't be found", "${result.unresolved}")
+                        SummaryLine(stringResource(R.string.sm_summary_not_found), "${result.unresolved}")
                     }
                     if (result.skippedOtherService > 0) {
-                        SummaryLine("Other services", "${result.skippedOtherService}")
+                        SummaryLine(stringResource(R.string.sm_summary_other_services), "${result.skippedOtherService}")
                         Spacer(Modifier.height(8.dp))
                         Text(
                             text = stringResource(R.string.sm_foreign_skipped),
@@ -997,7 +997,7 @@ private fun GroupChannelsDialog(
                     if (matched.isEmpty()) {
                         item(key = "no-matches") {
                             Text(
-                                text = "No channels match \"$query\"",
+                                text = stringResource(R.string.sm_no_channel_matches, query),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier
