@@ -34,9 +34,7 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -63,7 +61,6 @@ import androidx.graphics.shapes.toPath
 import com.ivor.ivormusic.R
 import com.ivor.ivormusic.data.HomeNavigationCustomization
 import com.ivor.ivormusic.data.ThemePreferences
-import kotlinx.coroutines.delay
 
 /**
  * The music/video switch as one button that becomes the mode it is in.
@@ -250,31 +247,12 @@ fun TopBarDownloadsButton(
 }
 
 /**
- * A short greeting for the Home top bar, using the device's local time.
- * Refresh once a minute so the greeting changes when the day moves into the
- * next period, even if the Home screen stays open.
+ * A stable welcome message beside the profile picture in the Home top bar.
  */
 @Composable
 fun HomeGreeting(modifier: Modifier = Modifier) {
-    val hourState = remember {
-        mutableIntStateOf(java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY))
-    }
-    LaunchedEffect(Unit) {
-        while (true) {
-            hourState.intValue = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
-            delay(60_000L)
-        }
-    }
-    val hour = hourState.intValue
     Text(
-        text = stringResource(
-            when (hour) {
-                in 5..10 -> R.string.home_greeting_morning
-                in 11..14 -> R.string.home_greeting_afternoon
-                in 15..18 -> R.string.home_greeting_evening
-                else -> R.string.home_greeting_night
-            }
-        ),
+        text = stringResource(R.string.home_greeting_welcome),
         modifier = modifier,
         style = MaterialTheme.typography.titleLarge,
         fontWeight = FontWeight.Bold,
