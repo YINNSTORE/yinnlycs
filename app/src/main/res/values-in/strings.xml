@@ -379,6 +379,7 @@
 
 
     <string name="home_tab_title">Beranda</string>
+    <string name="home_greeting_welcome">Selamat datang</string>
     <string name="home_greeting_morning">Selamat pagi</string>
     <string name="home_greeting_afternoon">Selamat siang</string>
     <string name="home_greeting_evening">Selamat sore</string>
