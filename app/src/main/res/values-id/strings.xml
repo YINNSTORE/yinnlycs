@@ -2348,4 +2348,10 @@
     <string name="sm_groups_for_channel">Grup untuk %1$s</string>
     <string name="sm_unfollow_channel">Berhenti mengikuti %1$s</string>
     <string name="sm_rename_group">Ubah nama grup</string>
+    <string name="share_local_only_spotify">Mode Lokal saja sedang aktif. Matikan di Setelan untuk mengimpor dari Spotify.</string>
+    <string name="share_no_youtube_link">Tidak ditemukan tautan YouTube pada konten yang kamu bagikan</string>
+    <string name="share_local_only_youtube">Mode Lokal saja sedang aktif. Matikan di Setelan untuk membuka tautan YouTube.</string>
+    <string name="share_open_playlist_failed">Tidak dapat membuka playlist tersebut</string>
+    <string name="share_open_link_failed">Tidak dapat membuka tautan tersebut</string>
+    <string name="share_playlist_title">Playlist yang dibagikan</string>
 </resources>
