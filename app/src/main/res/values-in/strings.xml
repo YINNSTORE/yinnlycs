@@ -23,7 +23,7 @@
     <string name="action_create">Buat</string>
     <string name="action_save">Simpan</string>
     <string name="action_delete">Hapus</string>
-    <string name="action_edit">Edit</string>
+    <string name="action_edit">Ubah</string>
     <string name="action_share">Bagikan</string>
     <string name="action_retry">Coba lagi</string>
     <string name="action_see_all">Lihat semua</string>
@@ -113,7 +113,7 @@
     <string name="song_options_add_to_playlist">Tambahkan ke playlist</string>
     <string name="song_options_remove_from_liked">Hapus dari disukai</string>
     <string name="song_options_like">Suka</string>
-    <string name="song_options_download">Download</string>
+    <string name="song_options_download">Unduh</string>
     <string name="song_options_download_subtitle">Simpan di perangkat ini</string>
     <string name="song_options_downloaded">Terdownload</string>
     <string name="song_options_go_to_artist">Buka %1$s</string>
@@ -126,7 +126,7 @@
     <string name="video_options_watch_later">Tonton nanti</string>
     <string name="video_options_kept_on_device">Disimpan di perangkat ini</string>
     <string name="video_options_save_to_playlist">Simpan ke playlist</string>
-    <string name="video_options_download">Download</string>
+    <string name="video_options_download">Unduh</string>
     <string name="video_options_go_to_channel">Buka channel</string>
     <string name="video_options_share">Bagikan</string>
     <string name="video_options_share_chooser">Bagikan video</string>
@@ -276,7 +276,7 @@
     <string name="np_tile_playlist">Playlist</string>
     <string name="np_tile_like">Suka</string>
     <string name="np_tile_liked">Disukai</string>
-    <string name="np_tile_download">Download</string>
+    <string name="np_tile_download">Unduh</string>
     <string name="np_tile_downloading">Menyimpan</string>
     <string name="np_tile_downloaded">Tersimpan</string>
     <string name="np_pill_block">Jangan rekomendasikan</string>
@@ -368,7 +368,7 @@
     <string name="sc_channels_on_device">%1$d channel - %2$d di perangkat ini</string>
     <string name="sh_playback_failed">Pemutaran gagal</string>
     <string name="subscribed">Disubscribe</string>
-    <string name="subscribe">Subscribe</string>
+    <string name="subscribe">Berlangganan</string>
     <string name="like">Suka</string>
     <!-- Subscription channel rail sorting -->
     <string name="subscription_channel_sort">Urutkan kanal</string>
@@ -390,7 +390,7 @@
     <string name="settings_language_subtitle">Pilih Bahasa Indonesia atau English untuk aplikasi.</string>
     <string name="settings_language_system">Ikuti sistem</string>
     <string name="settings_language_indonesian">Bahasa Indonesia</string>
-    <string name="settings_language_english">English</string>
+    <string name="settings_language_english">Inggris</string>
     <string name="settings_performance">Performa</string>
     <string name="settings_refresh_rate">Refresh rate tinggi</string>
     <string name="settings_refresh_rate_subtitle">Minta Android memakai mode layar tercepat saat Yinnlycs terbuka. Android dan sistem HP tetap dapat membatasinya.</string>
@@ -402,10 +402,10 @@
     <string name="settings_dynamic_island_width">Lebar</string>
     <string name="settings_dynamic_island_height">Tinggi</string>
     <string name="settings_dynamic_island_theme">Tema island</string>
-    <string name="settings_dynamic_island_theme_glass">Glass</string>
+    <string name="settings_dynamic_island_theme_glass">Kaca</string>
     <string name="settings_dynamic_island_theme_violet">Ungu</string>
-    <string name="settings_dynamic_island_theme_ocean">Ocean</string>
-    <string name="settings_equalizer">Equalizer</string>
+    <string name="settings_dynamic_island_theme_ocean">Samudra</string>
+    <string name="settings_equalizer">Ekualiser</string>
     <string name="settings_equalizer_subtitle">Atur audio Yinnlycs atau buka equalizer bawaan HP maupun aplikasi equalizer lain.</string>
     <string name="settings_equalizer_enabled">Gunakan equalizer bawaan aplikasi</string>
     <string name="settings_equalizer_system">Buka equalizer perangkat</string>
@@ -761,7 +761,7 @@
     <string name="sp_album_colors_off">Nonaktif</string>
     <string name="sp_album_colors_player">Pemutar</string>
     <string name="sp_album_colors_app">Seluruh aplikasi</string>
-    <string name="sp_mini_player">Mini player</string>
+    <string name="sp_mini_player">Pemutar mini</string>
     <string name="sp_mini_progress">Progres</string>
     <string name="sp_mini_progress_sub">Tampilkan progres lagu dengan mengisi mini player, garis di sekitar sampul, atau keduanya</string>
     <string name="sp_mini_progress_both">Keduanya</string>
@@ -908,7 +908,7 @@
     <string name="sp_subs_source_desc">Daftar yang digunakan tab Subscription untuk menyusun feed.</string>
     <string name="sp_subscribe_saves_to">Simpan subscription ke</string>
     <string name="sp_subs_target_desc">Tempat penyimpanan kanal saat tombol Ikuti diketuk. Penyimpanan di perangkat dapat digunakan tanpa login dan tidak memberi tahu YouTube.</string>
-    <string name="sp_feed">Feed</string>
+    <string name="sp_feed">Umpan</string>
     <string name="sp_fast_refresh">Penyegaran subscription cepat</string>
     <string name="sp_fast_refresh_on">Menggunakan jauh lebih sedikit data dan waktu unggah yang akurat, tetapi tanpa lencana durasi</string>
     <string name="sp_fast_refresh_off">Detail lengkap untuk setiap video, tetapi lebih lambat pada daftar subscription yang besar</string>
@@ -917,10 +917,10 @@
     <string name="sp_private_downloads_on">Audio dan video baru disimpan di dalam Yinnlycs dan dihapus saat aplikasi di-uninstall</string>
     <string name="sp_private_downloads_off">Audio dan video baru muncul di folder Downloads/Yinnlycs</string>
     <string name="sp_private_downloads_note">Sampul album tetap tersembunyi dari Galeri pada kedua mode. Unduhan lama tetap berada di lokasi semula.</string>
-    <string name="sp_cache">Cache</string>
+    <string name="sp_cache">Tembolok</string>
     <string name="sp_cache_videos">Cache video</string>
     <string name="sp_cache_videos_sub">Simpan data video sementara untuk menggeser waktu dan memutar ulang</string>
-    <string name="sp_cache_shorts">Cache Shorts</string>
+    <string name="sp_cache_shorts">Tembolok Shorts</string>
     <string name="sp_cache_shorts_sub">Simpan data Shorts sementara agar bisa kembali dan memutar ulang</string>
     <string name="sp_playback_preload">Muat media berikutnya lebih awal</string>
     <string name="sp_playback_preload_sub">Siapkan musik dan Shorts berikutnya sebelum diputar</string>
@@ -1000,7 +1000,7 @@
     <string name="sp_pip_buttons_videos_sub">Sebelumnya dan berikutnya dalam playlist; jika tidak, mundur 10 detik dan lanjut</string>
     <string name="sp_pip_buttons_seek_sub">Mundur 10 detik dan maju 10 detik di samping tombol putar dan jeda</string>
     <string name="sp_home_classic">Klasik</string>
-    <string name="sp_home_spotlight">Spotlight</string>
+    <string name="sp_home_spotlight">Sorotan</string>
     <string name="sp_nav_floating">Mengambang</string>
     <string name="sp_nav_standard">Standar</string>
     <string name="sp_motion_artwork">Sampul animasi</string>
@@ -1280,7 +1280,7 @@
     <string name="ob_player_style_body">Pilih pemutar yang kamu inginkan. Kamu bisa mengubahnya kapan saja melalui Pengaturan atau dengan menyentuh dan menahan sampul saat lagu diputar.</string>
     <string name="ob_page_final_touches">Pengaturan akhir</string>
     <string name="ob_page_final_touches_body">Beberapa fitur tambahan yang opsional. Semua pengaturan ini dapat diubah lagi nanti melalui Pengaturan.</string>
-    <string name="ob_crossfade">Crossfade</string>
+    <string name="ob_crossfade">Transisi silang</string>
     <string name="ob_crossfade_sub">Padukan perpindahan antar lagu saat diputar</string>
     <string name="ob_playback_notifications">Notifikasi pemutaran</string>
     <string name="ob_notif_ready">Kontrol layar kunci siap digunakan.</string>
@@ -1297,7 +1297,7 @@
     <string name="ob_off_hint">Jika nonaktif, tampilan tetap sederhana dan berfokus pada musik. Pemutar video tetap tersedia.</string>
     <string name="lib_following_header">Mengikuti</string>
     <string name="lib_everything_in_order">Semua yang kamu putar, sesuai urutan</string>
-    <string name="lib_edit_playlist">Edit playlist</string>
+    <string name="lib_edit_playlist">Ubah playlist</string>
     <string name="lib_delete_body">Playlist ini akan hilang di semua tempat kamu menggunakan YouTube, termasuk youtube.com dan aplikasi resminya.</string>
     <string name="lib_search_in_playlist">Cari dalam playlist</string>
     <string name="lib_change_cover">Ganti sampul</string>
@@ -1424,9 +1424,9 @@
     <string name="sb_cat_selfpromo_sub">Promosi tanpa bayaran, merchandise, donasi, dan kanal lainnya</string>
     <string name="sb_cat_interaction">pengingat</string>
     <string name="sb_cat_interaction_sub">Pengingat untuk menyukai, berlangganan, atau mengikuti</string>
-    <string name="sb_cat_intro">intro</string>
+    <string name="sb_cat_intro">Pembuka</string>
     <string name="sb_cat_intro_sub">Kartu judul dan jeda tanpa konten penting</string>
-    <string name="sb_cat_outro">outro</string>
+    <string name="sb_cat_outro">Penutup</string>
     <string name="sb_cat_outro_sub">Kartu penutup dan kredit</string>
     <string name="sb_cat_preview">rekap</string>
     <string name="sb_cat_preview_sub">Ringkasan video ini atau pratinjau bagian berikutnya</string>
