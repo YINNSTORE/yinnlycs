@@ -1,11 +1,11 @@
 name: Build APKs
 
 on:
-  # beta is the branch testers follow: work lands there first and a push to it
-  # is the only thing that posts an APK. main moves through the beta -> main
-  # pull request and is what releases are cut from.
+  # beta is the branch testers follow; pushes there publish tester APKs.
+  # The V8.1 polish branch is also included so its changes can be CI-validated.
+  # main moves through the beta -> main pull request and is what releases are cut from.
   push:
-    branches: [ main, master, beta ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-1-indonesian-polish ]
   pull_request:
     branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   workflow_dispatch:
