@@ -2540,7 +2540,7 @@
     <string name="spotlight_moods_title">Pick a mood</string>
     <string name="settings_device_experience">Device experience</string>
     <string name="settings_language">App language</string>
-    <string name="settings_language_subtitle">Follow your phone or choose a language.</string>
+    <string name="settings_language_subtitle">Choose Indonesian or English for the app.</string>
     <string name="settings_language_system">Follow system</string>
     <string name="settings_language_indonesian">Bahasa Indonesia</string>
     <string name="settings_language_english">English</string>
@@ -2578,4 +2578,6 @@
     <string name="about_donate_title">Support Yinnlycs</string>
     <string name="about_donate_message">Scan this QRIS code with your preferred payment app. Thank you for supporting the project!</string>
     <string name="about_donate_close">Close</string>
+    <string name="about_whatsapp_channel">Join WhatsApp Channel</string>
+    <string name="about_whatsapp_channel_subtitle">Follow the official Info [yinnlycs] channel on WhatsApp.</string>
 </resources>
