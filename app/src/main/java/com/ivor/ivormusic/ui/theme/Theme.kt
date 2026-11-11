@@ -267,15 +267,21 @@ private val LiquidGlassShapes = Shapes(
 )
 
 private fun ColorScheme.liquidGlassSurfaces(): ColorScheme = copy(
-    surface = surface.copy(alpha = 0.86f),
-    surfaceVariant = surfaceVariant.copy(alpha = 0.72f),
-    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.58f),
-    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.64f),
-    surfaceContainer = surfaceContainer.copy(alpha = 0.70f),
-    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.78f),
-    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.84f),
-    surfaceTint = primary.copy(alpha = 0.18f),
-    outlineVariant = outlineVariant.copy(alpha = 0.46f),
+    // Keep the page visible through every elevated surface: this is the
+    // distinction between a translucent glass treatment and a second opaque
+    // colour palette. The lower roles are deliberately more transparent.
+    surface = surface.copy(alpha = 0.72f),
+    surfaceVariant = surfaceVariant.copy(alpha = 0.60f),
+    surfaceDim = surfaceDim.copy(alpha = 0.78f),
+    surfaceBright = surfaceBright.copy(alpha = 0.82f),
+    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.40f),
+    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.48f),
+    surfaceContainer = surfaceContainer.copy(alpha = 0.56f),
+    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.64f),
+    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.72f),
+    surfaceTint = primary.copy(alpha = 0.24f),
+    outline = outline.copy(alpha = 0.48f),
+    outlineVariant = outlineVariant.copy(alpha = 0.58f),
 )
 
 /**
