@@ -245,6 +245,7 @@ fun IvorMusicTheme(
         CompositionLocalProvider(
             LocalAppColorScheme provides styledColorScheme,
             LocalAlbumTheming provides AlbumTheming(artworkWholeApp, paletteStyle, darkTheme && amoledDark),
+            LocalLiquidGlassEnabled provides (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS),
             androidx.compose.material3.LocalContentColor provides styledColorScheme.onBackground,
             androidx.compose.material3.LocalTextStyle provides selectedTypography.bodyLarge,
         ) {
@@ -267,21 +268,20 @@ private val LiquidGlassShapes = Shapes(
 )
 
 private fun ColorScheme.liquidGlassSurfaces(): ColorScheme = copy(
-    // Keep the page visible through every elevated surface: this is the
-    // distinction between a translucent glass treatment and a second opaque
-    // colour palette. The lower roles are deliberately more transparent.
-    surface = surface.copy(alpha = 0.72f),
-    surfaceVariant = surfaceVariant.copy(alpha = 0.60f),
-    surfaceDim = surfaceDim.copy(alpha = 0.78f),
-    surfaceBright = surfaceBright.copy(alpha = 0.82f),
-    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.40f),
-    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.48f),
-    surfaceContainer = surfaceContainer.copy(alpha = 0.56f),
-    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.64f),
-    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.72f),
-    surfaceTint = primary.copy(alpha = 0.24f),
-    outline = outline.copy(alpha = 0.48f),
-    outlineVariant = outlineVariant.copy(alpha = 0.58f),
+    // Glass must reveal the page beneath it. The previous values were so
+    // opaque that cards looked like the Expressive treatment on flat screens.
+    surface = surface.copy(alpha = 0.58f),
+    surfaceVariant = surfaceVariant.copy(alpha = 0.46f),
+    surfaceDim = surfaceDim.copy(alpha = 0.64f),
+    surfaceBright = surfaceBright.copy(alpha = 0.68f),
+    surfaceContainerLowest = surfaceContainerLowest.copy(alpha = 0.18f),
+    surfaceContainerLow = surfaceContainerLow.copy(alpha = 0.25f),
+    surfaceContainer = surfaceContainer.copy(alpha = 0.32f),
+    surfaceContainerHigh = surfaceContainerHigh.copy(alpha = 0.40f),
+    surfaceContainerHighest = surfaceContainerHighest.copy(alpha = 0.48f),
+    surfaceTint = primary.copy(alpha = 0.28f),
+    outline = outline.copy(alpha = 0.38f),
+    outlineVariant = outlineVariant.copy(alpha = 0.44f),
 )
 
 /**
@@ -296,6 +296,9 @@ private fun ColorScheme.liquidGlassSurfaces(): ColorScheme = copy(
  */
 
 data class AlbumTheming(val wholeApp: Boolean, val style: PaletteStyle, val amoled: Boolean)
+
+/** Lets custom-drawn containers add a glass edge while the style is selected. */
+val LocalLiquidGlassEnabled = staticCompositionLocalOf { false }
 
 val LocalAlbumTheming = staticCompositionLocalOf { AlbumTheming(false, PaletteStyle.TONAL_SPOT, false) }
 
