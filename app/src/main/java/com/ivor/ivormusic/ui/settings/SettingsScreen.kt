@@ -2546,12 +2546,19 @@ private fun ExpressiveAboutDialog(
                                     .background(MaterialTheme.colorScheme.primaryContainer),
                                 contentAlignment = Alignment.Center,
                             ) {
-                                // The About hero uses the developer's supplied portrait.
-                                androidx.compose.foundation.Image(
-                                    painter = painterResource(R.drawable.yinnlycs_developer_v7),
+                                // Use the live GitHub profile photo in a true circular crop.
+                                AsyncImage(
+                                    model = ImageRequest.Builder(context)
+                                        .data(developerAvatarUrl)
+                                        .crossfade(true)
+                                        .diskCachePolicy(CachePolicy.ENABLED)
+                                        .memoryCachePolicy(CachePolicy.ENABLED)
+                                        .build(),
                                     contentDescription = stringResource(R.string.about_developer),
                                     contentScale = ContentScale.Crop,
-                                    modifier = Modifier.fillMaxSize(),
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .clip(CircleShape),
                                 )
                             }
                             Spacer(modifier = Modifier.height(14.dp))
@@ -2642,9 +2649,9 @@ private fun ExpressiveAboutDialog(
                                                 .build(),
                                             contentDescription = stringResource(R.string.about_developer),
                                             contentScale = ContentScale.Crop,
-                                            placeholder = painterResource(R.drawable.yinnlycs_icon),
-                                            error = painterResource(R.drawable.yinnlycs_icon),
-                                            modifier = Modifier.fillMaxSize(),
+                                            modifier = Modifier
+                                                .fillMaxSize()
+                                                .clip(CircleShape),
                                         )
                                     }
                                     Column(modifier = Modifier.weight(1f)) {
