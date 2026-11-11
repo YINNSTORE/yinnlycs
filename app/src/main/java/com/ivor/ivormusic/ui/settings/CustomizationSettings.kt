@@ -74,7 +74,6 @@ internal fun CustomizationSettingsPage(
     val context = LocalContext.current
     val experiencePreferences = remember(context) { ExperiencePreferences(context) }
     val highRefreshRate by experiencePreferences.highRefreshRate.collectAsState()
-    val dynamicIslandEnabled by experiencePreferences.dynamicIslandEnabled.collectAsState()
     val languageLabel = when (AppLocaleManager.currentLanguage(context)) {
         "id" -> stringResource(R.string.settings_language_indonesian)
         "en" -> stringResource(R.string.settings_language_english)
@@ -246,14 +245,6 @@ internal fun CustomizationSettingsPage(
                         onClick = { onOpenPage(SettingsPage.PERFORMANCE) },
                         iconShape = MaterialShapes.Gem.toShape(),
                         explanation = stringResource(R.string.settings_refresh_rate_subtitle)
-                    )
-                    SettingsHubRow(
-                        icon = Icons.Rounded.AutoAwesome,
-                        title = stringResource(R.string.settings_dynamic_island),
-                        value = stringResource(if (dynamicIslandEnabled) R.string.settings_enabled else R.string.settings_disabled),
-                        onClick = { onOpenPage(SettingsPage.DYNAMIC_ISLAND) },
-                        iconShape = MaterialShapes.Burst.toShape(),
-                        explanation = stringResource(R.string.settings_dynamic_island_subtitle)
                     )
                     SettingsHubRow(
                         icon = Icons.Rounded.PlayCircle,
