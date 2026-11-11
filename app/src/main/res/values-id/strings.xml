@@ -420,4 +420,9 @@
     <string name="settings_enabled">Aktif</string>
     <string name="settings_disabled">Nonaktif</string>
 
+    <string name="about_donate">Buy Me a Coffee</string>
+    <string name="about_donate_subtitle">Dukung pengembangan Yinnlycs melalui QRIS</string>
+    <string name="about_donate_title">Dukung Yinnlycs</string>
+    <string name="about_donate_message">Pindai kode QRIS ini menggunakan aplikasi pembayaran pilihan Anda. Terima kasih sudah mendukung proyek ini!</string>
+    <string name="about_donate_close">Tutup</string>
 </resources>
