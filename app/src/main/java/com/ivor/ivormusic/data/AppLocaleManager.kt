@@ -25,10 +25,22 @@ object AppLocaleManager {
             }
             return base
         }
-        if (tag == "system") return base
-        val locale = Locale.forLanguageTag(tag)
+        if (tag == "system") {
+            // Keep the process default in step with the phone when the user
+            // returns from an app-specific language.
+            val systemLocales = base.resources.configuration.locales
+            if (!systemLocales.isEmpty) Locale.setDefault(systemLocales[0])
+            return base
+        }
+        val requestedLocales = LocaleList.forLanguageTags(tag)
+        val locale = requestedLocales[0] ?: Locale.forLanguageTag(tag)
+        Locale.setDefault(locale)
         val configuration = Configuration(base.resources.configuration)
-        configuration.setLocale(locale)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            configuration.setLocales(requestedLocales)
+        } else {
+            configuration.setLocale(locale)
+        }
         configuration.setLayoutDirection(locale)
         return base.createConfigurationContext(configuration)
     }
