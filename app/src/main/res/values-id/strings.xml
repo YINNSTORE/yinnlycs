@@ -381,7 +381,7 @@
     <string name="home_tab_title">Beranda</string>
     <string name="home_greeting_morning">Selamat pagi</string>
     <string name="home_greeting_afternoon">Selamat siang</string>
-    <string name="home_greeting_evening">Selamat malam</string>
+    <string name="home_greeting_evening">Selamat sore</string>
     <string name="home_greeting_subtitle">Temukan lagu yang cocok untuk suasana saat ini.</string>
     <string name="home_community_title">Dari komunitas</string>
     <string name="spotlight_moods_title">Pilih suasana</string>
@@ -505,7 +505,7 @@
     <string name="home_section_mixes">Mix untukmu</string>
     <string name="home_offline_subtitle">Kamu sedang offline. Lagu-lagu ini bisa diputar tanpa koneksi internet.</string>
     <string name="home_mix_up_next">Berikutnya dalam mix-mu</string>
-    <string name="home_greeting_night">Masih terjaga</string>
+    <string name="home_greeting_night">Selamat malam</string>
     <string name="action_listen_as_music">Musik</string>
     <string name="action_clear">Bersihkan</string>
     <string name="action_show_less">Tampilkan lebih sedikit</string>
