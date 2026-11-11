@@ -231,6 +231,15 @@ jobs:
     - name: Build Release APK
       run: ./gradlew assembleRelease
 
+    - name: Upload Release APK artifact (pull request)
+      if: github.event_name == 'pull_request'
+      uses: actions/upload-artifact@v7
+      with:
+        name: yinnlycs-v8-release-arm64
+        path: app/build/outputs/apk/release/*arm64-v8a*.apk
+        if-no-files-found: error
+        retention-days: 14
+
     - name: Publish direct APK download
       if: github.event_name != 'pull_request'
       env:
