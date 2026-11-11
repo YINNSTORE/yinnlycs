@@ -7,7 +7,6 @@ import com.ivor.ivormusic.data.ExperiencePreferences
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.AutoAwesome
 import androidx.compose.material.icons.rounded.Bedtime
 import androidx.compose.material.icons.rounded.Dashboard
 import androidx.compose.material.icons.rounded.FormatSize
@@ -79,9 +78,6 @@ internal fun CustomizationSettingsPage(
         "en" -> stringResource(R.string.settings_language_english)
         else -> stringResource(R.string.settings_language_system)
     }
-    val appearancePreferences = remember(context) { ThemePreferences(context) }
-    val surfaceStyle by appearancePreferences.surfaceStyle.collectAsState()
-    val fontFamily by appearancePreferences.fontFamily.collectAsState()
     val hapticsLabel = stringResource(
         when (hapticsLevel) {
             "off" -> R.string.haptic_level_off
@@ -106,15 +102,6 @@ internal fun CustomizationSettingsPage(
                         tint = MaterialTheme.colorScheme.tertiary,
                         iconShape = MaterialShapes.Cookie4Sided.toShape(),
                         explanation = stringResource(R.string.cz_info_theme)
-                    )
-                    SettingsHubRow(
-                        icon = Icons.Rounded.AutoAwesome,
-                        title = stringResource(R.string.settings_interface_style_title),
-                        value = "${stringResource(surfaceStyle.labelRes)} · ${stringResource(fontFamily.labelRes)}",
-                        onClick = { onOpenPage(SettingsPage.INTERFACE_STYLE) },
-                        tint = MaterialTheme.colorScheme.tertiary,
-                        iconShape = MaterialShapes.Pill.toShape(),
-                        explanation = stringResource(R.string.settings_interface_style_description)
                     )
                     SettingsHubRow(
                         icon = Icons.Rounded.AutoAwesome,
