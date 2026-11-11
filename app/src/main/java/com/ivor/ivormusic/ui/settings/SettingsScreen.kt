@@ -2550,36 +2550,19 @@ private fun ExpressiveAboutDialog(
                                 // the preset's artwork otherwise. Without this
                                 // a style someone saved would change nothing
                                 // they could ever see.
-                                val themePrefs = remember { ThemePreferences(context) }
-                                val styleStore = remember {
-                                    com.ivor.ivormusic.data.AppIconStyleStore(context)
-                                }
-                                val currentAppIconId by themePrefs.appIcon.collectAsState()
-                                val activeStyleId by styleStore.activeStyleId.collectAsState()
-                                val savedStyles by styleStore.styles.collectAsState()
-                                val currentAppIcon = remember(currentAppIconId) {
-                                    AppIcon.fromId(currentAppIconId)
-                                }
-                                val activeStyle = remember(activeStyleId, savedStyles) {
-                                    savedStyles.firstOrNull { it.id == activeStyleId }
-                                }
-                                if (activeStyle != null) {
-                                    YinnlycsAppIcon(
-                                        style = activeStyle.toIconStyle(),
-                                        shape = androidx.compose.foundation.shape
-                                            .RoundedCornerShape(20.dp),
-                                        animateColors = false,
-                                        modifier = Modifier.fillMaxSize(),
-                                    )
-                                } else {
-                                    androidx.compose.foundation.Image(
-                                        painter = painterResource(
-                                            currentAppIcon.previewForegroundRes
-                                        ),
-                                        contentDescription = stringResource(R.string.app_name),
-                                        modifier = Modifier.fillMaxSize(),
-                                    )
-                                }
+                                // Compose painterResource supports bitmap and vector
+                                // drawables, not Android LayerDrawable resources such as
+                                // ic_launcher_foreground.xml. Loading that adaptive-icon
+                                // XML here crashed the entire About dialog on tap. Use the
+                                // supplied WebP asset directly; it is safe on every API.
+                                androidx.compose.foundation.Image(
+                                    painter = painterResource(R.drawable.yinnlycs_logo_v7),
+                                    contentDescription = stringResource(R.string.app_name),
+                                    contentScale = ContentScale.Fit,
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .padding(8.dp),
+                                )
                             }
                             Spacer(modifier = Modifier.height(14.dp))
                             Text(
