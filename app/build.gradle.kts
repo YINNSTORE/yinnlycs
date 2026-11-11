@@ -31,8 +31,8 @@ android {
         // platform did not gain until API 33.
         minSdk = 30
         targetSdk = 36
-        versionCode = 33
-        versionName = "6.0.1"
+        versionCode = 34
+        versionName = "6.0.2"
         manifestPlaceholders["appLabel"] = "Yinnlycs"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
