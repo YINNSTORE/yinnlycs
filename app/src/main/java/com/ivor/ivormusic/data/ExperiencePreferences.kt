@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.asStateFlow
 
 /** Small, independent preferences for device-level Yinnlycs experience settings. */
 class ExperiencePreferences(context: Context) {
-    private val prefs = context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
     private val _highRefreshRate = MutableStateFlow(isHighRefreshRateEnabled)
     val highRefreshRate: StateFlow<Boolean> = _highRefreshRate.asStateFlow()
