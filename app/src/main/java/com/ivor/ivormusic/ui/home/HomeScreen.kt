@@ -1760,9 +1760,16 @@ fun HomeScreen(
             Triple(0, stringResource(R.string.tab_home), Pair(Icons.Rounded.Home, Icons.Outlined.Home)),
             Triple(1, stringResource(R.string.tab_search), Pair(Icons.Filled.Search, Icons.Outlined.Search)),
             Triple(2, stringResource(R.string.tab_library), Pair(Icons.Filled.LibraryMusic, Icons.Outlined.LibraryMusic))
+        )) + Triple(
+            99,
+            stringResource(R.string.cd_settings),
+            Pair(Icons.Default.Settings, Icons.Default.Settings)
         )
         val selectNavTab: (Int) -> Unit = { index ->
-            if (selectedTab == index) {
+            if (index == 99) {
+                navBarHaptics.performHapticFeedback(HapticFeedbackType.ContextClick)
+                onNavigateToSettings()
+            } else if (selectedTab == index) {
                 if (currentTabScrollState.canScrollBackward) {
                     navBarHaptics.performHapticFeedback(HapticFeedbackType.ContextClick)
                     scope.launch { currentTabScrollState.scrollToTop() }
@@ -1779,7 +1786,10 @@ fun HomeScreen(
             tabIds = navTabs.map { it.first },
             onHoverChange = { navBarHaptics.performHapticFeedback(HapticFeedbackType.SegmentTick) },
             onCommit = { target ->
-                if (target != selectedTab) {
+                if (target == 99) {
+                    navBarHaptics.performHapticFeedback(HapticFeedbackType.ContextClick)
+                    onNavigateToSettings()
+                } else if (target != selectedTab) {
                     navBarHaptics.performHapticFeedback(HapticFeedbackType.ContextClick)
                     selectedTab = target
                 }
@@ -2654,12 +2664,14 @@ fun TopBarSection(
             }
         }
         
-        Text(
-            text = stringResource(R.string.home_tab_title),
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.onBackground,
-            modifier = Modifier.align(Alignment.CenterStart).padding(start = 56.dp)
-        )
+        if (!topBarOptions.showGreeting) {
+            Text(
+                text = stringResource(R.string.home_tab_title),
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.align(Alignment.CenterStart).padding(start = 56.dp)
+            )
+        }
 
         // Right side icons with shape morphing.
         Row(
