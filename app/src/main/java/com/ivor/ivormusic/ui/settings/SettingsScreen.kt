@@ -3417,7 +3417,7 @@ private fun FolderItem(
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = "${folder.songCount} song${if (folder.songCount != 1) "s" else ""}",
+                    text = stringResource(R.string.settings_folder_song_count, folder.songCount),
                     color = secondaryTextColor,
                     fontSize = 12.sp,
                     maxLines = 1,
