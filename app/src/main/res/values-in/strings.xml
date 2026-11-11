@@ -2295,4 +2295,5 @@
     <string name="pl_export_m3u_sub">Dapat dibuka di Metrolist, ArchiveTune, VLC, dan sebagian besar pemutar musik</string>
     <string name="pl_export_csv">Spreadsheet CSV</string>
     <string name="pl_export_csv_sub">Untuk spreadsheet dan layanan pemindahan playlist, dilengkapi tautan ke setiap lagu</string>
+    <string name="sp_mini_preview_time">-2:14</string>
 </resources>
