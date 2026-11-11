@@ -2624,4 +2624,15 @@
     <string name="stats_song_count">%1$d songs</string>
     <string name="stats_play_count">%1$d plays</string>
     <string name="report_log_lines">%1$d log lines recorded this session</string>
+    <string name="ni_blocked_channels_count">%1$d won't appear in your feeds</string>
+    <string name="ni_hidden_videos_count">%1$d hidden</string>
+    <string name="ni_recommend_channel_again">Recommend %1$s again</string>
+    <string name="ni_unhide_video">Unhide %1$s</string>
+    <string name="sm_channel_count">%1$d channels</string>
+    <string name="sm_delete_group_accessibility">Delete %1$s</string>
+    <string name="sm_no_channel_matches">No channels match “%1$s”</string>
+    <string name="sm_delete_group_title">Delete %1$s?</string>
+    <string name="sm_groups_for_channel">Groups for %1$s</string>
+    <string name="sm_unfollow_channel">Unfollow %1$s</string>
+    <string name="sm_rename_group">Rename group</string>
 </resources>
