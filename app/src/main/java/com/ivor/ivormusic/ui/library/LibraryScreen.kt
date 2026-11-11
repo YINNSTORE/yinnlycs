@@ -1355,7 +1355,7 @@ fun AllSongsList(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = if (songs.isEmpty()) "All tracks" else "All tracks • ${songs.size}",
+                    text = if (songs.isEmpty()) stringResource(R.string.lib_all_tracks) else stringResource(R.string.lib_all_tracks_count, songs.size),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onBackground
@@ -4886,7 +4886,7 @@ fun PlaylistDetailScreen(
             if (isSearchActive && searchQuery.isNotBlank() && filteredSongs.isNotEmpty()) {
                 item {
                     Text(
-                        text = if (filteredSongs.size == 1) "1 result" else "${filteredSongs.size} results",
+                        text = stringResource(R.string.search_result_count, filteredSongs.size),
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(start = 24.dp, top = 8.dp, bottom = 4.dp)
