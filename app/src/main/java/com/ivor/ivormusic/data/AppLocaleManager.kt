@@ -13,9 +13,9 @@ import java.util.Locale
 object AppLocaleManager {
     fun wrap(base: Context): Context {
         val tag = ExperiencePreferences(base).appLanguage
-        val requestedLocales = LocaleList.forLanguageTags(tag)
 
         if (Build.VERSION.SDK_INT >= 33) {
+            val requestedLocales = LocaleList.forLanguageTags(tag)
             val manager = base.getSystemService(LocaleManager::class.java)
             if (manager.applicationLocales.toLanguageTags() != requestedLocales.toLanguageTags()) {
                 manager.applicationLocales = requestedLocales
@@ -23,7 +23,12 @@ object AppLocaleManager {
             return base
         }
 
-        val locale = requestedLocales[0] ?: Locale.forLanguageTag(tag)
+        // Android 11–12 use the legacy ISO code "in" for Indonesian resources.
+        // Keep the saved/app-facing code as "id", but resolve resources through
+        // the legacy qualifier so values-in is selected on older Android builds.
+        val resourceTag = if (tag == "id") "in" else tag
+        val requestedLocales = LocaleList.forLanguageTags(resourceTag)
+        val locale = requestedLocales[0] ?: Locale.forLanguageTag(resourceTag)
         Locale.setDefault(locale)
         val configuration = Configuration(base.resources.configuration).apply {
             setLocales(requestedLocales)
@@ -48,6 +53,10 @@ object AppLocaleManager {
             context.getSystemService(LocaleManager::class.java).applicationLocales =
                 LocaleList.forLanguageTags(safeLanguage)
         } else {
+            // Match the legacy Android resource qualifier used by API 30–32.
+            val resourceTag = if (safeLanguage == "id") "in" else safeLanguage
+            val locale = Locale.forLanguageTag(resourceTag)
+            Locale.setDefault(locale)
             context.findActivity()?.recreate()
         }
     }
