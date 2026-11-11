@@ -2598,7 +2598,7 @@
     <string name="lib_reorder_song_accessibility">Reorder %1$s</string>
     <string name="lh_day_streak">%1$d day streak</string>
     <string name="lh_nothing_in_range">Nothing %1$s</string>
-    <string name="lh_clear_dialog_body">This removes all %1$d plays. Your recently played row, the Library's “Most played” sort and your statistics are all built on this history and will reset with it.</string>
+    <string name="lh_clear_dialog_body">This removes all %1$d plays. Your recently played row, the Library\'s “Most played” sort and your statistics are all built on this history and will reset with it.</string>
     <string name="onboarding_step_of">Step %1$d of %2$d</string>
     <string name="video_seconds">%1$d seconds</string>
     <string name="video_channel_description">%1$s channel</string>
@@ -2611,7 +2611,7 @@
     <string name="settings_folder_song_count">%1$d songs</string>
     <string name="settings_search_no_match">No settings match “%1$s”</string>
     <string name="settings_search_hint">Try a shorter word, or search for what the setting does instead of its name.</string>
-    <string name="settings_android_auto_help_subtitle">Android Auto doesn't show Yinnlycs in your car? Start here.</string>
+    <string name="settings_android_auto_help_subtitle">Android Auto doesn\'t show Yinnlycs in your car? Start here.</string>
     <string name="comment_cancel_reply">Cancel reply</string>
     <string name="comment_post">Post comment</string>
     <string name="comment_pinned">Pinned comment</string>
@@ -2624,7 +2624,7 @@
     <string name="stats_song_count">%1$d songs</string>
     <string name="stats_play_count">%1$d plays</string>
     <string name="report_log_lines">%1$d log lines recorded this session</string>
-    <string name="ni_blocked_channels_count">%1$d won't appear in your feeds</string>
+    <string name="ni_blocked_channels_count">%1$d won\'t appear in your feeds</string>
     <string name="ni_hidden_videos_count">%1$d hidden</string>
     <string name="ni_recommend_channel_again">Recommend %1$s again</string>
     <string name="ni_unhide_video">Unhide %1$s</string>
@@ -2638,8 +2638,8 @@
     <string name="share_local_only_spotify">Local only mode is on. Turn it off in Settings to import from Spotify.</string>
     <string name="share_no_youtube_link">No YouTube link found in what you shared</string>
     <string name="share_local_only_youtube">Local only mode is on. Turn it off in Settings to open YouTube links.</string>
-    <string name="share_open_playlist_failed">Couldn't open that playlist</string>
-    <string name="share_open_link_failed">Couldn't open that link</string>
+    <string name="share_open_playlist_failed">Couldn\'t open that playlist</string>
+    <string name="share_open_link_failed">Couldn\'t open that link</string>
     <string name="share_playlist_title">Shared playlist</string>
     <string name="sp_palette_dynamic">Dynamic</string>
     <string name="sp_palette_dynamic_wallpaper">Dynamic (from wallpaper)</string>
