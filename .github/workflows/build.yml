@@ -7,7 +7,7 @@ on:
   push:
     branches: [ main, master, beta ]
   pull_request:
-    branches: [ main, master, beta ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   workflow_dispatch:
 
 # Least privilege by default: no job gets a token unless it asks for one below.
