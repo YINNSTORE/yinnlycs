@@ -2495,7 +2495,7 @@ private fun ExpressiveAboutDialog(
     var showDonateDialog by remember { mutableStateOf(false) }
     val githubUrl = "https://github.com/${BuildConfig.GITHUB_REPO}"
     val developerUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}"
-    val developerAvatarUrl = "https://avatars.githubusercontent.com/u/146443900?v=4"
+    val developerAvatarUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}.png"
     val whatsappChannelUrl = "https://whatsapp.com/channel/0029Vb8N4MCKwqSRSuyBsr1n"
 
     Dialog(
