@@ -244,10 +244,6 @@ internal fun buildSettingsSearchIndex(
         listOf("120hz", "120 hz", "refresh rate", "fps", "smooth scrolling", "display mode", "high refresh")
     ) { onOpenPage(SettingsPage.PERFORMANCE) }
     entry(
-        "dynamic_island", stringResource(R.string.settings_dynamic_island), stringResource(R.string.settings_device_experience), Icons.Rounded.AutoAwesome,
-        listOf("dynamic island", "floating pill", "music pill", "overlay", "notch", "mini player")
-    ) { onOpenPage(SettingsPage.DYNAMIC_ISLAND) }
-    entry(
         "equalizer", stringResource(R.string.settings_equalizer), stringResource(R.string.settings_device_experience), Icons.Rounded.GraphicEq,
         listOf("equalizer", "eq", "bass", "treble", "mid", "sound", "audio effect", "device equalizer")
     ) { onOpenPage(SettingsPage.EQUALIZER) }
