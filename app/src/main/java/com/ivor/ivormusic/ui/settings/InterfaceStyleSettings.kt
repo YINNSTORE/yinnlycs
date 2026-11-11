@@ -27,6 +27,7 @@ import com.ivor.ivormusic.R
 import com.ivor.ivormusic.data.ThemePreferences
 import com.ivor.ivormusic.ui.theme.AppFontFamily
 import com.ivor.ivormusic.ui.theme.AppSurfaceStyle
+import com.ivor.ivormusic.ui.theme.typographyFor
 
 @Composable
 internal fun InterfaceStyleSettingsPage(onBack: () -> Unit) {
@@ -34,6 +35,9 @@ internal fun InterfaceStyleSettingsPage(onBack: () -> Unit) {
     val preferences = remember(context) { ThemePreferences(context) }
     val surfaceStyle by preferences.surfaceStyle.collectAsState()
     val fontFamily by preferences.fontFamily.collectAsState()
+    // The preview is bound directly to the selected family as well as the
+    // app-wide Material theme, so a font choice is immediately visible here.
+    val selectedTypography = remember(fontFamily) { typographyFor(fontFamily) }
 
     SettingsDetailScaffold(
         title = stringResource(R.string.settings_interface_style_title),
@@ -103,10 +107,10 @@ internal fun InterfaceStyleSettingsPage(onBack: () -> Unit) {
                         androidx.compose.foundation.layout.Column(
                             modifier = Modifier.padding(18.dp)
                         ) {
-                            Text("Yinnlycs", style = MaterialTheme.typography.headlineSmall)
+                            Text("Yinnlycs", style = selectedTypography.headlineSmall)
                             Text(
                                 stringResource(R.string.home_greeting_subtitle),
-                                style = MaterialTheme.typography.bodyMedium,
+                                style = selectedTypography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
                         }
