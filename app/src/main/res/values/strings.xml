@@ -2609,4 +2609,7 @@
     <string name="channel_search_placeholder">Search %1$s</string>
     <string name="channel_close_photos">Close photos</string>
     <string name="settings_folder_song_count">%1$d songs</string>
+    <string name="settings_search_no_match">No settings match “%1$s”</string>
+    <string name="settings_search_hint">Try a shorter word, or search for what the setting does instead of its name.</string>
+    <string name="settings_android_auto_help_subtitle">Android Auto doesn't show Yinnlycs in your car? Start here.</string>
 </resources>
