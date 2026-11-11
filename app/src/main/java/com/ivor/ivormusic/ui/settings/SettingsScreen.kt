@@ -83,6 +83,7 @@ import androidx.compose.material.icons.rounded.DirectionsCar
 import androidx.compose.material.icons.rounded.Download
 import androidx.compose.material.icons.rounded.SystemUpdate
 import androidx.compose.material.icons.rounded.Folder
+import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FolderOff
 import androidx.compose.material.icons.rounded.GraphicEq
 import androidx.compose.material.icons.rounded.GridView
@@ -2490,13 +2491,9 @@ private fun ExpressiveAboutDialog(
     onNavigateToLicenses: () -> Unit
 ) {
     val context = LocalContext.current
+    var showDonateDialog by remember { mutableStateOf(false) }
     val githubUrl = "https://github.com/${BuildConfig.GITHUB_REPO}"
     val developerUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}"
-    val developerAvatarUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}.png"
-    // Local Only means the app does not reach the network, and a profile photo
-    // is not the exception that proves the rule. The placeholder below is the
-    // whole card in that state.
-    val localOnly = remember { ThemePreferences.isLocalOnly(context) }
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -2656,13 +2653,6 @@ private fun ExpressiveAboutDialog(
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.spacedBy(16.dp),
                                 ) {
-                                    // The placeholder is drawn first and never
-                                    // waits on anything, so the card is
-                                    // complete the frame it appears. The avatar
-                                    // crossfades over it out of Coil's shared
-                                    // disk cache, which makes every visit after
-                                    // the first a local read rather than a
-                                    // round trip to GitHub.
                                     Box(
                                         modifier = Modifier
                                             .size(58.dp)
@@ -2670,31 +2660,12 @@ private fun ExpressiveAboutDialog(
                                             .background(MaterialTheme.colorScheme.secondary),
                                         contentAlignment = Alignment.Center,
                                     ) {
-                                        Icon(
-                                            Icons.Rounded.Person,
-                                            contentDescription = null,
-                                            tint = MaterialTheme.colorScheme.onSecondary,
+                                        androidx.compose.foundation.Image(
+                                            painter = painterResource(R.drawable.yinnlycs_developer_v7),
+                                            contentDescription = stringResource(R.string.about_developer),
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier.fillMaxSize(),
                                         )
-                                        if (!localOnly) {
-                                            AsyncImage(
-                                                model = ImageRequest.Builder(context)
-                                                    .data(developerAvatarUrl)
-                                                    .memoryCachePolicy(CachePolicy.ENABLED)
-                                                    .diskCachePolicy(CachePolicy.ENABLED)
-                                                    // GitHub serves this path
-                                                    // with redirects and rotating
-                                                    // query strings; keying on the
-                                                    // stable URL keeps one entry
-                                                    // rather than one per redirect.
-                                                    .memoryCacheKey(developerAvatarUrl)
-                                                    .diskCacheKey(developerAvatarUrl)
-                                                    .crossfade(true)
-                                                    .build(),
-                                                contentDescription = null,
-                                                contentScale = ContentScale.Crop,
-                                                modifier = Modifier.fillMaxSize(),
-                                            )
-                                        }
                                     }
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(
@@ -2717,6 +2688,14 @@ private fun ExpressiveAboutDialog(
                     item {
                         SettingsSection(title = stringResource(R.string.about_project)) {
                             SettingsCard {
+                                SettingsRow(
+                                    icon = Icons.Rounded.Favorite,
+                                    title = stringResource(R.string.about_donate),
+                                    subtitle = stringResource(R.string.about_donate_subtitle),
+                                    onClick = { showDonateDialog = true },
+                                    showChevron = true,
+                                )
+                                SettingsDivider()
                                 SettingsRow(
                                     icon = Icons.Rounded.SystemUpdate,
                                     title = stringResource(R.string.action_check_updates),
@@ -2789,6 +2768,31 @@ private fun ExpressiveAboutDialog(
                 }
             }
         }
+    }
+
+    if (showDonateDialog) {
+        AlertDialog(
+            onDismissRequest = { showDonateDialog = false },
+            title = { Text(stringResource(R.string.about_donate_title)) },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Text(stringResource(R.string.about_donate_message))
+                    androidx.compose.foundation.Image(
+                        painter = painterResource(R.drawable.yinnlycs_donate_qris_v7),
+                        contentDescription = stringResource(R.string.about_donate_title),
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 420.dp),
+                    )
+                }
+            },
+            confirmButton = {
+                Button(onClick = { showDonateDialog = false }) {
+                    Text(stringResource(R.string.about_donate_close))
+                }
+            },
+        )
     }
 }
 
