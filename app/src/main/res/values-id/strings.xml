@@ -450,4 +450,7 @@
     <string name="sp_report_bug">Laporkan bug</string>
     <string name="about_whatsapp_channel">Gabung Saluran WhatsApp</string>
     <string name="about_whatsapp_channel_subtitle">Ikuti saluran resmi Info [yinnlycs] di WhatsApp.</string>
+    <string name="about_donate_download">Unduh QRIS</string>
+    <string name="about_donate_download_success">QRIS berhasil disimpan ke folder Gambar/Yinnlycs.</string>
+    <string name="about_donate_download_failed">QRIS gagal disimpan. Silakan coba lagi.</string>
 </resources>
