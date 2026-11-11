@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.dp
 import com.ivor.ivormusic.R
 import com.ivor.ivormusic.data.AppLocaleManager
 import com.ivor.ivormusic.data.ExperiencePreferences
-import com.ivor.ivormusic.service.DynamicIslandService
 import com.ivor.ivormusic.service.YinnlycsEqualizer
 import com.ivor.ivormusic.util.DisplayPerformance
 import kotlin.math.roundToInt
@@ -114,127 +113,6 @@ internal fun PerformanceSettingsPage(onBack: () -> Unit) {
                                 preferences.setHighRefreshRate(checked)
                                 activity?.let { DisplayPerformance.apply(it, checked) }
                             }
-                        )
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-internal fun DynamicIslandSettingsPage(onBack: () -> Unit) {
-    val context = LocalContext.current
-    val preferences = remember(context) { ExperiencePreferences(context) }
-    val enabled by preferences.dynamicIslandEnabled.collectAsState()
-    val width by preferences.dynamicIslandWidthDp.collectAsState()
-    val height by preferences.dynamicIslandHeightDp.collectAsState()
-    val theme by preferences.dynamicIslandTheme.collectAsState()
-    var permissionGranted by remember { mutableStateOf(Settings.canDrawOverlays(context)) }
-    val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
-
-    DisposableEffect(lifecycleOwner, context) {
-        val observer = androidx.lifecycle.LifecycleEventObserver { _, event ->
-            if (event == androidx.lifecycle.Lifecycle.Event.ON_RESUME) {
-                permissionGranted = Settings.canDrawOverlays(context)
-            }
-        }
-        lifecycleOwner.lifecycle.addObserver(observer)
-        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
-    }
-
-    fun refreshOverlay() {
-        if (enabled && permissionGranted) {
-            context.startService(Intent(context, DynamicIslandService::class.java).setAction(DynamicIslandService.ACTION_REFRESH))
-        }
-    }
-
-    SettingsDetailScaffold(title = stringResource(R.string.settings_dynamic_island), onBack = onBack) {
-        item {
-            SettingsSection(title = stringResource(R.string.settings_dynamic_island)) {
-                SettingsCard {
-                    Column(modifier = Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text(stringResource(R.string.settings_dynamic_island_enable), style = MaterialTheme.typography.titleMedium)
-                                Text(
-                                    stringResource(R.string.settings_dynamic_island_subtitle),
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                            Switch(
-                                checked = enabled,
-                                enabled = permissionGranted,
-                                onCheckedChange = { checked ->
-                                    preferences.setDynamicIslandEnabled(checked)
-                                    if (checked) {
-                                        context.startService(Intent(context, DynamicIslandService::class.java).setAction(DynamicIslandService.ACTION_SHOW))
-                                    } else {
-                                        context.stopService(Intent(context, DynamicIslandService::class.java))
-                                    }
-                                }
-                            )
-                        }
-                        if (!permissionGranted) {
-                            Button(onClick = {
-                                val intent = Intent(
-                                    Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                                    Uri.parse("package:" + context.packageName)
-                                ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                runCatching { context.startActivity(intent) }
-                            }) {
-                                Text(stringResource(R.string.settings_dynamic_island_permission))
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        item {
-            SettingsSection(title = stringResource(R.string.settings_dynamic_island_theme)) {
-                SettingsCard {
-                    SettingsChoiceRow(
-                        icon = Icons.Rounded.AutoAwesome,
-                        title = stringResource(R.string.settings_dynamic_island_theme),
-                        subtitle = stringResource(R.string.settings_dynamic_island_subtitle),
-                        labels = listOf(
-                            stringResource(R.string.settings_dynamic_island_theme_glass),
-                            stringResource(R.string.settings_dynamic_island_theme_violet),
-                            stringResource(R.string.settings_dynamic_island_theme_ocean)
-                        ),
-                        selectedIndex = listOf("glass", "violet", "ocean").indexOf(theme).coerceAtLeast(0),
-                        onSelect = { index ->
-                            preferences.setDynamicIslandTheme(listOf("glass", "violet", "ocean").getOrElse(index) { "glass" })
-                            refreshOverlay()
-                        }
-                    )
-                }
-            }
-        }
-        item {
-            SettingsSection(title = stringResource(R.string.settings_dynamic_island_width)) {
-                SettingsCard {
-                    Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-                        Text(stringResource(R.string.settings_dynamic_island_width) + ": " + width + " dp")
-                        Slider(
-                            value = width.toFloat(),
-                            onValueChange = {
-                                preferences.setDynamicIslandWidthDp(it.roundToInt())
-                                refreshOverlay()
-                            },
-                            valueRange = 220f..360f,
-                            steps = 6
-                        )
-                        Text(stringResource(R.string.settings_dynamic_island_height) + ": " + height + " dp")
-                        Slider(
-                            value = height.toFloat(),
-                            onValueChange = {
-                                preferences.setDynamicIslandHeightDp(it.roundToInt())
-                                refreshOverlay()
-                            },
-                            valueRange = 36f..64f,
-                            steps = 6
                         )
                     }
                 }
