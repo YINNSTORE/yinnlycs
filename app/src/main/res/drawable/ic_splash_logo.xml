@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Slightly larger than the launcher foreground, while staying inside
+         the Android splash icon's safe area. -->
+    <item
+        android:width="84dp"
+        android:height="84dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/yinnlycs_logo_v7"
+            android:gravity="fill" />
+    </item>
+</layer-list>
