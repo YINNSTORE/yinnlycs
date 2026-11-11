@@ -67,6 +67,7 @@ import com.ivor.ivormusic.ui.library.songRowClick
 import com.ivor.ivormusic.ui.components.ExpressivePullToRefresh
 import com.ivor.ivormusic.ui.components.MusicVideoToggleState
 import com.ivor.ivormusic.ui.components.rememberMusicVideoToggleState
+import kotlinx.coroutines.delay
 
 /**
  * Spotlight: an alternative music Home built the way music apps are actually
@@ -218,11 +219,20 @@ fun SpotlightHomeContent(
             }
 
             item(key = "greeting") {
-                val hour = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
-                val greeting = when (hour) {
+                val hourState = remember {
+                    mutableStateOf(java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY))
+                }
+                LaunchedEffect(Unit) {
+                    while (true) {
+                        hourState.value = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+                        delay(60_000L)
+                    }
+                }
+                val greeting = when (hourState.value) {
                     in 5..10 -> R.string.home_greeting_morning
-                    in 11..15 -> R.string.home_greeting_afternoon
-                    else -> R.string.home_greeting_evening
+                    in 11..14 -> R.string.home_greeting_afternoon
+                    in 15..18 -> R.string.home_greeting_evening
+                    else -> R.string.home_greeting_night
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp)
