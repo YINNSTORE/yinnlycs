@@ -447,4 +447,5 @@
     <string name="about_open_source_note">Yinnlycs adalah proyek sumber terbuka di bawah GPL-3.0. Logo aplikasi dan detail build di atas disertakan bersama aplikasi, sehingga halaman ini tetap lengkap tanpa perlu memuat data dari internet.</string>
     <string name="about_licenses">Lisensi sumber terbuka</string>
     <string name="about_licenses_subtitle">Pustaka yang digunakan untuk membangun Yinnlycs</string>
+    <string name="sp_report_bug">Laporkan bug</string>
 </resources>
