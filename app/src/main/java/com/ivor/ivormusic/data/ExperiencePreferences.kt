@@ -15,9 +15,9 @@ class ExperiencePreferences(context: Context) {
     val isHighRefreshRateEnabled: Boolean
         get() = prefs.getBoolean(KEY_HIGH_REFRESH_RATE, false)
 
-    /** Indonesian is the first-run default; users can still explicitly choose System or English. */
+    /** Indonesian is the default; English is the only alternate app language. */
     val appLanguage: String
-        get() = prefs.getString(KEY_APP_LANGUAGE, "id") ?: "id"
+        get() = if (prefs.getString(KEY_APP_LANGUAGE, "id") == "en") "en" else "id"
 
     fun setHighRefreshRate(enabled: Boolean) {
         prefs.edit().putBoolean(KEY_HIGH_REFRESH_RATE, enabled).apply()
@@ -25,7 +25,7 @@ class ExperiencePreferences(context: Context) {
     }
 
     fun setAppLanguage(language: String) {
-        val safeLanguage = language.takeIf { it in setOf("id", "en", "system") } ?: "id"
+        val safeLanguage = if (language == "en") "en" else "id"
         prefs.edit().putString(KEY_APP_LANGUAGE, safeLanguage).apply()
     }
 
