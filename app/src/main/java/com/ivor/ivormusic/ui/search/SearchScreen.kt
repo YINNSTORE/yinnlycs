@@ -966,7 +966,7 @@ fun SearchScreen(
                     if (channelResults.isNotEmpty()) {
                         item {
                             ResultHeader(
-                                title = "Channels",
+                                title = stringResource(R.string.cat_channels),
                                 count = channelResults.size,
                                 icon = Icons.Rounded.AccountCircle,
                                 color = MaterialTheme.colorScheme.primary,
@@ -991,7 +991,7 @@ fun SearchScreen(
                     if (videoPlaylistResults.isNotEmpty()) {
                         item {
                             ResultHeader(
-                                title = "Playlists",
+                                title = stringResource(R.string.cat_playlists),
                                 count = videoPlaylistResults.size,
                                 icon = Icons.Rounded.QueueMusic,
                                 color = Color(0xFF_FF9800), // Orange
@@ -1048,7 +1048,7 @@ fun SearchScreen(
                                 )
                                 Spacer(modifier = Modifier.weight(1f))
                                 Text(
-                                    "${videoResults.size} results",
+                                    stringResource(R.string.search_result_count, videoResults.size),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = secondaryTextColor
                                 )
@@ -1088,7 +1088,7 @@ fun SearchScreen(
                 artistResults.isNotEmpty() -> {
                     item {
                         ResultHeader(
-                            title = "Artists",
+                            title = stringResource(R.string.cat_artists),
                             count = artistResults.size,
                             icon = Icons.Rounded.Person,
                             color = Color(0xFF9C27B0), // Purple
@@ -1131,7 +1131,7 @@ fun SearchScreen(
                 albumResults.isNotEmpty() -> {
                      item {
                         ResultHeader(
-                            title = "Albums",
+                            title = stringResource(R.string.cat_albums),
                             count = albumResults.size,
                             icon = Icons.Rounded.Album,
                             color = Color(0xFF_009688), // Teal
@@ -1167,7 +1167,7 @@ fun SearchScreen(
                 playlistResults.isNotEmpty() -> {
                     item {
                         ResultHeader(
-                            title = "Playlists",
+                            title = stringResource(R.string.cat_playlists),
                             count = playlistResults.size,
                             icon = Icons.Rounded.QueueMusic,
                             color = Color(0xFF_FF9800), // Orange
@@ -1285,7 +1285,7 @@ fun SearchScreen(
                             )
                             Spacer(modifier = Modifier.weight(1f))
                             Text(
-                                "${youtubeResults.size} results",
+                                stringResource(R.string.search_result_count, youtubeResults.size),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = secondaryTextColor
                             )
@@ -1370,7 +1370,7 @@ fun SearchScreen(
                                 )
                                 Spacer(modifier = Modifier.weight(1f))
                                 Text(
-                                    "${filteredLocalSongs.size} matches",
+                                    stringResource(R.string.search_match_count, filteredLocalSongs.size),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = secondaryTextColor
                                 )
@@ -1459,7 +1459,7 @@ fun SearchScreen(
                     // Local search results only (when no YouTube results but have local matches)
                     item {
                         Text(
-                            "${filteredLocalSongs.size} results",
+                            stringResource(R.string.search_result_count, filteredLocalSongs.size),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                             color = secondaryTextColor,
@@ -1566,7 +1566,7 @@ private fun SearchHeroHeader(
         } catch (e: ActivityNotFoundException) {
             // No recognizer on the device. A toast beats a silent dead button,
             // and this is the one voice-search failure that is a device fact.
-            Toast.makeText(context, "Voice search is not available on this device", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.search_voice_unavailable, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -2162,7 +2162,7 @@ fun ResultHeader(
         )
         Spacer(modifier = Modifier.weight(1f))
         Text(
-            "$count results",
+            stringResource(R.string.search_result_count, count),
             style = MaterialTheme.typography.bodySmall,
             color = secondaryTextColor
         )
@@ -2986,7 +2986,7 @@ private fun LinkPlaylistHeader(
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Rounded.PlayArrow,
-                            contentDescription = "Play all",
+                            contentDescription = stringResource(R.string.action_play_all),
                             tint = MaterialTheme.colorScheme.onPrimary,
                             modifier = Modifier.size(24.dp)
                         )
