@@ -1414,7 +1414,7 @@ internal fun ChannelSearchPane(
                 )
                 Spacer(Modifier.height(12.dp))
                 Text(
-                    text = "Nothing in this channel matches \"$query\"",
+                    text = stringResource(R.string.channel_search_no_matches, query),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center
@@ -1436,7 +1436,7 @@ internal fun ChannelSearchPane(
                 )
                 Spacer(Modifier.height(12.dp))
                 Text(
-                    text = "Search everything $channelName has published",
+                    text = stringResource(R.string.channel_search_all_hint, channelName),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center
