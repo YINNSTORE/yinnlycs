@@ -1677,7 +1677,7 @@
     <string name="bell_level_none">Tidak ada</string>
     <string name="bell_level_unknown">tidak diketahui</string>
     <string name="bell_content_description">Notifikasi untuk %1$s: %2$s. Ubah</string>
-    <string name="bell_changed">Notifikasi untuk %1$s diatur ke %2$s</string>
+    <string name="bell_changed">Notifikasi diatur ke %1$s</string>
     <string name="bell_change_failed">Tidak dapat mengubah notifikasi untuk %1$s</string>
     <string name="bell_koda_uploads_off">Yinnlycs akan memberi tahu tentang unggahan ini setelah fitur Unggahan baru diaktifkan melalui Pengaturan</string>
     <string name="stop_recommending">Jangan rekomendasikan lagi</string>
