@@ -842,7 +842,7 @@ private fun LazyGridScope.aboutTab(about: ChannelAbout?, isLoading: Boolean) {
 
     if (!about.description.isNullOrBlank()) {
         item(key = "about_description", span = { GridItemSpan(maxLineSpan) }) {
-            AboutCard(title = "Description") {
+            AboutCard(title = stringResource(R.string.channel_description)) {
                 // The bio arrives as a bare string, so its addresses, emails
                 // and @handles are found here; a YouTube one opens in Koda.
                 val linkified = remember(about.description) {
@@ -860,7 +860,7 @@ private fun LazyGridScope.aboutTab(about: ChannelAbout?, isLoading: Boolean) {
     if (about.links.isNotEmpty()) {
         item(key = "about_links", span = { GridItemSpan(maxLineSpan) }) {
             val uriHandler = LocalUriHandler.current
-            AboutCard(title = "Links") {
+            AboutCard(title = stringResource(R.string.channel_links)) {
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     about.links.forEach { link ->
                         Row(
@@ -913,7 +913,7 @@ private fun LazyGridScope.aboutTab(about: ChannelAbout?, isLoading: Boolean) {
     )
     if (stats.isNotEmpty()) {
         item(key = "about_stats", span = { GridItemSpan(maxLineSpan) }) {
-            AboutCard(title = "Details") {
+            AboutCard(title = stringResource(R.string.channel_details)) {
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     stats.forEach { (icon, text) ->
                         Row(
@@ -1380,13 +1380,13 @@ internal fun ChannelSearchPane(
                 modifier = Modifier.size(44.dp)
             ) {
                 Box(contentAlignment = Alignment.Center) {
-                    Icon(Icons.Rounded.Close, contentDescription = "Close search")
+                    Icon(Icons.Rounded.Close, contentDescription = stringResource(R.string.channel_close_search))
                 }
             }
             SearchField(
                 query = query,
                 onQueryChange = onQueryChange,
-                placeholder = "Search $channelName",
+                placeholder = stringResource(R.string.channel_search_placeholder, channelName),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -1646,7 +1646,7 @@ internal fun ChannelPhotoViewer(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Rounded.Close,
-                            contentDescription = "Close photos",
+                            contentDescription = stringResource(R.string.channel_close_photos),
                             modifier = Modifier.size(24.dp)
                         )
                     }
