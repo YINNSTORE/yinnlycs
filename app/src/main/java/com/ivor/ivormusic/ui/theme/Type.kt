@@ -125,7 +125,9 @@ enum class AppFontFamily(val storageId: String, @param:StringRes val labelRes: I
 
 /** Keep the existing expressive scale and weights while changing only typefaces. */
 fun typographyFor(choice: AppFontFamily): MaterialTypography {
-    if (choice == AppFontFamily.DEFAULT) return Typography
+    // DEFAULT is the platform sans-serif, not the app's decorative display
+    // face. Giving it an explicit family makes switching away from Montserrat
+    // visibly change every text role, including body and labels.
     val family = when (choice) {
         AppFontFamily.DEFAULT -> FontFamily.SansSerif
         AppFontFamily.MONTSERRAT -> MontserratFamily
