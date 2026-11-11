@@ -197,6 +197,7 @@
     <string name="no_albums_yet_subtitle">Album dari lagumu akan muncul di sini</string>
 
     <plurals name="n_songs">
+        <item quantity="one">%1$d lagu</item>
         <item quantity="other">%1$d lagu</item>
     </plurals>
     <plurals name="n_playlists">
