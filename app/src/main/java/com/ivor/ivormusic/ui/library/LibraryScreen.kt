@@ -1385,7 +1385,7 @@ fun AllSongsList(
                         ) {
                             Icon(
                                 Icons.Rounded.SwapVert,
-                                contentDescription = "Sort by ${sortOption.label}",
+                                contentDescription = stringResource(R.string.lib_sort_by_accessibility, sortOption.label),
                                 modifier = Modifier.size(20.dp)
                             )
                         }
@@ -1789,7 +1789,7 @@ fun PlaylistsGrid(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Your playlists • ${playlists.size}",
+                        text = stringResource(R.string.lib_your_playlists_count, stringResource(R.string.your_playlists), playlists.size),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onBackground,
@@ -2631,7 +2631,7 @@ fun ExpressivePlaylistCard(
             if (isEditable || isSaved || onHide != null || modeAction != null) {
                 Box {
                     IconButton(onClick = { showMenu = true }) {
-                        Icon(Icons.Rounded.MoreVert, contentDescription = "Playlist options", tint = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Icon(Icons.Rounded.MoreVert, contentDescription = stringResource(R.string.cd_playlist_options), tint = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     DropdownMenu(expanded = showMenu, onDismissRequest = { showMenu = false }) {
                         // Hiding is offered on every card, including the ones
@@ -2995,7 +2995,7 @@ private fun ManageModeToolbar(
         colors = FloatingToolbarDefaults.vibrantFloatingToolbarColors(),
         floatingActionButton = {
             FloatingToolbarDefaults.VibrantFloatingActionButton(onClick = onDone) {
-                Icon(Icons.Rounded.Done, contentDescription = "Finish editing")
+                Icon(Icons.Rounded.Done, contentDescription = stringResource(R.string.action_done))
             }
         }
     ) {
@@ -3071,7 +3071,7 @@ private fun TrackSectionHeader(
     ) {
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = "Tracks",
+                text = stringResource(R.string.ab_tracks),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 // Stands on the page's ground, not on a theme surface.
@@ -3357,7 +3357,7 @@ private fun PlaylistTrackRow(
                     IconButton(onClick = onRemove, enabled = !isDragging) {
                         Icon(
                             imageVector = Icons.Rounded.RemoveCircleOutline,
-                            contentDescription = "Remove ${song.title}",
+                            contentDescription = stringResource(R.string.lib_remove_song_accessibility, song.title),
                             tint = MaterialTheme.colorScheme.error
                         )
                     }
@@ -3368,7 +3368,7 @@ private fun PlaylistTrackRow(
                         ) {
                             Icon(
                                 imageVector = Icons.Rounded.DragIndicator,
-                                contentDescription = "Reorder ${song.title}",
+                                contentDescription = stringResource(R.string.lib_reorder_song_accessibility, song.title),
                                 tint = if (isDragging) {
                                     MaterialTheme.colorScheme.onSecondaryContainer
                                 } else {
@@ -4469,12 +4469,12 @@ fun PlaylistDetailScreen(
                         TextField(
                             value = searchQuery,
                             onValueChange = { searchQuery = it },
-                            placeholder = { Text("Find in ${if (isAlbum) "album" else "playlist"}") },
+                            placeholder = { Text(stringResource(if (isAlbum) R.string.lib_find_in_album else R.string.lib_find_in_playlist)) },
                             leadingIcon = { Icon(Icons.Rounded.Search, null) },
                             trailingIcon = if (searchQuery.isNotEmpty()) {
                                 {
                                     IconButton(onClick = { searchQuery = "" }) {
-                                        Icon(Icons.Rounded.Close, "Clear search")
+                                        Icon(Icons.Rounded.Close, stringResource(R.string.cd_clear_search))
                                     }
                                 }
                             } else null,
@@ -4901,7 +4901,7 @@ fun PlaylistDetailScreen(
                     EmptyLibraryState(
                         icon = Icons.Rounded.SearchOff,
                         title = stringResource(R.string.search_no_results),
-                        subtitle = "Nothing in this ${if (isAlbum) "album" else "playlist"} matches \"$searchQuery\""
+                        subtitle = stringResource(if (isAlbum) R.string.lib_nothing_matches_album else R.string.lib_nothing_matches_playlist, searchQuery)
                     )
                 }
 
@@ -4939,7 +4939,7 @@ fun PlaylistDetailScreen(
                     EmptyLibraryState(
                         icon = Icons.Rounded.MusicNote,
                         title = stringResource(if (isAlbum) R.string.lib_album_empty else R.string.lib_playlist_empty),
-                        subtitle = "Songs you add to this ${if (isAlbum) "album" else "playlist"} will show up here",
+                        subtitle = stringResource(if (isAlbum) R.string.lib_album_empty_hint else R.string.lib_playlist_empty_hint),
                         action = if (isLocalPlaylist && onAddSongsRequest != null) {
                             {
                                 Button(onClick = onAddSongsRequest) {
