@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.svg" width="120" alt="Koda logo"/>
+  <img src="icon.svg" width="120" alt="Yinnlycs logo"/>
 </p>
 
 <h1 align="center">yinnlycs</h1>
@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Ivorisnoob/Koda/releases/latest"><img src="https://img.shields.io/github/v/release/Ivorisnoob/Koda?style=for-the-badge&label=Download&color=6750A4" alt="Latest release"/></a>
-  <a href="https://github.com/Ivorisnoob/Koda/releases"><img src="https://img.shields.io/github/downloads/Ivorisnoob/Koda/total?style=for-the-badge&color=1B6C3A" alt="Downloads"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Ivorisnoob/Koda?style=for-the-badge&color=8B4513" alt="GPL-3.0 license"/></a>
+  <a href="https://github.com/Ivorisnoob/Yinnlycs/releases/latest"><img src="https://img.shields.io/github/v/release/Ivorisnoob/Yinnlycs?style=for-the-badge&label=Download&color=6750A4" alt="Latest release"/></a>
+  <a href="https://github.com/Ivorisnoob/Yinnlycs/releases"><img src="https://img.shields.io/github/downloads/Ivorisnoob/Yinnlycs/total?style=for-the-badge&color=1B6C3A" alt="Downloads"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Ivorisnoob/Yinnlycs?style=for-the-badge&color=8B4513" alt="GPL-3.0 license"/></a>
 </p>
 
 <p align="center">
@@ -20,20 +20,20 @@
   <a href="https://t.me/ivorisnoob_chat"><img src="https://img.shields.io/badge/Telegram-Community-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram community"/></a>
 </p>
 
-Koda combines a complete music player and a complete video player in one app. Switch modes from Home and the feed, search, library, and player adapt with it.
+Yinnlycs combines a complete music player and a complete video player in one app. Switch modes from Home and the feed, search, library, and player adapt with it.
 
 It works without an official YouTube API key, and an account is optional. Search, playback, downloads, local playlists, likes, subscriptions, and recommendations can all work on the device; signing in adds your YouTube feeds, library, history, comments, and other account features.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/01-home-music-your-mix.png" width="24%" alt="Music home"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/03-player-editorial.png" width="24%" alt="Editorial music player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/41-home-video-recommended.png" width="24%" alt="Video home"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/42-video-watch-page.png" width="24%" alt="Video watch page"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/01-home-music-your-mix.png" width="24%" alt="Music home"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/03-player-editorial.png" width="24%" alt="Editorial music player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/41-home-video-recommended.png" width="24%" alt="Video home"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/42-video-watch-page.png" width="24%" alt="Video watch page"/>
 </p>
 
 ## Download
 
-Download the latest APK from **[GitHub Releases](https://github.com/Ivorisnoob/Koda/releases/latest)**. Koda requires Android 11 or newer.
+Download the latest APK from **[GitHub Releases](https://github.com/Ivorisnoob/Yinnlycs/releases/latest)**. Yinnlycs requires Android 11 or newer.
 
 | APK | Use it for |
 |---|---|
@@ -41,7 +41,7 @@ Download the latest APK from **[GitHub Releases](https://github.com/Ivorisnoob/K
 | `armeabi-v7a` | Older 32-bit devices. |
 | `universal` | A larger build containing both architectures. |
 
-Android will ask for permission to install an app from outside the Play Store. After installation, Koda's updater can check GitHub Releases and select the correct APK automatically.
+Android will ask for permission to install an app from outside the Play Store. After installation, Yinnlycs's updater can check GitHub Releases and select the correct APK automatically.
 
 Official builds are published only on GitHub and in the [Telegram community](https://t.me/ivorisnoob_chat). See [SECURITY.md](SECURITY.md) before installing a build from anywhere else.
 
@@ -50,7 +50,7 @@ Official builds are published only on GitHub and in the [Telegram community](htt
 ### Music and library
 
 - Search YouTube Music for songs, albums, artists, and playlists, with paged results and local search history.
-- Search by voice from inside Koda.
+- Search by voice from inside Yinnlycs.
 - Choose between the Your Mix and Spotlight home layouts.
 - Get recommendations from local listening activity, with YouTube Music recommendations added when signed in.
 - Start a radio from any song and automatically extend the queue with related music.
@@ -97,7 +97,7 @@ Official builds are published only on GitHub and in the [Telegram community](htt
 - Timed comments that can appear over the video at the moment they reference.
 - Tappable links and timestamps in descriptions and comments.
 - Video watch history, a notification inbox, sharing, and autoplay controls.
-- Open shared YouTube watch, Shorts, live, playlist, music, and channel links directly in Koda.
+- Open shared YouTube watch, Shorts, live, playlist, music, and channel links directly in Yinnlycs.
 
 ### Channels and subscriptions
 
@@ -128,7 +128,7 @@ Official builds are published only on GitHub and in the [Telegram community](htt
 
 - Download songs, videos, albums, and playlists for offline playback.
 - Choose video quality and see an estimated size before downloading.
-- Store portable music and video files under `Downloads/Koda` so other apps can open them.
+- Store portable music and video files under `Downloads/Yinnlycs` so other apps can open them.
 - Keep downloads running in the background with progress notifications.
 - Manage music and video downloads with progress, cancel, delete, and retry controls.
 - Skip files already downloaded when restarting an album or playlist download.
@@ -150,14 +150,14 @@ Official builds are published only on GitHub and in the [Telegram community](htt
 - Six home-screen widgets covering artwork, transport controls, progress, shuffle, repeat, and Up Next.
 - A Quick Settings tile for music playback.
 - Android Auto browsing, search, playback, and voice requests.
-- Assistant playback requests such as asking Google to play a song on Koda.
+- Assistant playback requests such as asking Google to play a song on Yinnlycs.
 - System media controls for both music and video.
 - An in-app bug report screen with logs and device details that you review before sharing.
 - An optional daily time limit with separate budgets for each day of the week.
 
 ### Accounts, profiles, and backup
 
-- Use Koda without a Google account through a device-local profile.
+- Use Yinnlycs without a Google account through a device-local profile.
 - Add several YouTube accounts and switch between them without signing in again.
 - Keep subscriptions and hidden recommendations separate per profile while sharing device libraries and downloads.
 - Sign in through an embedded browser or paste session cookies when the browser flow is unavailable.
@@ -165,7 +165,7 @@ Official builds are published only on GitHub and in the [Telegram community](htt
 - Back up and restore playlists, likes, saved items, statistics, history, subscriptions, hidden recommendations, profiles, artwork, and settings.
 - Backups exclude account credentials and downloaded media.
 
-## Using Koda without an account
+## Using Yinnlycs without an account
 
 | Without an account | Signing in adds |
 |---|---|
@@ -175,11 +175,11 @@ Official builds are published only on GitHub and in the [Telegram community](htt
 | Like songs and follow channels on the device | Changes synchronized with YouTube |
 | Use local recommendations, history, statistics, and the blocklist | Multiple stored YouTube profiles |
 
-Account actions affect the connected YouTube account. Koda asks for confirmation before destructive actions such as deleting an account-owned playlist.
+Account actions affect the connected YouTube account. Yinnlycs asks for confirmation before destructive actions such as deleting an account-owned playlist.
 
 ## Screenshots
 
-The player styles were captured on Koda 5.1; the rest of the gallery was captured on Koda 4.4 and may differ slightly from the latest release.
+The player styles were captured on Yinnlycs 5.1; the rest of the gallery was captured on Yinnlycs 4.4 and may differ slightly from the latest release.
 
 <details>
 <summary>Open the screenshot gallery</summary>
@@ -187,9 +187,9 @@ The player styles were captured on Koda 5.1; the rest of the gallery was capture
 ### Music
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/01-home-music-your-mix.png" width="30%" alt="Music home"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/05-library-music.png" width="30%" alt="Music library"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/07-search-music-songs.png" width="30%" alt="Music search"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/01-home-music-your-mix.png" width="30%" alt="Music home"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/05-library-music.png" width="30%" alt="Music library"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/07-search-music-songs.png" width="30%" alt="Music search"/>
 </p>
 
 ### Player styles
@@ -197,37 +197,37 @@ The player styles were captured on Koda 5.1; the rest of the gallery was capture
 Nine styles to choose from. Pick one in Settings, or long-press the artwork while a song plays.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/50-player-hero.png" width="30%" alt="Hero player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/03-player-editorial.png" width="30%" alt="Editorial player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/10-player-classic.png" width="30%" alt="Classic player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/50-player-hero.png" width="30%" alt="Hero player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/03-player-editorial.png" width="30%" alt="Editorial player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/10-player-classic.png" width="30%" alt="Classic player"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/11-player-gesture.png" width="30%" alt="Gesture player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/12-player-canvas.png" width="30%" alt="Canvas player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/13-player-bento.png" width="30%" alt="Bento player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/11-player-gesture.png" width="30%" alt="Gesture player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/12-player-canvas.png" width="30%" alt="Canvas player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/13-player-bento.png" width="30%" alt="Bento player"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/14-player-sticker.png" width="30%" alt="Sticker player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/15-player-morph.png" width="30%" alt="Morph player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/17-player-dial.png" width="30%" alt="Dial player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/14-player-sticker.png" width="30%" alt="Sticker player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/15-player-morph.png" width="30%" alt="Morph player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/17-player-dial.png" width="30%" alt="Dial player"/>
 </p>
 
 ### Video and subscriptions
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/41-home-video-recommended.png" width="30%" alt="Video home"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/42-video-watch-page.png" width="30%" alt="Video player"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/46-subscriptions-feed.png" width="30%" alt="Subscriptions feed"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/41-home-video-recommended.png" width="30%" alt="Video home"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/42-video-watch-page.png" width="30%" alt="Video player"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/46-subscriptions-feed.png" width="30%" alt="Subscriptions feed"/>
 </p>
 
 ### Settings and profiles
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/22-settings-hub.png" width="30%" alt="Settings"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/23-settings-color-palette.png" width="30%" alt="Color palette picker"/>
-  <img src="https://raw.githubusercontent.com/Ivorisnoob/Koda/main/Screenshots/49-profiles-sheet-signed-in.png" width="30%" alt="Account profiles"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/22-settings-hub.png" width="30%" alt="Settings"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/23-settings-color-palette.png" width="30%" alt="Color palette picker"/>
+  <img src="https://raw.githubusercontent.com/Ivorisnoob/Yinnlycs/main/Screenshots/49-profiles-sheet-signed-in.png" width="30%" alt="Account profiles"/>
 </p>
 
 </details>
@@ -237,8 +237,8 @@ Nine styles to choose from. Pick one in Settings, or long-press the artwork whil
 Use the latest stable Android Studio and a device or emulator running Android 11 or newer.
 
 ```bash
-git clone https://github.com/Ivorisnoob/Koda.git
-cd Koda
+git clone https://github.com/Ivorisnoob/Yinnlycs.git
+cd Yinnlycs
 ./gradlew assembleDebug
 ```
 
@@ -257,21 +257,21 @@ Contributor and maintainer documentation:
 
 ## Community and contributing
 
-Join the [Telegram community](https://t.me/ivorisnoob_chat) for help, beta builds, and discussion. Use [GitHub Issues](https://github.com/Ivorisnoob/Koda/issues) for bug reports and feature requests so they remain trackable.
+Join the [Telegram community](https://t.me/ivorisnoob_chat) for help, beta builds, and discussion. Use [GitHub Issues](https://github.com/Ivorisnoob/Yinnlycs/issues) for bug reports and feature requests so they remain trackable.
 
 Pull requests are welcome. Open them against the `beta` branch, not `main`: `beta` is where new work lands and what beta testers get builds from. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community expectations.
 
 ## Security
 
-Please report vulnerabilities privately through [GitHub Security Advisories](https://github.com/Ivorisnoob/Koda/security/advisories), not through a public issue or chat. See [SECURITY.md](SECURITY.md) for details.
+Please report vulnerabilities privately through [GitHub Security Advisories](https://github.com/Ivorisnoob/Yinnlycs/security/advisories), not through a public issue or chat. See [SECURITY.md](SECURITY.md) for details.
 
 ## Acknowledgements
 
-Smooth motion draws its in-between frames with a port of [open-svpflow](https://github.com/Z1xus/open-svpflow) (Apache 2.0), an open-source reimplementation of SmoothVideo Project's frame rendering. Its motion search was written after studying AMD's [FidelityFX SDK](https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK) (FSR 3 optical flow, MIT), and earlier engines also learned from FFmpeg's [`minterpolate`](https://github.com/FFmpeg/FFmpeg/blob/master/libavfilter/vf_minterpolate.c) filter (LGPL 2.1+). [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) says what came from each and carries the licences. The libraries Koda is built on are listed, with their licences, under Open-source licences in the app's settings.
+Smooth motion draws its in-between frames with a port of [open-svpflow](https://github.com/Z1xus/open-svpflow) (Apache 2.0), an open-source reimplementation of SmoothVideo Project's frame rendering. Its motion search was written after studying AMD's [FidelityFX SDK](https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK) (FSR 3 optical flow, MIT), and earlier engines also learned from FFmpeg's [`minterpolate`](https://github.com/FFmpeg/FFmpeg/blob/master/libavfilter/vf_minterpolate.c) filter (LGPL 2.1+). [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) says what came from each and carries the licences. The libraries Yinnlycs is built on are listed, with their licences, under Open-source licences in the app's settings.
 
 ## License
 
-Koda is licensed under the [GNU General Public License v3.0](LICENSE).
+Yinnlycs is licensed under the [GNU General Public License v3.0](LICENSE).
 
 <p align="center">
   Made by <b>ivorisnoob</b><br/>

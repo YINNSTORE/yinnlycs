@@ -546,6 +546,7 @@ class MusicService : MediaLibraryService() {
         streamResolver.clear()
         playbackRecovery.clear()
         streamWarmer.clear()
+        YinnlycsEqualizer.release()
         super.onDestroy()
     }
 
@@ -768,6 +769,7 @@ class MusicService : MediaLibraryService() {
         if (generatedSessionId != android.media.AudioManager.ERROR) {
             audioSessionId = generatedSessionId
             engine.setAudioSessionId(generatedSessionId)
+            YinnlycsEqualizer.attach(this, generatedSessionId)
             val intent = Intent(AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION).apply {
                 putExtra(AudioEffect.EXTRA_AUDIO_SESSION, generatedSessionId)
                 putExtra(AudioEffect.EXTRA_PACKAGE_NAME, packageName)
@@ -777,6 +779,7 @@ class MusicService : MediaLibraryService() {
             KLog.i(TAG, "Announced audio session $generatedSessionId for external equalizers")
         }
     }
+
 
     private fun initializeSession() {
         val sessionIntent = packageManager.getLaunchIntentForPackage(packageName).let {

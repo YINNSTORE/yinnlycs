@@ -95,7 +95,7 @@ fun NotInterestedScreen(
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.cd_back))
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -129,7 +129,7 @@ fun NotInterestedScreen(
                 item(key = "channels-header") {
                     SectionHeader(
                         title = stringResource(R.string.ni_section_sources),
-                        subtitle = "${blockedChannels.size} won't appear in your feeds",
+                        subtitle = stringResource(R.string.ni_blocked_channels_count, blockedChannels.size),
                         onClear = { confirmClear = ClearTarget.CHANNELS }
                     )
                 }
@@ -145,7 +145,7 @@ fun NotInterestedScreen(
                 item(key = "videos-header") {
                     SectionHeader(
                         title = stringResource(R.string.ni_section_items),
-                        subtitle = "${hiddenVideos.size} hidden",
+                        subtitle = stringResource(R.string.ni_hidden_videos_count, hiddenVideos.size),
                         onClear = { confirmClear = ClearTarget.VIDEOS }
                     )
                 }
@@ -275,7 +275,7 @@ private fun BlockedChannelRow(channel: BlockedChannel, onUnblock: () -> Unit) {
             IconButton(onClick = onUnblock) {
                 Icon(
                     Icons.Rounded.Undo,
-                    contentDescription = "Recommend ${channel.name} again",
+                    contentDescription = stringResource(R.string.ni_recommend_channel_again, channel.name),
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
@@ -331,7 +331,7 @@ private fun HiddenVideoRow(
             IconButton(onClick = onUnhide) {
                 Icon(
                     Icons.Rounded.Undo,
-                    contentDescription = "Unhide ${video.title}",
+                    contentDescription = stringResource(R.string.ni_unhide_video, video.title),
                     tint = MaterialTheme.colorScheme.primary
                 )
             }

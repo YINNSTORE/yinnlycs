@@ -273,7 +273,7 @@ fun ListeningHistoryScreen(
                     }
                     Box {
                         IconButton(onClick = { menuOpen = true }) {
-                            Icon(Icons.Rounded.MoreVert, contentDescription = "More options")
+                            Icon(Icons.Rounded.MoreVert, contentDescription = stringResource(R.string.cd_more_options))
                         }
                         DropdownMenu(
                             expanded = menuOpen,
@@ -706,7 +706,7 @@ private fun HistoryHeroCard(
                             )
                             Spacer(Modifier.width(6.dp))
                             Text(
-                                "$streakDays day streak",
+                                stringResource(R.string.lh_day_streak, streakDays),
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onPrimaryContainer
@@ -956,7 +956,7 @@ private fun HistoryRunRow(
                 }
                 DropdownMenuItem(
                     text = {
-                        Text(if (run.playCount > 1) "Remove these ${run.playCount} plays" else "Remove this play")
+                        Text(if (run.playCount > 1) stringResource(R.string.lh_remove_run_multiple, run.playCount) else stringResource(R.string.lh_remove_run_single))
                     },
                     leadingIcon = { Icon(Icons.Rounded.Delete, contentDescription = null) },
                     onClick = {
@@ -1030,7 +1030,7 @@ private fun HistorySearchField(
         trailingIcon = {
             if (query.isNotEmpty()) {
                 IconButton(onClick = onClear) {
-                    Icon(Icons.Rounded.Close, contentDescription = "Clear search")
+                    Icon(Icons.Rounded.Close, contentDescription = stringResource(R.string.cd_clear_search))
                 }
             }
         },
@@ -1098,7 +1098,7 @@ private fun HistoryEmptyState(
             body = stringResource(R.string.lh_no_matches_body)
         }
         hasAnyHistory -> {
-            title = "Nothing ${rangeLabel.lowercase()}"
+            title = stringResource(R.string.lh_nothing_in_range, rangeLabel.lowercase())
             body = stringResource(R.string.lh_range_empty_body)
         }
         isPaused -> {
@@ -1187,9 +1187,7 @@ private fun ClearHistoryDialog(
         title = { Text(stringResource(R.string.lh_clear_dialog_title)) },
         text = {
             Text(
-                "This removes all $entryCount plays. Your recently played row, " +
-                    "the Library's \"Most played\" sort and your statistics are " +
-                    "all built on this history and will reset with it."
+                stringResource(R.string.lh_clear_dialog_body, entryCount)
             )
         },
         confirmButton = {

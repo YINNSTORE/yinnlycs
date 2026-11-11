@@ -196,7 +196,7 @@ fun StatsScreen(
                 ) {
                     ExpressiveStatTile(
                         value = "${globalStats.uniqueSongs}",
-                        label = "Songs played",
+                        label = stringResource(R.string.stats_songs_played),
                         icon = Icons.Rounded.MusicNote,
                         badgeShape = MaterialShapes.Cookie9Sided.toShape(),
                         container = MaterialTheme.colorScheme.secondaryContainer,
@@ -207,7 +207,7 @@ fun StatsScreen(
                     )
                     ExpressiveStatTile(
                         value = "${globalStats.uniqueArtists}",
-                        label = "Artists explored",
+                        label = stringResource(R.string.stats_artists_explored),
                         icon = Icons.Rounded.Person,
                         badgeShape = MaterialShapes.Clover4Leaf.toShape(),
                         container = MaterialTheme.colorScheme.tertiaryContainer,
@@ -225,7 +225,7 @@ fun StatsScreen(
                 ) {
                     ExpressiveStatTile(
                         value = "${likedSongs.size}",
-                        label = "Liked songs",
+                        label = stringResource(R.string.stats_liked_songs),
                         icon = Icons.Rounded.Favorite,
                         badgeShape = MaterialShapes.Sunny.toShape(),
                         container = MaterialTheme.colorScheme.surfaceContainerHigh,
@@ -236,7 +236,7 @@ fun StatsScreen(
                     )
                     ExpressiveStatTile(
                         value = globalStats.topArtists.firstOrNull()?.name ?: "—",
-                        label = "Top artist",
+                        label = stringResource(R.string.stats_top_artist),
                         icon = Icons.Rounded.MusicNote,
                         badgeShape = MaterialShapes.Pill.toShape(),
                         container = MaterialTheme.colorScheme.surfaceContainerHigh,
@@ -355,10 +355,10 @@ fun StatsScreen(
                             shapes = ListItemDefaults.segmentedShapes(index, count),
                             colors = com.ivor.ivormusic.ui.components.segmentedColorsOver(MaterialTheme.colorScheme.background),
                             leadingContent = { RankBadge(rank = index + 1) },
-                            supportingContent = { Text("${artistStats.songCount} songs") },
+                            supportingContent = { Text(stringResource(R.string.stats_song_count, artistStats.songCount)) },
                             trailingContent = {
                                 Text(
-                                    "${artistStats.playCount} plays",
+                                    stringResource(R.string.stats_play_count, artistStats.playCount),
                                     style = MaterialTheme.typography.labelLarge,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.tertiary

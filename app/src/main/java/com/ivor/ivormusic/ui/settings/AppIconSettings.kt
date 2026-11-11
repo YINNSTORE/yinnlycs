@@ -103,7 +103,7 @@ import com.ivor.ivormusic.util.rememberKodaHaptics
  *
  * **A custom style cannot be a launcher icon, and the page says so.** The home
  * screen draws a static resource behind an `<activity-alias>` - there is no
- * runtime path from arbitrary colours to it. So a saved style becomes Koda's
+ * runtime path from arbitrary colours to it. So a saved style becomes Yinnlycs's
  * mark inside the app and puts the closest real preset on the launcher, and the
  * header names that preset rather than letting someone discover the
  * substitution on their home screen.
@@ -535,7 +535,7 @@ private fun AppIconPreviewHeader(
                         .clip(CircleShape)
                         .background(Brush.radialGradient(listOf(glow, Color.Transparent)))
                 )
-                KodaAppIcon(
+                YinnlycsAppIcon(
                     style = style,
                     shape = shape,
                     modifier = Modifier.size(88.dp)
@@ -733,7 +733,7 @@ private fun IconTile(
                     .padding(14.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                KodaAppIcon(
+                YinnlycsAppIcon(
                     style = style,
                     shape = style.shape.containerShape(),
                     animateColors = false,

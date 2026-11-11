@@ -168,9 +168,9 @@ internal fun AppearanceSettingsPage(
     onBack: () -> Unit
 ) {
     val paletteName = if (colorPalette == ThemePreferences.DEFAULT_COLOR_PALETTE) {
-        "Dynamic (from wallpaper)"
+        stringResource(R.string.sp_palette_dynamic_wallpaper)
     } else {
-        com.ivor.ivormusic.ui.theme.findPalette(colorPalette)?.name ?: "Dynamic"
+        com.ivor.ivormusic.ui.theme.findPalette(colorPalette)?.name ?: stringResource(R.string.sp_palette_dynamic)
     }
 
     // Colours only. The app icon, display size, Home layout and touch
@@ -201,9 +201,9 @@ internal fun AppearanceSettingsPage(
                         icon = Icons.Rounded.Contrast,
                         title = stringResource(R.string.sp_amoled_black),
                         subtitle = if (amoledTheme) {
-                            "Pure black backgrounds in dark theme"
+                            stringResource(R.string.sp_theme_pure_black_desc)
                         } else {
-                            "Standard dark backgrounds"
+                            stringResource(R.string.sp_theme_standard_dark_desc)
                         },
                         enabled = amoledTheme,
                         onToggle = onAmoledThemeToggle,
@@ -300,9 +300,9 @@ internal fun HomeNavigationSettingsPage(
                         icon = Icons.Rounded.Home,
                         title = stringResource(R.string.sp_spotlight_home),
                         subtitle = if (spotlightHome) {
-                            "Shortcut grid, quick picks and artwork shelves"
+                            stringResource(R.string.sp_home_spotlight_desc)
                         } else {
-                            "Classic Home with a hero and carousels"
+                            stringResource(R.string.sp_home_classic_desc)
                         },
                         enabled = spotlightHome,
                         onToggle = onSpotlightHomeToggle,
@@ -326,9 +326,9 @@ internal fun HomeNavigationSettingsPage(
                         icon = Icons.Rounded.Dashboard,
                         title = stringResource(R.string.sp_non_expressive_nav),
                         subtitle = if (nonExpressiveNavigationBar) {
-                            "Standard Material 3 bar with fixed labels"
+                            stringResource(R.string.sp_nav_material_desc)
                         } else {
-                            "Expressive floating navigation"
+                            stringResource(R.string.sp_nav_expressive_desc)
                         },
                         enabled = nonExpressiveNavigationBar,
                         onToggle = onNonExpressiveNavigationBarToggle,
@@ -1006,9 +1006,9 @@ internal fun PlayerSettingsPage(
                         icon = Icons.Rounded.Palette,
                         title = stringResource(R.string.sp_ambient_background),
                         subtitle = if (ambientBackground) {
-                            "Dynamic colors from album art"
+                            stringResource(R.string.sp_ambient_dynamic_desc)
                         } else {
-                            "Solid background"
+                            stringResource(R.string.sp_ambient_solid_desc)
                         },
                         enabled = ambientBackground,
                         onToggle = onAmbientBackgroundToggle,
@@ -1090,9 +1090,9 @@ internal fun PlaybackSettingsPage(
                         icon = Icons.Rounded.GraphicEq,
                         title = stringResource(R.string.sp_song_transitions),
                         subtitle = when {
-                            !crossfadeEnabled -> "Songs change without an overlap"
-                            crossfadeAuto -> "AutoMix adapts to each song, up to 15s"
-                            else -> "Always overlap by ${crossfadeDurationMs / 1000}s"
+                            !crossfadeEnabled -> stringResource(R.string.sp_crossfade_disabled_desc)
+                            crossfadeAuto -> stringResource(R.string.sp_crossfade_automix_desc)
+                            else -> stringResource(R.string.sp_crossfade_overlap_desc, crossfadeDurationMs / 1000)
                         },
                         onClick = {
                             if (crossfadeEnabled) {
@@ -1171,7 +1171,7 @@ internal fun PlaybackSettingsPage(
                         ) {
                             Column(modifier = Modifier.padding(top = 12.dp)) {
                                 Text(
-                                    text = "Duration: ${crossfadeDurationMs / 1000}s",
+                                    text = stringResource(R.string.sp_crossfade_duration_label, crossfadeDurationMs / 1000),
                                     color = MaterialTheme.colorScheme.onBackground,
                                     fontSize = 14.sp,
                                     fontWeight = FontWeight.Medium
@@ -1245,9 +1245,9 @@ internal fun PlaybackSettingsPage(
                         icon = Icons.Rounded.History,
                         title = stringResource(R.string.sp_save_listening_history),
                         subtitle = if (saveMusicHistory) {
-                            "Songs you play are logged on this device"
+                            stringResource(R.string.sp_history_enabled_desc)
                         } else {
-                            "Paused: new plays are not recorded"
+                            stringResource(R.string.sp_history_paused_desc)
                         },
                         enabled = saveMusicHistory,
                         onToggle = onSaveMusicHistoryToggle,
@@ -1468,9 +1468,9 @@ internal fun PlaybackSettingsPage(
                         icon = Icons.Rounded.BrightnessMedium,
                         title = stringResource(R.string.sp_remember_brightness),
                         subtitle = if (rememberVideoBrightness) {
-                            "Videos reopen at the brightness you last set"
+                            stringResource(R.string.sp_video_brightness_last_desc)
                         } else {
-                            "Videos reopen at the system brightness"
+                            stringResource(R.string.sp_video_brightness_system_desc)
                         },
                         enabled = rememberVideoBrightness,
                         onToggle = onRememberVideoBrightnessToggle,
@@ -1589,9 +1589,9 @@ internal fun ContentSettingsPage(
                         icon = Icons.Rounded.CloudOff,
                         title = stringResource(R.string.sp_local_only),
                         subtitle = if (localOnlyMode) {
-                            "Offline: device library only, no internet"
+                            stringResource(R.string.sp_local_only_enabled_desc)
                         } else {
-                            "YouTube features enabled"
+                            stringResource(R.string.sp_local_only_disabled_desc)
                         },
                         enabled = localOnlyMode,
                         onToggle = onLocalOnlyModeToggle,
@@ -1622,9 +1622,9 @@ internal fun ContentSettingsPage(
                                 icon = Icons.Rounded.ToggleOn,
                                 title = stringResource(R.string.sp_home_mode_toggle),
                                 subtitle = if (homeModeToggleEnabled) {
-                                    "Switch music and video from the Home header"
+                                    stringResource(R.string.sp_home_mode_toggle_enabled_desc)
                                 } else {
-                                    "Change the mode here in Settings only"
+                                    stringResource(R.string.sp_home_mode_toggle_disabled_desc)
                                 },
                                 enabled = homeModeToggleEnabled,
                                 onToggle = onHomeModeToggleChange,
@@ -1654,9 +1654,9 @@ internal fun ContentSettingsPage(
                             icon = Icons.AutoMirrored.Rounded.Comment,
                             title = stringResource(R.string.sp_timed_comments),
                             subtitle = if (timedCommentsEnabled) {
-                                "Comments appear on the seek bar where they were posted"
+                                stringResource(R.string.sp_timed_comments_enabled_desc)
                             } else {
-                                "Comments stay in the comment sheet"
+                                stringResource(R.string.sp_timed_comments_disabled_desc)
                             },
                             enabled = timedCommentsEnabled,
                             onToggle = onTimedCommentsToggle,
@@ -1734,9 +1734,9 @@ internal fun ContentSettingsPage(
                                     icon = Icons.Rounded.Visibility,
                                     title = stringResource(R.string.sp_shorts_buttons),
                                     subtitle = if (shortsHiddenActions.isEmpty()) {
-                                        "All buttons shown"
+                                        stringResource(R.string.sp_shorts_all_buttons_desc)
                                     } else {
-                                        "${shortsHiddenActions.size} hidden"
+                                        stringResource(R.string.sp_shorts_hidden_count, shortsHiddenActions.size)
                                     },
                                     onClick = onShowShortsButtons,
                                     showChevron = true
@@ -2695,9 +2695,9 @@ internal fun LocalLibrarySettingsPage(
                         icon = Icons.Rounded.Folder,
                         title = stringResource(R.string.sp_load_local_songs),
                         subtitle = if (loadLocalSongs) {
-                            "Shows songs from your device"
+                            stringResource(R.string.sp_load_local_songs_enabled_desc)
                         } else {
-                            "YouTube Music only"
+                            stringResource(R.string.sp_load_local_songs_disabled_desc)
                         },
                         enabled = loadLocalSongs,
                         onToggle = onLoadLocalSongsToggle,
@@ -2718,10 +2718,9 @@ internal fun LocalLibrarySettingsPage(
                                 icon = Icons.Rounded.FolderOff,
                                 title = stringResource(R.string.sp_excluded_folders),
                                 subtitle = if (excludedFolderCount == 0) {
-                                    "All folders included"
+                                    stringResource(R.string.sp_folders_all_included_desc)
                                 } else {
-                                    "$excludedFolderCount folder" +
-                                        "${if (excludedFolderCount == 1) "" else "s"} excluded"
+                                    stringResource(R.string.sp_excluded_folders_count, excludedFolderCount)
                                 },
                                 onClick = onOpenFolderExclusion,
                                 showChevron = true
@@ -2933,7 +2932,7 @@ internal fun AdvancedSettingsPage(
                     SettingsRow(
                         icon = Icons.Rounded.DirectionsCar,
                         title = "Android Auto",
-                        subtitle = "Koda missing from your car? Start here",
+                        subtitle = stringResource(R.string.settings_android_auto_help_subtitle),
                         onClick = onOpenAutoHelp,
                         showChevron = true
                     )

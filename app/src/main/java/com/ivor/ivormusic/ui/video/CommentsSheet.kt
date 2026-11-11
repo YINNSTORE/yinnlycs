@@ -187,7 +187,7 @@ fun CommentsPanel(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = if (commentsAvailable) "No comments yet" else unavailableMessage,
+                                text = if (commentsAvailable) stringResource(R.string.comment_empty) else unavailableMessage,
                                 style = MaterialTheme.typography.bodyLarge,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -238,7 +238,7 @@ fun CommentsPanel(
                                     val isLoadingReplies = comment.commentId in loadingReplyIds
                                     if (comment.repliesToken != null && commentReplies == null) {
                                         Text(
-                                            text = if (isLoadingReplies) "Loading replies…"
+                                            text = if (isLoadingReplies) stringResource(R.string.comment_loading_replies)
                                             else "View replies" + if (comment.replyCount.isNotEmpty()) " (${comment.replyCount})" else "",
                                             style = MaterialTheme.typography.labelLarge,
                                             color = MaterialTheme.colorScheme.primary,
@@ -466,7 +466,7 @@ private fun CommentComposer(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Replying to ${replyTarget.author}",
+                        text = stringResource(R.string.comment_replying_to, replyTarget.author),
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.primary,
                         maxLines = 1,
@@ -476,7 +476,7 @@ private fun CommentComposer(
                     IconButton(onClick = onCancelReply) {
                         Icon(
                             Icons.Rounded.Close,
-                            contentDescription = "Cancel reply",
+                            contentDescription = stringResource(R.string.comment_cancel_reply),
                             modifier = Modifier.size(18.dp),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -497,7 +497,7 @@ private fun CommentComposer(
                         .weight(1f)
                         .focusRequester(focusRequester),
                     placeholder = {
-                        Text(if (replyTarget != null) "Add a reply…" else "Add a comment…")
+                        Text(if (replyTarget != null) stringResource(R.string.comment_add_reply_hint) else stringResource(R.string.comment_add_comment_hint))
                     },
                     shape = CircleShape,
                     maxLines = 4,
@@ -520,7 +520,7 @@ private fun CommentComposer(
                     ) {
                         Icon(
                             Icons.AutoMirrored.Rounded.Send,
-                            contentDescription = "Post",
+                            contentDescription = stringResource(R.string.comment_post),
                             tint = if (text.isNotBlank()) MaterialTheme.colorScheme.primary
                             else MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -587,7 +587,7 @@ private fun CommentRow(
                 if (comment.isPinned) {
                     Icon(
                         Icons.Rounded.PushPin,
-                        contentDescription = "Pinned",
+                        contentDescription = stringResource(R.string.comment_pinned),
                         modifier = Modifier.size(12.dp),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -618,7 +618,7 @@ private fun CommentRow(
                 if (comment.isVerified) {
                     Icon(
                         Icons.Rounded.Verified,
-                        contentDescription = "Verified",
+                        contentDescription = stringResource(R.string.cd_verified),
                         modifier = Modifier.size(14.dp),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -662,7 +662,7 @@ private fun CommentRow(
                 ) {
                     Icon(
                         Icons.Rounded.ThumbUp,
-                        contentDescription = if (comment.isLiked) "Unlike" else "Like",
+                        contentDescription = stringResource(if (comment.isLiked) R.string.comment_unlike_accessibility else R.string.comment_like_accessibility),
                         modifier = Modifier.size(14.dp),
                         tint = likeTint
                     )
@@ -676,7 +676,7 @@ private fun CommentRow(
                         Spacer(Modifier.width(4.dp))
                         Icon(
                             Icons.Rounded.Favorite,
-                            contentDescription = "Hearted by creator",
+                            contentDescription = stringResource(R.string.comment_hearted_by_creator),
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.error
                         )
@@ -697,12 +697,12 @@ private fun CommentRow(
                     ) {
                         Icon(
                             Icons.Rounded.DeleteOutline,
-                            contentDescription = "Delete comment",
+                            contentDescription = stringResource(R.string.comment_delete_accessibility),
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                         Text(
-                            text = "Delete",
+                            text = stringResource(R.string.action_delete),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )

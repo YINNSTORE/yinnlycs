@@ -1,13 +1,19 @@
 package com.ivor.ivormusic
 
 import android.app.Application
+import android.content.Context
 import coil.ImageLoader
 import coil.ImageLoaderFactory
+import com.ivor.ivormusic.data.AppLocaleManager
 import com.ivor.ivormusic.data.CrashReporter
 import com.ivor.ivormusic.data.LocalVideoThumbnail
 import com.ivor.ivormusic.data.LocalVideoThumbnailFetcher
 
 class IvorMusicApplication : Application(), ImageLoaderFactory {
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(AppLocaleManager.wrap(base))
+    }
 
     override fun onCreate() {
         super.onCreate()

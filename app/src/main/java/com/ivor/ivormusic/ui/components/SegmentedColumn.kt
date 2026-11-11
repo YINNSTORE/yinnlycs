@@ -18,8 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawOutline
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.input.pointer.PointerEventPass
@@ -31,6 +33,7 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import com.ivor.ivormusic.ui.theme.LocalLiquidGlassEnabled
 
 /**
  * True inside a [SegmentedColumn], where the gaps between segments already
@@ -71,6 +74,7 @@ fun SegmentedColumn(
     val segments = remember { mutableStateOf<List<Rect>>(emptyList()) }
     val press = remember { mutableStateMapOf<Int, Animatable<Float, AnimationVector1D>>() }
     val scope = rememberCoroutineScope()
+    val liquidGlass = LocalLiquidGlassEnabled.current
     val spec = MaterialTheme.motionScheme.fastSpatialSpec<Float>()
     fun shapeOf(index: Int, count: Int): Shape =
         segmentedRowShape(index, count, rounding = press[index]?.value ?: 0f)
@@ -99,9 +103,31 @@ fun SegmentedColumn(
                 }
                 .drawBehind {
                     val rects = segments.value
+                    val glassBrush = if (liquidGlass) {
+                        Brush.verticalGradient(
+                            colors = listOf(
+                                Color.White.copy(alpha = 0.10f),
+                                containerColor.copy(alpha = 0.30f),
+                                Color.White.copy(alpha = 0.035f),
+                            )
+                        )
+                    } else {
+                        null
+                    }
                     rects.forEachIndexed { index, rect ->
                         val outline = shapeOf(index, rects.size).createOutline(rect.size, layoutDirection, this)
-                        translate(rect.left, rect.top) { drawOutline(outline, containerColor) }
+                        translate(rect.left, rect.top) {
+                            if (glassBrush != null) {
+                                drawOutline(outline, brush = glassBrush)
+                                drawOutline(
+                                    outline,
+                                    color = Color.White.copy(alpha = 0.16f),
+                                    style = Stroke(width = 1.dp.toPx())
+                                )
+                            } else {
+                                drawOutline(outline, containerColor)
+                            }
+                        }
                     }
                 }
         ) { measurables, constraints ->

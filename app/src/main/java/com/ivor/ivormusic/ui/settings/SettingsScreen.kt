@@ -2,8 +2,14 @@ package com.ivor.ivormusic.ui.settings
 import androidx.compose.ui.res.stringResource
 import com.ivor.ivormusic.R
 
+import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Environment
+import android.provider.MediaStore
+import android.widget.Toast
 import androidx.activity.BackEventCompat
 import androidx.activity.compose.PredictiveBackHandler
 import androidx.compose.animation.AnimatedContent
@@ -83,6 +89,7 @@ import androidx.compose.material.icons.rounded.DirectionsCar
 import androidx.compose.material.icons.rounded.Download
 import androidx.compose.material.icons.rounded.SystemUpdate
 import androidx.compose.material.icons.rounded.Folder
+import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FolderOff
 import androidx.compose.material.icons.rounded.GraphicEq
 import androidx.compose.material.icons.rounded.GridView
@@ -265,6 +272,9 @@ internal enum class SettingsPage {
     HUB,
     ACCOUNT,
     APPEARANCE,
+    LANGUAGE,
+    PERFORMANCE,
+    EQUALIZER,
     PLAYER,
     PLAYBACK,
     CONTENT,
@@ -296,7 +306,8 @@ internal enum class SettingsPage {
      */
     val parent: SettingsPage
         get() = when (this) {
-            APPEARANCE, APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
+            APPEARANCE, LANGUAGE, PERFORMANCE, EQUALIZER,
+            APP_ICON, DISPLAY_SIZE, PLAYER, MINI_PLAYER,
             HOME_NAVIGATION, GESTURES, VIDEO_PLAYER, VIDEO_FEED, VIDEO_SHADERS, STANDBY -> CUSTOMIZATION
             VIDEO_HOME -> CONTENT
             else -> HUB
@@ -835,6 +846,18 @@ fun SettingsScreen(
             onNavigateToColorPalette = onNavigateToColorPalette,
             amoledTheme = amoledTheme,
             onAmoledThemeToggle = onAmoledThemeToggle,
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.LANGUAGE -> LanguageSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.PERFORMANCE -> PerformanceSettingsPage(
+            onBack = { page = SettingsPage.CUSTOMIZATION }
+        )
+
+        SettingsPage.EQUALIZER -> EqualizerSettingsPage(
             onBack = { page = SettingsPage.CUSTOMIZATION }
         )
 
@@ -1548,11 +1571,11 @@ private fun SettingsHub(
     }
 
     val notificationsValue = when {
-        !canPostPromoted && (liveDownloadUpdates || livePlaybackUpdates) -> "Blocked by system"
-        liveDownloadUpdates && livePlaybackUpdates -> "Downloads and playback"
-        liveDownloadUpdates -> "Downloads only"
-        livePlaybackUpdates -> "Playback only"
-        else -> "Off"
+        !canPostPromoted && (liveDownloadUpdates || livePlaybackUpdates) -> stringResource(R.string.notifications_value_blocked)
+        liveDownloadUpdates && livePlaybackUpdates -> stringResource(R.string.notifications_value_downloads_playback)
+        liveDownloadUpdates -> stringResource(R.string.notifications_value_downloads_only)
+        livePlaybackUpdates -> stringResource(R.string.notifications_value_playback_only)
+        else -> stringResource(R.string.notifications_value_off)
     }
 
     // Read on entry rather than held in a flow: Navigation Compose disposes
@@ -2005,7 +2028,7 @@ internal fun ExpressiveAccountItem(
         // User Info
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = userName ?: "YouTube Account",
+                text = userName ?: stringResource(R.string.kp_youtube_account),
                 color = textColor,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold,
@@ -2469,13 +2492,11 @@ private fun ExpressiveAboutDialog(
     onNavigateToLicenses: () -> Unit
 ) {
     val context = LocalContext.current
+    var showDonateDialog by remember { mutableStateOf(false) }
     val githubUrl = "https://github.com/${BuildConfig.GITHUB_REPO}"
     val developerUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}"
     val developerAvatarUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}.png"
-    // Local Only means the app does not reach the network, and a profile photo
-    // is not the exception that proves the rule. The placeholder below is the
-    // whole card in that state.
-    val localOnly = remember { ThemePreferences.isLocalOnly(context) }
+    val whatsappChannelUrl = "https://whatsapp.com/channel/0029Vb8N4MCKwqSRSuyBsr1n"
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -2521,47 +2542,24 @@ private fun ExpressiveAboutDialog(
                             Box(
                                 modifier = Modifier
                                     .size(112.dp)
-                                    .clip(MaterialShapes.SoftBurst.toShape())
+                                    .clip(CircleShape)
                                     .background(MaterialTheme.colorScheme.primaryContainer),
                                 contentAlignment = Alignment.Center,
                             ) {
-                                // A saved style has no drawable behind it -
-                                // it is colours, not a resource - so the one
-                                // place Koda draws its own mark at size gets
-                                // the live renderer when one is active, and
-                                // the preset's artwork otherwise. Without this
-                                // a style someone saved would change nothing
-                                // they could ever see.
-                                val themePrefs = remember { ThemePreferences(context) }
-                                val styleStore = remember {
-                                    com.ivor.ivormusic.data.AppIconStyleStore(context)
-                                }
-                                val currentAppIconId by themePrefs.appIcon.collectAsState()
-                                val activeStyleId by styleStore.activeStyleId.collectAsState()
-                                val savedStyles by styleStore.styles.collectAsState()
-                                val currentAppIcon = remember(currentAppIconId) {
-                                    AppIcon.fromId(currentAppIconId)
-                                }
-                                val activeStyle = remember(activeStyleId, savedStyles) {
-                                    savedStyles.firstOrNull { it.id == activeStyleId }
-                                }
-                                if (activeStyle != null) {
-                                    KodaAppIcon(
-                                        style = activeStyle.toIconStyle(),
-                                        shape = androidx.compose.foundation.shape
-                                            .RoundedCornerShape(20.dp),
-                                        animateColors = false,
-                                        modifier = Modifier.fillMaxSize(),
-                                    )
-                                } else {
-                                    androidx.compose.foundation.Image(
-                                        painter = painterResource(
-                                            currentAppIcon.previewForegroundRes
-                                        ),
-                                        contentDescription = stringResource(R.string.app_name),
-                                        modifier = Modifier.fillMaxSize(),
-                                    )
-                                }
+                                // Use the live GitHub profile photo in a true circular crop.
+                                AsyncImage(
+                                    model = ImageRequest.Builder(context)
+                                        .data(developerAvatarUrl)
+                                        .crossfade(true)
+                                        .diskCachePolicy(CachePolicy.ENABLED)
+                                        .memoryCachePolicy(CachePolicy.ENABLED)
+                                        .build(),
+                                    contentDescription = stringResource(R.string.about_developer),
+                                    contentScale = ContentScale.Crop,
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .clip(CircleShape),
+                                )
                             }
                             Spacer(modifier = Modifier.height(14.dp))
                             Text(
@@ -2635,45 +2633,26 @@ private fun ExpressiveAboutDialog(
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.spacedBy(16.dp),
                                 ) {
-                                    // The placeholder is drawn first and never
-                                    // waits on anything, so the card is
-                                    // complete the frame it appears. The avatar
-                                    // crossfades over it out of Coil's shared
-                                    // disk cache, which makes every visit after
-                                    // the first a local read rather than a
-                                    // round trip to GitHub.
                                     Box(
                                         modifier = Modifier
                                             .size(58.dp)
-                                            .clip(MaterialShapes.Clover4Leaf.toShape())
+                                            .clip(CircleShape)
                                             .background(MaterialTheme.colorScheme.secondary),
                                         contentAlignment = Alignment.Center,
                                     ) {
-                                        Icon(
-                                            Icons.Rounded.Person,
-                                            contentDescription = null,
-                                            tint = MaterialTheme.colorScheme.onSecondary,
+                                        AsyncImage(
+                                            model = ImageRequest.Builder(context)
+                                                .data(developerAvatarUrl)
+                                                .crossfade(true)
+                                                .diskCachePolicy(CachePolicy.ENABLED)
+                                                .memoryCachePolicy(CachePolicy.ENABLED)
+                                                .build(),
+                                            contentDescription = stringResource(R.string.about_developer),
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier
+                                                .fillMaxSize()
+                                                .clip(CircleShape),
                                         )
-                                        if (!localOnly) {
-                                            AsyncImage(
-                                                model = ImageRequest.Builder(context)
-                                                    .data(developerAvatarUrl)
-                                                    .memoryCachePolicy(CachePolicy.ENABLED)
-                                                    .diskCachePolicy(CachePolicy.ENABLED)
-                                                    // GitHub serves this path
-                                                    // with redirects and rotating
-                                                    // query strings; keying on the
-                                                    // stable URL keeps one entry
-                                                    // rather than one per redirect.
-                                                    .memoryCacheKey(developerAvatarUrl)
-                                                    .diskCacheKey(developerAvatarUrl)
-                                                    .crossfade(true)
-                                                    .build(),
-                                                contentDescription = null,
-                                                contentScale = ContentScale.Crop,
-                                                modifier = Modifier.fillMaxSize(),
-                                            )
-                                        }
                                     }
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(
@@ -2696,6 +2675,22 @@ private fun ExpressiveAboutDialog(
                     item {
                         SettingsSection(title = stringResource(R.string.about_project)) {
                             SettingsCard {
+                                SettingsRow(
+                                    icon = Icons.Rounded.Favorite,
+                                    title = stringResource(R.string.about_donate),
+                                    subtitle = stringResource(R.string.about_donate_subtitle),
+                                    onClick = { showDonateDialog = true },
+                                    showChevron = true,
+                                )
+                                SettingsDivider()
+                                SettingsRow(
+                                    icon = Icons.Rounded.ChatBubble,
+                                    title = stringResource(R.string.about_whatsapp_channel),
+                                    subtitle = stringResource(R.string.about_whatsapp_channel_subtitle),
+                                    onClick = { context.openAboutLink(whatsappChannelUrl) },
+                                    showChevron = true,
+                                )
+                                SettingsDivider()
                                 SettingsRow(
                                     icon = Icons.Rounded.SystemUpdate,
                                     title = stringResource(R.string.action_check_updates),
@@ -2769,6 +2764,97 @@ private fun ExpressiveAboutDialog(
             }
         }
     }
+
+    if (showDonateDialog) {
+        AlertDialog(
+            onDismissRequest = { showDonateDialog = false },
+            title = { Text(stringResource(R.string.about_donate_title)) },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Text(stringResource(R.string.about_donate_message))
+                    androidx.compose.foundation.Image(
+                        painter = painterResource(R.drawable.yinnlycs_donate_qris_v7),
+                        contentDescription = stringResource(R.string.about_donate_title),
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 420.dp),
+                    )
+                    Button(
+                        onClick = { saveDonationQris(context) },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        Icon(Icons.Rounded.Download, contentDescription = null)
+                        Spacer(Modifier.width(8.dp))
+                        Text(stringResource(R.string.about_donate_download))
+                    }
+                }
+            },
+            confirmButton = {
+                Button(onClick = { showDonateDialog = false }) {
+                    Text(stringResource(R.string.about_donate_close))
+                }
+            },
+        )
+    }
+}
+
+private fun saveDonationQris(context: android.content.Context) {
+    val bitmap = BitmapFactory.decodeResource(
+        context.resources,
+        R.drawable.yinnlycs_donate_qris_v7,
+    ) ?: run {
+        Toast.makeText(
+            context,
+            R.string.about_donate_download_failed,
+            Toast.LENGTH_SHORT,
+        ).show()
+        return
+    }
+
+    val values = ContentValues().apply {
+        put(MediaStore.MediaColumns.DISPLAY_NAME, "Yinnlycs-QRIS.png")
+        put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
+        put(
+            MediaStore.MediaColumns.RELATIVE_PATH,
+            "${Environment.DIRECTORY_PICTURES}/Yinnlycs",
+        )
+        put(MediaStore.MediaColumns.IS_PENDING, 1)
+    }
+
+    val resolver = context.contentResolver
+    val uri = runCatching {
+        resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+    }.getOrNull()
+    val saved = try {
+        uri != null && resolver.openOutputStream(uri)?.use { output ->
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, output)
+        } == true
+    } catch (_: Exception) {
+        false
+    } finally {
+        bitmap.recycle()
+    }
+
+    if (saved && uri != null) {
+        runCatching {
+            resolver.update(
+                uri,
+                ContentValues().apply { put(MediaStore.MediaColumns.IS_PENDING, 0) },
+                null,
+                null,
+            )
+        }
+    } else {
+        uri?.let { runCatching { resolver.delete(it, null, null) } }
+    }
+
+    Toast.makeText(
+        context,
+        if (saved) R.string.about_donate_download_success
+        else R.string.about_donate_download_failed,
+        Toast.LENGTH_SHORT,
+    ).show()
 }
 
 @Composable
@@ -3331,7 +3417,7 @@ private fun FolderItem(
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = "${folder.songCount} song${if (folder.songCount != 1) "s" else ""}",
+                    text = stringResource(R.string.settings_folder_song_count, folder.songCount),
                     color = secondaryTextColor,
                     fontSize = 12.sp,
                     maxLines = 1,
@@ -3540,7 +3626,7 @@ private fun ShortsButtonShapeToggle(
             ) {
                 Icon(
                     imageVector = icon,
-                    contentDescription = "$label: ${if (shown) "shown" else "hidden"}",
+                    contentDescription = stringResource(R.string.visibility_state, label, stringResource(if (shown) R.string.visibility_shown else R.string.visibility_hidden)),
                     tint = iconColor,
                     modifier = Modifier.size(26.dp)
                 )

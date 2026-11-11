@@ -5,9 +5,9 @@ on:
   # is the only thing that posts an APK. main moves through the beta -> main
   # pull request and is what releases are cut from.
   push:
-    branches: [ main, master, beta ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   pull_request:
-    branches: [ main, master, beta ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   workflow_dispatch:
 
 # Least privilege by default: no job gets a token unless it asks for one below.
@@ -123,7 +123,7 @@ jobs:
   build-debug:
     name: Build Debug APK
     needs: authorize
-    if: needs.authorize.outputs.allowed == 'true'
+    if: needs.authorize.outputs.allowed == 'true' && github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -147,40 +147,17 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
-    - name: Upload Debug APK (Universal)
-      uses: actions/upload-artifact@v7
-      with:
-        name: app-debug-universal
-        path: app/build/outputs/apk/debug/*universal*.apk
-        if-no-files-found: error
-        retention-days: 14
-
-    - name: Upload Debug APK (arm64-v8a)
-      uses: actions/upload-artifact@v7
-      with:
-        name: app-debug-arm64-v8a
-        path: app/build/outputs/apk/debug/*arm64-v8a*.apk
-        if-no-files-found: error
-        retention-days: 14
-
-    - name: Upload Debug APK (armeabi-v7a)
-      uses: actions/upload-artifact@v7
-      with:
-        name: app-debug-armeabi-v7a
-        path: app/build/outputs/apk/debug/*armeabi-v7a*.apk
-        if-no-files-found: error
-        retention-days: 14
 
   build-release:
     name: Build Release APK
     needs: authorize
-    # Fork PRs never receive the signing secrets, so a release build there would
-    # fail on the keystore decode. Debug still runs for them.
+    # Fork PRs are kept out of the release job. Same-repository PRs can validate
+    # the release variant; only trusted non-PR runs publish a downloadable APK.
     if: needs.authorize.outputs.allowed == 'true' && needs.authorize.outputs.is-fork-pr != 'true'
     runs-on: ubuntu-latest
     permissions:
       actions: read
-      contents: read
+      contents: write
 
     steps:
     - name: Checkout code
@@ -202,57 +179,98 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Decode keystore
+    - name: Prepare release signing key
       env:
         KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        KEYSTORE_PASSWORD_SECRET: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_ALIAS_SECRET: ${{ secrets.KEY_ALIAS }}
+        KEY_PASSWORD_SECRET: ${{ secrets.KEY_PASSWORD }}
       run: |
+        set -euo pipefail
         mkdir -p keystore
-        echo "$KEYSTORE_BASE64" | base64 --decode > keystore/ivormusic.jks
+
+        # Use the owner's persistent signing key only when all credentials are
+        # present and the keystore can actually be opened. Never decode an empty
+        # secret over the keystore path.
+        if [[ -n "${KEYSTORE_BASE64:-}" && -n "${KEYSTORE_PASSWORD_SECRET:-}" && -n "${KEY_ALIAS_SECRET:-}" && -n "${KEY_PASSWORD_SECRET:-}" ]]; then
+          if printf '%s' "$KEYSTORE_BASE64" | base64 --decode > keystore/ivormusic.jks 2>/dev/null \
+            && keytool -list -keystore keystore/ivormusic.jks -storepass "$KEYSTORE_PASSWORD_SECRET" -alias "$KEY_ALIAS_SECRET" >/dev/null 2>&1; then
+            {
+              echo "KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD_SECRET"
+              echo "KEY_ALIAS=$KEY_ALIAS_SECRET"
+              echo "KEY_PASSWORD=$KEY_PASSWORD_SECRET"
+            } >> "$GITHUB_ENV"
+            echo "Using the configured persistent release signing key."
+          else
+            echo "::warning::Configured keystore could not be validated; generating a temporary CI key."
+            rm -f keystore/ivormusic.jks
+          fi
+        else
+          echo "Release signing secrets are not configured; generating a temporary CI key."
+          rm -f keystore/ivormusic.jks
+        fi
+
+        if [[ ! -s keystore/ivormusic.jks ]]; then
+          STORE_PASS="$(openssl rand -hex 24)"
+          KEY_ALIAS_VALUE="yinnlycs-ci"
+          keytool -genkeypair -v \
+            -keystore keystore/ivormusic.jks \
+            -storepass "$STORE_PASS" \
+            -keypass "$STORE_PASS" \
+            -alias "$KEY_ALIAS_VALUE" \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Yinnlycs, OU=CI, O=YINNSTORE, C=ID" -noprompt
+          {
+            echo "KEYSTORE_PASSWORD=$STORE_PASS"
+            echo "KEY_ALIAS=$KEY_ALIAS_VALUE"
+            echo "KEY_PASSWORD=$STORE_PASS"
+          } >> "$GITHUB_ENV"
+          echo "::warning::This run uses a temporary signing key. To install future builds as updates without uninstalling, configure a persistent keystore in GitHub Actions secrets."
+        fi
 
     - name: Build Release APK
-      env:
-        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: ./gradlew assembleRelease
 
-    - name: Upload Release APK (Universal)
+    - name: Upload Release APK artifact (pull request)
+      if: github.event_name == 'pull_request'
       uses: actions/upload-artifact@v7
       with:
-        name: app-release-universal
-        path: app/build/outputs/apk/release/*universal*.apk
-        if-no-files-found: error
-        retention-days: 14
-
-    - name: Upload Release APK (arm64-v8a)
-      uses: actions/upload-artifact@v7
-      with:
-        name: app-release-arm64-v8a
+        name: yinnlycs-v8-release-arm64
         path: app/build/outputs/apk/release/*arm64-v8a*.apk
         if-no-files-found: error
         retention-days: 14
 
-    - name: Upload Release APK (armeabi-v7a)
-      uses: actions/upload-artifact@v7
-      with:
-        name: app-release-armeabi-v7a
-        # Was globbing *arm64-v8a*.apk, which put the arm64 APK in this
-        # artifact and left the real armeabi build nowhere.
-        path: app/build/outputs/apk/release/*armeabi-v7a*.apk
-        if-no-files-found: error
-        retention-days: 14
+    - name: Publish direct APK download
+      if: github.event_name != 'pull_request'
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+      run: |
+        set -euo pipefail
+        APK_SOURCE=$(find app/build/outputs/apk/release -maxdepth 1 -type f -name '*arm64-v8a*.apk' -print -quit)
+        if [[ -z "$APK_SOURCE" ]]; then
+          echo "No arm64-v8a APK was produced." >&2
+          find app/build/outputs/apk/release -maxdepth 2 -type f -print || true
+          exit 1
+        fi
 
-    # R8 deobfuscation map for this exact build. Release stack traces arriving
-    # through the in-app bug reporter are only readable against the mapping of
-    # the versionCode that produced them, so keep it as a retained workflow
-    # artifact for maintainers rather than a public release asset.
-    - name: Upload Release mapping.txt
-      uses: actions/upload-artifact@v7
-      with:
-        name: app-release-mapping
-        path: app/build/outputs/mapping/release/mapping.txt
-        if-no-files-found: error
-        retention-days: 90
+        APK_NAME="Yinnlycs-arm64-v8a.apk"
+        cp "$APK_SOURCE" "$APK_NAME"
+        APK_SIZE=$(du -h "$APK_NAME" | cut -f1)
+        TAG="ci-latest"
+        NOTES=$(printf 'Latest Yinnlycs CI build.\n\nCommit: %s\nBranch: %s\nABI: arm64-v8a\nAPK size: %s\n\nFor 64-bit Android devices.' "$GITHUB_SHA" "$GITHUB_REF_NAME" "$APK_SIZE")
+
+        if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
+          gh release upload "$TAG" "$APK_NAME" --clobber --repo "$REPO"
+          gh release edit "$TAG" --title "Yinnlycs latest APK" --notes "$NOTES" --prerelease --repo "$REPO"
+        else
+          gh release create "$TAG" "$APK_NAME" --title "Yinnlycs latest APK" --notes "$NOTES" --prerelease --target "$GITHUB_SHA" --repo "$REPO"
+        fi
+
+        DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${TAG}/${APK_NAME}"
+        echo "APK size: ${APK_SIZE}" >> "$GITHUB_STEP_SUMMARY"
+        echo "Direct APK download: ${DOWNLOAD_URL}" >> "$GITHUB_STEP_SUMMARY"
+        echo "::notice title=Direct APK download::${DOWNLOAD_URL}"
 
     # Testers follow one branch. A pull request builds its APKs as artifacts and
     # posts nothing; the post happens when the work lands on beta. Posting per
@@ -296,7 +314,7 @@ jobs:
         VERSION=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts || echo "unknown")
         RUN_URL="https://github.com/${REPO}/actions/runs/${RUN_ID}"
 
-        CAPTION="<b>Latest beta</b> · Koda v${VERSION}
+        CAPTION="<b>Latest beta</b> · Yinnlycs v${VERSION}
 
         SHA: <code>${HEAD_SHA::7}</code>
         <a href=\"${RUN_URL}\">Workflow Run</a>"
@@ -425,15 +443,15 @@ jobs:
         fi
 
         APK_MESSAGE_ID=""
-        for apk in app/build/outputs/apk/release/*universal*.apk; do
+        for apk in app/build/outputs/apk/release/*arm64-v8a*.apk; do
           SIZE=$(stat -c%s "$apk")
           if [ "$SIZE" -gt 50000000 ]; then
             RESPONSE=$(curl -sS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
               --data-urlencode "chat_id=${CHAT_ID}" \
               --data-urlencode "parse_mode=HTML" \
-              --data-urlencode "text=<b>Latest beta</b> · Koda v${VERSION}
+              --data-urlencode "text=<b>Latest beta</b> · Yinnlycs v${VERSION}
 
-        $(esc "$(basename "$apk")") is over Telegram's 50 MB bot limit — grab it from the <a href=\"${RUN_URL}\">workflow artifacts</a>.")
+        $(esc "$(basename "$apk")") is over Telegram's 50 MB bot limit — grab it from the <a href=\"https://github.com/${REPO}/releases/download/ci-latest/Yinnlycs-arm64-v8a.apk\">direct APK download</a>.")
             if ! telegram_ok "$RESPONSE"; then
               echo "Telegram artifact-link send failed: ${RESPONSE}"
               exit 1

@@ -22,6 +22,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.SideEffect
@@ -198,6 +199,11 @@ fun IvorMusicTheme(
         if (darkTheme && amoledDark) scheme else scheme.withTintedPages(darkTheme)
     }
     val colorScheme = rememberFadedColorScheme(targetScheme, fadeKey = artworkSeed)
+    // Liquid Glass and font switching are temporarily disabled. Keep the
+    // stable Expressive surfaces and the app's original typography.
+    val styledColorScheme = colorScheme
+    val styledShapes = ExpressiveShapes
+    val selectedTypography = Typography
     
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -223,19 +229,21 @@ fun IvorMusicTheme(
     }
 
     MaterialExpressiveTheme(
-        colorScheme = colorScheme,
+        colorScheme = styledColorScheme,
         motionScheme = MotionScheme.expressive(),
-        shapes = ExpressiveShapes,
-        typography = Typography,
+        shapes = styledShapes,
+        typography = selectedTypography,
     ) {
         // The app's own scheme, kept reachable from inside a local re-theme.
         // Content color too: most screens paint a plain background rather than
         // a Surface, and without one an uncolored Text falls back to black,
         // which is invisible in dark theme.
         CompositionLocalProvider(
-            LocalAppColorScheme provides colorScheme,
+            LocalAppColorScheme provides styledColorScheme,
             LocalAlbumTheming provides AlbumTheming(artworkWholeApp, paletteStyle, darkTheme && amoledDark),
-            androidx.compose.material3.LocalContentColor provides colorScheme.onBackground,
+            LocalLiquidGlassEnabled provides false,
+            androidx.compose.material3.LocalContentColor provides styledColorScheme.onBackground,
+            androidx.compose.material3.LocalTextStyle provides selectedTypography.bodyLarge,
         ) {
             ScaledDensity(uiScale, content)
         }
@@ -252,7 +260,11 @@ fun IvorMusicTheme(
  * a playlist page is its own artwork's colours while the app around it is the
  * playing album's, and neither borrows roles from the other.
  */
+
 data class AlbumTheming(val wholeApp: Boolean, val style: PaletteStyle, val amoled: Boolean)
+
+/** Liquid Glass is disabled until the feature is reliable on supported devices. */
+val LocalLiquidGlassEnabled = staticCompositionLocalOf { false }
 
 val LocalAlbumTheming = staticCompositionLocalOf { AlbumTheming(false, PaletteStyle.TONAL_SPOT, false) }
 

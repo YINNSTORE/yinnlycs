@@ -328,7 +328,7 @@ fun OnboardingScreen(
             )
 
             Text(
-                text = "Step ${pagerState.currentPage + 1} of $ONBOARDING_PAGE_COUNT",
+                text = stringResource(R.string.onboarding_step_of, pagerState.currentPage + 1, ONBOARDING_PAGE_COUNT),
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -357,7 +357,7 @@ fun OnboardingScreen(
                         shapes = IconButtonDefaults.shapes(),
                         modifier = Modifier.size(56.dp)
                     ) {
-                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.cd_back))
                     }
                 }
 
