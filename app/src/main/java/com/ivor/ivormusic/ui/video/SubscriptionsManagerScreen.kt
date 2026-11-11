@@ -220,7 +220,7 @@ fun SubscriptionsManagerScreen(
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.cd_back))
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -317,13 +317,13 @@ fun SubscriptionsManagerScreen(
                             ManagerRow(
                                 icon = Icons.Rounded.Folder,
                                 title = group.name,
-                                subtitle = "${group.channelIds.size} channels",
+                                subtitle = stringResource(R.string.sm_channel_count, group.channelIds.size),
                                 onClick = { groupBeingEdited = group.id },
                                 trailing = {
                                     IconButton(onClick = { groupToDelete = group }) {
                                         Icon(
                                             Icons.Rounded.Close,
-                                            contentDescription = "Delete ${group.name}",
+                                            contentDescription = stringResource(R.string.sm_delete_group_accessibility, group.name),
                                             tint = MaterialTheme.colorScheme.onSurfaceVariant
                                         )
                                     }
@@ -399,7 +399,7 @@ fun SubscriptionsManagerScreen(
                 if (matchedSubscriptions.isEmpty()) {
                     item(key = "no-channel-matches") {
                         SearchEmptyState(
-                            title = "No channels match \"$channelQuery\"",
+                            title = stringResource(R.string.sm_no_channel_matches, channelQuery),
                             hint = stringResource(R.string.sc_search_hint)
                         )
                     }
@@ -506,7 +506,7 @@ fun SubscriptionsManagerScreen(
             onDismissRequest = { groupToDelete = null },
             containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
             shape = RoundedCornerShape(32.dp),
-            title = { Text("Delete ${group.name}?", fontWeight = FontWeight.Bold) },
+            title = { Text(stringResource(R.string.sm_delete_group_title, group.name), fontWeight = FontWeight.Bold) },
             text = { Text(stringResource(R.string.sm_delete_group_body)) },
             confirmButton = {
                 TextButton(onClick = {
@@ -787,14 +787,14 @@ private fun ManagedChannelRow(
             IconButton(onClick = onEditGroups) {
                 Icon(
                     Icons.Rounded.Folder,
-                    contentDescription = "Groups for ${channel.name}",
+                    contentDescription = stringResource(R.string.sm_groups_for_channel, channel.name),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
             IconButton(onClick = onRemove) {
                 Icon(
                     Icons.Rounded.Close,
-                    contentDescription = "Unfollow ${channel.name}",
+                    contentDescription = stringResource(R.string.sm_unfollow_channel, channel.name),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
@@ -956,7 +956,7 @@ private fun GroupChannelsDialog(
     if (showRename) {
         GroupNameDialog(
             initialName = groupName,
-            title = "Rename group",
+            title = stringResource(R.string.sm_rename_group),
             onConfirm = {
                 onRename(it)
                 showRename = false
@@ -974,7 +974,7 @@ private fun GroupChannelsDialog(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(groupName, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
                 IconButton(onClick = { showRename = true }) {
-                    Icon(Icons.Rounded.Edit, contentDescription = "Rename group")
+                    Icon(Icons.Rounded.Edit, contentDescription = stringResource(R.string.sm_rename_group))
                 }
             }
         },
