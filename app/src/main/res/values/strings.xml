@@ -2573,4 +2573,9 @@
     <string name="settings_enabled">On</string>
     <string name="settings_disabled">Off</string>
 
+    <string name="about_donate">Buy Me a Coffee</string>
+    <string name="about_donate_subtitle">Support the development of Yinnlycs with QRIS</string>
+    <string name="about_donate_title">Support Yinnlycs</string>
+    <string name="about_donate_message">Scan this QRIS code with your preferred payment app. Thank you for supporting the project!</string>
+    <string name="about_donate_close">Close</string>
 </resources>
