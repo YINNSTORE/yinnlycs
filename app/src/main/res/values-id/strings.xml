@@ -2410,4 +2410,140 @@
     <string name="notifications_value_downloads_only">Hanya unduhan</string>
     <string name="notifications_value_playback_only">Hanya pemutaran</string>
     <string name="notifications_value_off">Nonaktif</string>
+    <plurals name="sb_active_categories">
+        <item quantity="one">%1$d kategori</item>
+        <item quantity="other">%1$d kategori</item>
+    </plurals>
+    <plurals name="cz_video_gestures_some">
+        <item quantity="one">%1$d gestur dinonaktifkan</item>
+        <item quantity="other">%1$d gestur dinonaktifkan</item>
+    </plurals>
+    <plurals name="cz_feed_summary_some">
+        <item quantity="one">%1$d item disembunyikan</item>
+        <item quantity="other">%1$d item disembunyikan</item>
+    </plurals>
+    <plurals name="sp_mini_summary_buttons">
+        <item quantity="one">%1$d tombol</item>
+        <item quantity="other">%1$d tombol</item>
+    </plurals>
+    <plurals name="vpl_video_count">
+        <item quantity="one">%d video</item>
+        <item quantity="other">%d video</item>
+    </plurals>
+    <plurals name="queue_saved_videos_to_playlist">
+        <item quantity="one">Menyimpan %1$d video ke %2$s</item>
+        <item quantity="other">Menyimpan %1$d video ke %2$s</item>
+    </plurals>
+    <plurals name="kp_plays">
+        <item quantity="one">%1$d kali diputar</item>
+        <item quantity="other">%1$d kali diputar</item>
+    </plurals>
+    <plurals name="taste_artists_count">
+        <item quantity="one">%1$d artis</item>
+        <item quantity="other">%1$d artis</item>
+    </plurals>
+    <plurals name="taste_genres_count">
+        <item quantity="one">%1$d genre</item>
+        <item quantity="other">%1$d genre</item>
+    </plurals>
+    <plurals name="taste_songs_kept_count">
+        <item quantity="one">%1$d lagu disimpan</item>
+        <item quantity="other">%1$d lagu disimpan</item>
+    </plurals>
+    <plurals name="ns_hidden_restore">
+        <item quantity="one">%1$d disembunyikan. Tampilkan kembali</item>
+        <item quantity="other">%1$d disembunyikan. Tampilkan kembali</item>
+    </plurals>
+    <plurals name="lib_upload_ytm_done_skipped">
+        <item quantity="one">Berhasil diunggah. %d lagu yang hanya ada di perangkat ini tidak disertakan.</item>
+        <item quantity="other">Berhasil diunggah. %d lagu yang hanya ada di perangkat ini tidak disertakan.</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="one">%1$d kali diputar</item>
+        <item quantity="other">%1$d kali diputar</item>
+    </plurals>
+    <plurals name="n_channels">
+        <item quantity="one">%1$d kanal</item>
+        <item quantity="other">%1$d kanal</item>
+    </plurals>
+    <plurals name="vp_collaborators_count">
+        <item quantity="one">%1$d kanal membagikan video ini</item>
+        <item quantity="other">%1$d kanal membagikan video ini</item>
+    </plurals>
+    <plurals name="n_results">
+        <item quantity="one">%1$d hasil</item>
+        <item quantity="other">%1$d hasil</item>
+    </plurals>
+    <plurals name="studio_songs_selected">
+        <item quantity="one">%1$d lagu</item>
+        <item quantity="other">%1$d lagu</item>
+    </plurals>
+    <plurals name="pl_import_playlists">
+        <item quantity="one">Menambahkan %1$d playlist berisi %2$d lagu.</item>
+        <item quantity="other">Menambahkan %1$d playlist berisi %2$d lagu.</item>
+    </plurals>
+    <plurals name="pl_import_video_playlists">
+        <item quantity="one">Menambahkan %1$d playlist berisi %2$d video.</item>
+        <item quantity="other">Menambahkan %1$d playlist berisi %2$d video.</item>
+    </plurals>
+    <plurals name="lib_artist_count">
+        <item quantity="one">%d artis</item>
+        <item quantity="other">%d artis</item>
+    </plurals>
+    <plurals name="lib_album_count">
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d album</item>
+    </plurals>
+    <plurals name="pl_import_saved">
+        <item quantity="one">%d playlist YouTube disimpan ke koleksimu.</item>
+        <item quantity="other">%d playlist YouTube disimpan ke koleksimu.</item>
+    </plurals>
+    <plurals name="pl_import_missing">
+        <item quantity="one">%d berkas tidak ada di perangkat ini, jadi dilewati.</item>
+        <item quantity="other">%d berkas tidak ada di perangkat ini, jadi dilewati.</item>
+    </plurals>
+    <plurals name="pl_import_foreign">
+        <item quantity="one">%d entri berasal dari layanan selain YouTube dan dilewati.</item>
+        <item quantity="other">%d entri berasal dari layanan selain YouTube dan dilewati.</item>
+    </plurals>
+    <plurals name="spotify_import_create_n">
+        <item quantity="one">Buat playlist berisi %1$d lagu</item>
+        <item quantity="other">Buat playlist berisi %1$d lagu</item>
+    </plurals>
+    <plurals name="import_add_n_songs">
+        <item quantity="one">Tambahkan %1$d lagu</item>
+        <item quantity="other">Tambahkan %1$d lagu</item>
+    </plurals>
+    <plurals name="import_added_n_songs">
+        <item quantity="one">%1$d lagu ditambahkan</item>
+        <item quantity="other">%1$d lagu ditambahkan</item>
+    </plurals>
+    <plurals name="sel_count">
+        <item quantity="one">%d lagu dipilih</item>
+        <item quantity="other">%d lagu dipilih</item>
+    </plurals>
+    <plurals name="sel_played_next">
+        <item quantity="one">%d lagu akan diputar berikutnya</item>
+        <item quantity="other">%d lagu akan diputar berikutnya</item>
+    </plurals>
+    <plurals name="sel_queued">
+        <item quantity="one">%d lagu ditambahkan ke antrean</item>
+        <item quantity="other">%d lagu ditambahkan ke antrean</item>
+    </plurals>
+    <plurals name="sel_downloading">
+        <item quantity="one">Mengunduh %d lagu</item>
+        <item quantity="other">Mengunduh %d lagu</item>
+    </plurals>
+    <plurals name="sel_added_to_playlist">
+        <item quantity="one">%1$d lagu ditambahkan ke %2$s</item>
+        <item quantity="other">%1$d lagu ditambahkan ke %2$s</item>
+    </plurals>
+    <plurals name="sel_removed">
+        <item quantity="one">%d lagu dihapus</item>
+        <item quantity="other">%d lagu dihapus</item>
+    </plurals>
+    <plurals name="pl_export_count">
+        <item quantity="one">%d lagu, beserta judul, artis, dan durasinya</item>
+        <item quantity="other">%d lagu, beserta judul, artis, dan durasinya</item>
+    </plurals>
 </resources>
