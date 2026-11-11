@@ -387,7 +387,7 @@
     <string name="spotlight_moods_title">Pilih suasana</string>
     <string name="settings_device_experience">Pengalaman perangkat</string>
     <string name="settings_language">Bahasa aplikasi</string>
-    <string name="settings_language_subtitle">Ikuti bahasa HP atau pilih bahasa sendiri.</string>
+    <string name="settings_language_subtitle">Pilih Bahasa Indonesia atau English untuk aplikasi.</string>
     <string name="settings_language_system">Ikuti sistem</string>
     <string name="settings_language_indonesian">Bahasa Indonesia</string>
     <string name="settings_language_english">English</string>
@@ -420,7 +420,7 @@
     <string name="settings_enabled">Aktif</string>
     <string name="settings_disabled">Nonaktif</string>
 
-    <string name="about_donate">Buy Me a Coffee</string>
+    <string name="about_donate">Dukung Yinnlycs</string>
     <string name="about_donate_subtitle">Dukung pengembangan Yinnlycs melalui QRIS</string>
     <string name="about_donate_title">Dukung Yinnlycs</string>
     <string name="about_donate_message">Pindai kode QRIS ini menggunakan aplikasi pembayaran pilihan Anda. Terima kasih sudah mendukung proyek ini!</string>
@@ -448,4 +448,6 @@
     <string name="about_licenses">Lisensi sumber terbuka</string>
     <string name="about_licenses_subtitle">Pustaka yang digunakan untuk membangun Yinnlycs</string>
     <string name="sp_report_bug">Laporkan bug</string>
+    <string name="about_whatsapp_channel">Gabung Saluran WhatsApp</string>
+    <string name="about_whatsapp_channel_subtitle">Ikuti saluran resmi Info [yinnlycs] di WhatsApp.</string>
 </resources>
