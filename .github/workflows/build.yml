@@ -5,7 +5,7 @@ on:
   # The V8.1 polish branch is also included so its changes can be CI-validated.
   # main moves through the beta -> main pull request and is what releases are cut from.
   push:
-    branches: [ main, master, beta, fix/yinnlycs-v8-1-indonesian-polish ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-1-indonesian-polish, feature/yinnlycs-v6.0.2 ]
   pull_request:
     branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   workflow_dispatch:
@@ -123,7 +123,7 @@ jobs:
   build-debug:
     name: Build Debug APK
     needs: authorize
-    if: needs.authorize.outputs.allowed == 'true' && (github.event_name == 'pull_request' || github.ref == 'refs/heads/fix/yinnlycs-v8-1-indonesian-polish')
+    if: needs.authorize.outputs.allowed == 'true' && (github.event_name == 'pull_request' || github.ref == 'refs/heads/fix/yinnlycs-v8-1-indonesian-polish' || github.ref == 'refs/heads/feature/yinnlycs-v6.0.2')
     runs-on: ubuntu-latest
     permissions:
       contents: read
