@@ -2933,7 +2933,7 @@ internal fun AdvancedSettingsPage(
                     SettingsRow(
                         icon = Icons.Rounded.DirectionsCar,
                         title = "Android Auto",
-                        subtitle = "Koda missing from your car? Start here",
+                        subtitle = stringResource(R.string.settings_android_auto_help_subtitle),
                         onClick = onOpenAutoHelp,
                         showChevron = true
                     )
