@@ -2617,4 +2617,11 @@
     <string name="comment_pinned">Pinned comment</string>
     <string name="comment_hearted_by_creator">Hearted by creator</string>
     <string name="comment_delete_accessibility">Delete comment</string>
+    <string name="stats_songs_played">Songs played</string>
+    <string name="stats_artists_explored">Artists explored</string>
+    <string name="stats_liked_songs">Liked songs</string>
+    <string name="stats_top_artist">Top artist</string>
+    <string name="stats_song_count">%1$d songs</string>
+    <string name="stats_play_count">%1$d plays</string>
+    <string name="report_log_lines">%1$d log lines recorded this session</string>
 </resources>
