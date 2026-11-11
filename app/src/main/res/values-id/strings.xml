@@ -444,7 +444,7 @@
     <string name="about_license">Lisensi</string>
     <string name="about_license_subtitle">GNU General Public License v3.0</string>
     <string name="about_report_issue_subtitle">Buat laporan masalah baru di GitHub</string>
-    <string name="about_open_source_note">Yinnlycs adalah proyek sumber terbuka di bawah GPL-3.0. Logo aplikasi dan detail build di atas disertakan bersama aplikasi, sehingga halaman ini tetap lengkap tanpa perlu memuat data dari internet.</string>
+    <string name="about_open_source_note">Yinnlycs adalah proyek sumber terbuka di bawah GPL-3.0. Detail build tersedia langsung di aplikasi; foto profil pengembang dan tautan proyek dapat dimuat dari GitHub saat online.</string>
     <string name="about_licenses">Lisensi sumber terbuka</string>
     <string name="about_licenses_subtitle">Pustaka yang digunakan untuk membangun Yinnlycs</string>
     <string name="sp_report_bug">Laporkan bug</string>
