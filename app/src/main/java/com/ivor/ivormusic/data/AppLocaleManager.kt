@@ -12,8 +12,19 @@ import java.util.Locale
 /** Follows the system by default and uses Android's per-app locale API where available. */
 object AppLocaleManager {
     fun wrap(base: Context): Context {
-        if (Build.VERSION.SDK_INT >= 33) return base
         val tag = ExperiencePreferences(base).appLanguage
+        if (Build.VERSION.SDK_INT >= 33) {
+            val manager = base.getSystemService(LocaleManager::class.java)
+            val requestedLocales = if (tag == "system") {
+                LocaleList.getEmptyLocaleList()
+            } else {
+                LocaleList.forLanguageTags(tag)
+            }
+            if (manager.applicationLocales.toLanguageTags() != requestedLocales.toLanguageTags()) {
+                manager.applicationLocales = requestedLocales
+            }
+            return base
+        }
         if (tag == "system") return base
         val locale = Locale.forLanguageTag(tag)
         val configuration = Configuration(base.resources.configuration)
@@ -23,12 +34,13 @@ object AppLocaleManager {
     }
 
     fun currentLanguage(context: Context): String {
+        val savedLanguage = ExperiencePreferences(context).appLanguage
         if (Build.VERSION.SDK_INT >= 33) {
             val locales = context.getSystemService(LocaleManager::class.java).applicationLocales
-            if (locales.isEmpty) return "system"
-            return locales[0]?.language ?: "system"
+            if (locales.isEmpty) return savedLanguage
+            return locales[0]?.language ?: savedLanguage
         }
-        return ExperiencePreferences(context).appLanguage
+        return savedLanguage
     }
 
     fun setLanguage(context: Context, language: String) {
