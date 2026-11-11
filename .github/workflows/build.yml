@@ -5,9 +5,9 @@ on:
   # is the only thing that posts an APK. main moves through the beta -> main
   # pull request and is what releases are cut from.
   push:
-    branches: [ main, master, beta ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   pull_request:
-    branches: [ main, master, beta ]
+    branches: [ main, master, beta, fix/yinnlycs-v8-requested-fixes ]
   workflow_dispatch:
 
 # Least privilege by default: no job gets a token unless it asks for one below.
