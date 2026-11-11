@@ -1731,7 +1731,7 @@ fun HomeScreen(
         // Both navigation variants use the same destinations and interaction
         // contract. Only their Material container and item presentation differ.
         val navBarHaptics = com.ivor.ivormusic.util.rememberKodaHaptics()
-        val navTabs = if (videoMode) {
+        val navTabs = (if (videoMode) {
             videoHomeConfiguration.orderedVisibleDestinations.map { destination ->
                 when (destination) {
                     VideoHomeDestination.HOME -> Triple(
