@@ -2,8 +2,14 @@ package com.ivor.ivormusic.ui.settings
 import androidx.compose.ui.res.stringResource
 import com.ivor.ivormusic.R
 
+import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Environment
+import android.provider.MediaStore
+import android.widget.Toast
 import androidx.activity.BackEventCompat
 import androidx.activity.compose.PredictiveBackHandler
 import androidx.compose.animation.AnimatedContent
@@ -2536,7 +2542,7 @@ private fun ExpressiveAboutDialog(
                             Box(
                                 modifier = Modifier
                                     .size(112.dp)
-                                    .clip(MaterialShapes.SoftBurst.toShape())
+                                    .clip(CircleShape)
                                     .background(MaterialTheme.colorScheme.primaryContainer),
                                 contentAlignment = Alignment.Center,
                             ) {
@@ -2623,7 +2629,7 @@ private fun ExpressiveAboutDialog(
                                     Box(
                                         modifier = Modifier
                                             .size(58.dp)
-                                            .clip(MaterialShapes.Clover4Leaf.toShape())
+                                            .clip(CircleShape)
                                             .background(MaterialTheme.colorScheme.secondary),
                                         contentAlignment = Alignment.Center,
                                     ) {
@@ -2767,6 +2773,14 @@ private fun ExpressiveAboutDialog(
                             .fillMaxWidth()
                             .heightIn(max = 420.dp),
                     )
+                    Button(
+                        onClick = { saveDonationQris(context) },
+                        modifier = Modifier.fillMaxWidth(),
+                    ) {
+                        Icon(Icons.Rounded.Download, contentDescription = null)
+                        Spacer(Modifier.width(8.dp))
+                        Text(stringResource(R.string.about_donate_download))
+                    }
                 }
             },
             confirmButton = {
@@ -2776,6 +2790,64 @@ private fun ExpressiveAboutDialog(
             },
         )
     }
+}
+
+private fun saveDonationQris(context: android.content.Context) {
+    val bitmap = BitmapFactory.decodeResource(
+        context.resources,
+        R.drawable.yinnlycs_donate_qris_v7,
+    ) ?: run {
+        Toast.makeText(
+            context,
+            R.string.about_donate_download_failed,
+            Toast.LENGTH_SHORT,
+        ).show()
+        return
+    }
+
+    val values = ContentValues().apply {
+        put(MediaStore.MediaColumns.DISPLAY_NAME, "Yinnlycs-QRIS.png")
+        put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
+        put(
+            MediaStore.MediaColumns.RELATIVE_PATH,
+            "${Environment.DIRECTORY_PICTURES}/Yinnlycs",
+        )
+        put(MediaStore.MediaColumns.IS_PENDING, 1)
+    }
+
+    val resolver = context.contentResolver
+    val uri = runCatching {
+        resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+    }.getOrNull()
+    val saved = try {
+        uri != null && resolver.openOutputStream(uri)?.use { output ->
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, output)
+        } == true
+    } catch (_: Exception) {
+        false
+    } finally {
+        bitmap.recycle()
+    }
+
+    if (saved && uri != null) {
+        runCatching {
+            resolver.update(
+                uri,
+                ContentValues().apply { put(MediaStore.MediaColumns.IS_PENDING, 0) },
+                null,
+                null,
+            )
+        }
+    } else {
+        uri?.let { runCatching { resolver.delete(it, null, null) } }
+    }
+
+    Toast.makeText(
+        context,
+        if (saved) R.string.about_donate_download_success
+        else R.string.about_donate_download_failed,
+        Toast.LENGTH_SHORT,
+    ).show()
 }
 
 @Composable
