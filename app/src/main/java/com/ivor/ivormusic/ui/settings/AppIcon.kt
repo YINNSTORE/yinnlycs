@@ -497,7 +497,7 @@ fun YinnlycsAppIcon(
         contentAlignment = Alignment.Center
     ) {
         Image(
-            painter = painterResource(id = com.ivor.ivormusic.R.drawable.yinnlycs_icon),
+            painter = painterResource(id = com.ivor.ivormusic.R.drawable.yinnlycs_logo_v7),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize().padding(8.dp)
