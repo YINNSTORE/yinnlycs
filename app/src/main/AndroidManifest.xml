@@ -34,7 +34,6 @@
         <package android:name="com.discord" />
     </queries>
 
-        <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:name=".IvorMusicApplication"
@@ -495,7 +494,6 @@
                 android:resource="@xml/orbit_widget_info" />
         </receiver>
 
-            <service android:name=".service.DynamicIslandService" android:exported="false" android:stopWithTask="false" />
     </application>
 
 </manifest>
