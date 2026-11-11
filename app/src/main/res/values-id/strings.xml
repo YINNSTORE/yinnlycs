@@ -2322,4 +2322,7 @@
     <string name="channel_search_placeholder">Cari %1$s</string>
     <string name="channel_close_photos">Tutup foto</string>
     <string name="settings_folder_song_count">%1$d lagu</string>
+    <string name="settings_search_no_match">Tidak ada pengaturan yang cocok dengan “%1$s”</string>
+    <string name="settings_search_hint">Coba kata yang lebih singkat, atau cari berdasarkan fungsi pengaturannya.</string>
+    <string name="settings_android_auto_help_subtitle">Yinnlycs tidak muncul di Android Auto mobilmu? Mulai dari sini.</string>
 </resources>
