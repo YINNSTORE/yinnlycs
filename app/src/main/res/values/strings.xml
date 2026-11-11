@@ -700,7 +700,7 @@
     <string name="auto_help_intro">Android Auto hides media apps that were not installed from the Play Store. Yinnlycs ships as a download from GitHub, so it stays invisible until you allow it - this is Auto\'s rule, not a bug in Yinnlycs.</string>
     <string name="auto_help_step1">Open the Android Auto app on your phone and tap its version info repeatedly until developer mode is offered</string>
     <string name="auto_help_step2">Open Developer settings from the menu</string>
-    <string name="auto_help_step3">Turn on \u0022Unknown sources\u0022</string>
+    <string name="auto_help_step3">Turn on &quot;Unknown sources&quot;</string>
     <string name="auto_help_step4">Re-check the app launcher in your car</string>
     <string name="auto_help_note">The exact wording and location of these options varies between phone brands and Auto versions.</string>
     <string name="sp_recommendations">Recommendations</string>
