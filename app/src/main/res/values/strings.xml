@@ -508,6 +508,7 @@
     <string name="cz_section_players">Players</string>
     <string name="cz_section_layout">Layout and touch</string>
     <string name="cz_section_home_layout">Layout</string>
+    <string name="home_greeting_welcome">Welcome</string>
     <string name="home_greeting_morning">Good morning</string>
     <string name="home_greeting_afternoon">Good afternoon</string>
     <string name="home_greeting_evening">Good evening</string>
