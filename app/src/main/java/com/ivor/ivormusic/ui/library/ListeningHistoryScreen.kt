@@ -956,7 +956,7 @@ private fun HistoryRunRow(
                 }
                 DropdownMenuItem(
                     text = {
-                        Text(if (run.playCount > 1) "Remove these ${run.playCount} plays" else "Remove this play")
+                        Text(if (run.playCount > 1) stringResource(R.string.lh_remove_run_multiple, run.playCount) else stringResource(R.string.lh_remove_run_single))
                     },
                     leadingIcon = { Icon(Icons.Rounded.Delete, contentDescription = null) },
                     onClick = {
