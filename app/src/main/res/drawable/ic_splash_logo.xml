@@ -3,8 +3,8 @@
     <!-- Slightly larger than the launcher foreground, while staying inside
          the Android splash icon's safe area. -->
     <item
-        android:width="84dp"
-        android:height="84dp"
+        android:width="96dp"
+        android:height="96dp"
         android:gravity="center">
         <bitmap
             android:src="@drawable/yinnlycs_logo_v7"
