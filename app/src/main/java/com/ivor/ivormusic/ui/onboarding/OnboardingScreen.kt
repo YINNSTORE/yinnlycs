@@ -230,7 +230,7 @@ fun OnboardingScreen(
                         )
                     }
                     Text(
-                        text = "Koda",
+                        text = "Yinnlycs",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
