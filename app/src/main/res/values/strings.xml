@@ -2580,4 +2580,7 @@
     <string name="about_donate_close">Close</string>
     <string name="about_whatsapp_channel">Join WhatsApp Channel</string>
     <string name="about_whatsapp_channel_subtitle">Follow the official Info [yinnlycs] channel on WhatsApp.</string>
+    <string name="about_donate_download">Download QRIS</string>
+    <string name="about_donate_download_success">QRIS saved to Pictures/Yinnlycs.</string>
+    <string name="about_donate_download_failed">Could not save QRIS. Please try again.</string>
 </resources>
