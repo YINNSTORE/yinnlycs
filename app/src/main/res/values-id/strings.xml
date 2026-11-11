@@ -425,4 +425,26 @@
     <string name="about_donate_title">Dukung Yinnlycs</string>
     <string name="about_donate_message">Pindai kode QRIS ini menggunakan aplikasi pembayaran pilihan Anda. Terima kasih sudah mendukung proyek ini!</string>
     <string name="about_donate_close">Tutup</string>
+    <string name="about_tagline">Pemutar musik modern dan sumber terbuka dengan integrasi YouTube Music.</string>
+    <string name="about_version">Versi</string>
+    <string name="about_build">Nomor build</string>
+    <string name="about_build_type">Jenis build</string>
+    <string name="about_developer">Pengembang</string>
+    <string name="about_debug">Debug</string>
+    <string name="about_release">Rilis</string>
+    <string name="about_title">Tentang Yinnlycs</string>
+    <string name="about_build_details">Detail build</string>
+    <string name="about_package">Paket</string>
+    <string name="about_device">Perangkat</string>
+    <string name="about_developer_subtitle">Pengembang dan pemelihara · Buka profil GitHub</string>
+    <string name="about_project">Proyek</string>
+    <string name="about_update_subtitle">Lihat build terpasang, rilis terbaru, dan APK yang kompatibel</string>
+    <string name="about_source_code">Kode sumber</string>
+    <string name="about_source_subtitle">Baca, tinjau, atau berkontribusi pada Yinnlycs di GitHub</string>
+    <string name="about_license">Lisensi</string>
+    <string name="about_license_subtitle">GNU General Public License v3.0</string>
+    <string name="about_report_issue_subtitle">Buat laporan masalah baru di GitHub</string>
+    <string name="about_open_source_note">Yinnlycs adalah proyek sumber terbuka di bawah GPL-3.0. Logo aplikasi dan detail build di atas disertakan bersama aplikasi, sehingga halaman ini tetap lengkap tanpa perlu memuat data dari internet.</string>
+    <string name="about_licenses">Lisensi sumber terbuka</string>
+    <string name="about_licenses_subtitle">Pustaka yang digunakan untuk membangun Yinnlycs</string>
 </resources>
