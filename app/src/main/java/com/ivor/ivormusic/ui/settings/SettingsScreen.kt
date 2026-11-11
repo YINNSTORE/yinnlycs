@@ -1571,11 +1571,11 @@ private fun SettingsHub(
     }
 
     val notificationsValue = when {
-        !canPostPromoted && (liveDownloadUpdates || livePlaybackUpdates) -> "Blocked by system"
-        liveDownloadUpdates && livePlaybackUpdates -> "Downloads and playback"
-        liveDownloadUpdates -> "Downloads only"
-        livePlaybackUpdates -> "Playback only"
-        else -> "Off"
+        !canPostPromoted && (liveDownloadUpdates || livePlaybackUpdates) -> stringResource(R.string.notifications_value_blocked)
+        liveDownloadUpdates && livePlaybackUpdates -> stringResource(R.string.notifications_value_downloads_playback)
+        liveDownloadUpdates -> stringResource(R.string.notifications_value_downloads_only)
+        livePlaybackUpdates -> stringResource(R.string.notifications_value_playback_only)
+        else -> stringResource(R.string.notifications_value_off)
     }
 
     // Read on entry rather than held in a flow: Navigation Compose disposes
@@ -2028,7 +2028,7 @@ internal fun ExpressiveAccountItem(
         // User Info
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = userName ?: "YouTube Account",
+                text = userName ?: stringResource(R.string.kp_youtube_account),
                 color = textColor,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold,
@@ -2495,7 +2495,7 @@ private fun ExpressiveAboutDialog(
     var showDonateDialog by remember { mutableStateOf(false) }
     val githubUrl = "https://github.com/${BuildConfig.GITHUB_REPO}"
     val developerUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}"
-    val developerAvatarUrl = "https://avatars.githubusercontent.com/u/146443900?v=4"
+    val developerAvatarUrl = "https://github.com/${BuildConfig.GITHUB_USERNAME}.png"
     val whatsappChannelUrl = "https://whatsapp.com/channel/0029Vb8N4MCKwqSRSuyBsr1n"
 
     Dialog(
@@ -3626,7 +3626,7 @@ private fun ShortsButtonShapeToggle(
             ) {
                 Icon(
                     imageVector = icon,
-                    contentDescription = "$label: ${if (shown) "shown" else "hidden"}",
+                    contentDescription = stringResource(R.string.visibility_state, label, stringResource(if (shown) R.string.visibility_shown else R.string.visibility_hidden)),
                     tint = iconColor,
                     modifier = Modifier.size(26.dp)
                 )
