@@ -278,7 +278,7 @@ private fun DayBudgetCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = if (isToday) "$dayName (today)" else dayName,
+                    text = if (isToday) "$dayName (${stringResource(R.string.sc_today).lowercase()})" else dayName,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold
                 )
