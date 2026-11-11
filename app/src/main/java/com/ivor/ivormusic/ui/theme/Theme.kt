@@ -207,7 +207,9 @@ fun IvorMusicTheme(
         if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) colorScheme.liquidGlassSurfaces() else colorScheme
     }
     val styledShapes = if (surfaceStyle == AppSurfaceStyle.LIQUID_GLASS) LiquidGlassShapes else ExpressiveShapes
-    val selectedTypography = typographyFor(fontFamily)
+    // Keep one stable typography snapshot per choice; every Material text role
+    // and the default LocalTextStyle must switch together when the preference changes.
+    val selectedTypography = remember(fontFamily) { typographyFor(fontFamily) }
     
     val view = LocalView.current
     if (!view.isInEditMode) {
