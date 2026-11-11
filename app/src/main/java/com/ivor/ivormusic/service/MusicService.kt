@@ -781,15 +781,6 @@ class MusicService : MediaLibraryService() {
         }
     }
 
-    private fun publishDynamicIslandState() {
-        if (!ExperiencePreferences(this).isDynamicIslandEnabled) return
-        val metadata = engine.active.currentMediaItem?.mediaMetadata
-        sendBroadcast(Intent(DynamicIslandService.ACTION_PLAYBACK_STATE).setPackage(packageName).apply {
-            putExtra(DynamicIslandService.EXTRA_TITLE, metadata?.title?.toString().orEmpty())
-            putExtra(DynamicIslandService.EXTRA_ARTIST, metadata?.artist?.toString().orEmpty())
-            putExtra(DynamicIslandService.EXTRA_PLAYING, engine.active.isPlaying)
-        })
-    }
 
     private fun initializeSession() {
         val sessionIntent = packageManager.getLaunchIntentForPackage(packageName).let {
@@ -1171,7 +1162,6 @@ class MusicService : MediaLibraryService() {
          */
         override fun onEvents(player: Player, events: Player.Events) {
             super.onEvents(player, events)
-            publishDynamicIslandState()
             if (events.containsAny(
                     Player.EVENT_IS_PLAYING_CHANGED,
                     Player.EVENT_PLAY_WHEN_READY_CHANGED,
