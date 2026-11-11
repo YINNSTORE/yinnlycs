@@ -34,7 +34,9 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -61,6 +63,7 @@ import androidx.graphics.shapes.toPath
 import com.ivor.ivormusic.R
 import com.ivor.ivormusic.data.HomeNavigationCustomization
 import com.ivor.ivormusic.data.ThemePreferences
+import kotlinx.coroutines.delay
 
 /**
  * The music/video switch as one button that becomes the mode it is in.
@@ -247,22 +250,28 @@ fun TopBarDownloadsButton(
 }
 
 /**
- * A short greeting for the Home top bar, by the hour: the bar's one line of
- * text, beside the profile picture.
- *
- * Read once per composition of the bar rather than ticking: a greeting that
- * changed under someone mid-scroll would be noise, and the bar is recomposed
- * often enough (a tab change, a return from another screen) to stay right.
+ * A short greeting for the Home top bar, using the device's local time.
+ * Refresh once a minute so the greeting changes when the day moves into the
+ * next period, even if the Home screen stays open.
  */
 @Composable
 fun HomeGreeting(modifier: Modifier = Modifier) {
-    val hour = remember { java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY) }
+    val hourState = remember {
+        mutableIntStateOf(java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY))
+    }
+    LaunchedEffect(Unit) {
+        while (true) {
+            hourState.intValue = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+            delay(60_000L)
+        }
+    }
+    val hour = hourState.intValue
     Text(
         text = stringResource(
             when (hour) {
-                in 5..11 -> R.string.home_greeting_morning
-                in 12..16 -> R.string.home_greeting_afternoon
-                in 17..21 -> R.string.home_greeting_evening
+                in 5..10 -> R.string.home_greeting_morning
+                in 11..14 -> R.string.home_greeting_afternoon
+                in 15..18 -> R.string.home_greeting_evening
                 else -> R.string.home_greeting_night
             }
         ),
