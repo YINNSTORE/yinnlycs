@@ -173,7 +173,7 @@ class MainActivity : ComponentActivity() {
         // Off the main thread: publishing is a binder call into the launcher.
         Thread { com.ivor.ivormusic.util.ModeShortcuts.publish(applicationContext) }.start()
 
-        // Remove splash instantly when ready — the AVD entrance animation is the show
+        // Remove the static system splash as soon as the activity is ready.
         splashScreen.setOnExitAnimationListener { it.remove() }
 
         // Large screens follow the device; phones stay portrait unless

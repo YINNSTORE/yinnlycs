@@ -451,8 +451,8 @@ object YinnlycsIconPaths {
 }
 
 /**
- * Pure Compose vector renderer for the Koda App Icon.
- * Supports fluid animated color transitions, arbitrary container shapes, and ambient glow.
+ * Image-backed Yinnlycs app icon renderer using the supplied waveform logo.
+ * Keeps the selected icon container shape and background styling.
  */
 @Composable
 fun YinnlycsAppIcon(

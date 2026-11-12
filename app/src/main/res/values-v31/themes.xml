@@ -17,12 +17,12 @@
         <item name="android:windowLayoutInDisplayCutoutMode">always</item>
     </style>
 
-    <!-- Splash Screen Theme (Android 12+) — uses Material You dynamic color -->
+    <!-- Splash Screen Theme (Android 12+) -->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <!-- Dynamic wallpaper-derived dark background (neutral shade 900) -->
-        <item name="windowSplashScreenBackground">@android:color/system_neutral1_900</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash</item>
-        <item name="windowSplashScreenAnimationDuration">800</item>
+        <!-- Match the supplied Yinnlycs logo background. -->
+        <item name="windowSplashScreenBackground">#EFEFEF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="windowSplashScreenAnimationDuration">0</item>
         <item name="postSplashScreenTheme">@style/Theme.IvorMusic</item>
         <!-- The activity window is created under this theme, so the
              cutout mode has to be declared here too. -->
